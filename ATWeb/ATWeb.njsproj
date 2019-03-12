@@ -31,8 +31,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
-    <Compile Include="routes\index.js" />
-    <Compile Include="routes\users.js" />
+    <Compile Include="routes\frontend\index.js" />
+    <Compile Include="routes\backend\index.js" />
+    <Content Include=".env" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\main.css" />
     <Content Include="README.md" />
@@ -46,6 +47,12 @@
     <Folder Include="public\javascripts\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
+    <Folder Include="routes\backend\auth\" />
+    <Folder Include="routes\backend\version\" />
+    <Folder Include="routes\backend\settings\" />
+    <Folder Include="routes\backend\users\" />
+    <Folder Include="routes\frontend\" />
+    <Folder Include="routes\backend\" />
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>
