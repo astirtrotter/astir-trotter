@@ -7,7 +7,8 @@
   },
   "description": "ATWeb",
   "author": {
-    "name": ""
+    "name": "Pro Dev",
+    "email": "prodev9999@gmail.com"
   },
   "dependencies": {
     "body-parser": "^1.15.0",
