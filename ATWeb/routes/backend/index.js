@@ -1,24 +1,30 @@
 ﻿'use strict';
-var express = require('express');
-var router = express.Router();
 
-// check if this is valid request
-router.use(function (req, res, next) {
-    if (req.body.ver === process.env.VERSION) {
-        next();
-    } else {
-        res.status(301);
-        res.send({
-            success: false,
-            error: {
-                message: 'The version of the client is old. Please update and try again.'
-            }
-        })
-    }
-});
+module.exports = function (app) {
+    /* middleware */
 
-router.get('/', function (req, res) {
-    res.send('respond with a resource');
-});
+    // check version
+    app.use(function (req, res, next) {
+        if (!req.url.startsWith(process.env.API_BASE_URL) ||
+            req.url.startsWith(process.env.API_BASE_URL + process.env.VERSION + '/')) {
+            return next();
+        } else {
+            res.status(301);
+            return res.send({
+                success: false,
+                error: {
+                    message: 'The version of the client you are using is old. Please update and try again.'
+                }
+            });
+        }
+    });
 
-module.exports = router;
+    app.param('userId', function (req, res, next, userId) {
+
+    });
+    
+    app.get(process.env.API_BASE_URL + process.env.VERSION +
+        '/', function (req, res, next) {
+        
+    });
+};
