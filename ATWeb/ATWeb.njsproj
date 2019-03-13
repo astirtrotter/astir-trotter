@@ -31,6 +31,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="helpers\msSqlConnecter.js" />
+    <Compile Include="helpers\version.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="models\user.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="msSqlConnecter.js" />
     <Compile Include="routes\frontend\index.js" />
     <Compile Include="routes\backend\index.js" />
     <Content Include=".env" />
@@ -42,6 +50,8 @@
     <Content Include="views\error.pug" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="helpers\" />
+    <Folder Include="models\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
