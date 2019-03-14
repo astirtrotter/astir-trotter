@@ -1,7 +1,6 @@
 ﻿'use strict';
 var Tedious = require("tedious");
 var Promise = require("bluebird");
-var TYPES = Tedious.TYPES;
 
 var msSqlConnecter = function () {
     var currentConnect = this;
@@ -95,7 +94,7 @@ module.exports = {
      * @param {any} params - array of {field, type, value}
      * @param {any} callback - function(count)
      */
-    insert: function insert(table, params, callback) {
+    insert: function (table, params, callback) {
         var con = new msSqlConnecter.msSqlConnecter();
         con.connect().then(function () {
             var fields = [];
@@ -121,17 +120,21 @@ module.exports = {
     },
 
     /**
-     * 
      * @param {any} table
-     * @param {any} callback
+     * @param {any} criteria
+     * @param {any} callback - function(count, data)
      */
-    queryAll: function queryAll(table, callback) {
+    query: function (table, criteria, callback) {
         var con = new msSqlConnecter.msSqlConnecter();
         con.connect().then(function () {
-            new con.Request("select * from ".concat(table))
+            var query = "select * from ".concat(table);
+            if (criteria) {
+                query = query.concat(" where ").concat(criteria);
+            }
+            new con.Request(query)
                 .onComplate(function (count, data) {
                     if (callback)
-                        callback(data);
+                        callback(count, data);
                 })
                 .onError(function (err) {
                     console.log(err);
@@ -147,7 +150,7 @@ module.exports = {
      * @param {any} criteria - criteria string, e.g. id > @id
      * @param {any} callback - function(count)
      */
-    update: function updateData(table, params, criteria, callback) {
+    update: function (table, params, criteria, callback) {
         var con = new msSqlConnecter.msSqlConnecter();
         con.connect().then(function () {
             var fields = [];
@@ -177,11 +180,10 @@ module.exports = {
      * @param {any} criteria - criteria to delete
      * @param {any} callback - function(count)
      */
-    delete: function deleteData(table, criteria, callback) {
+    delete: function (table, criteria, callback) {
         var con = new msSqlConnecter.msSqlConnecter();
         con.connect().then(function () {
             new con.Request("delete from ".concat(table).concat(" where ").concat(criteria))
-                .addParam("id", TYPES.Int, 3)
                 .onComplate(function (count) {
                     if (callback)
                         callback(count);
