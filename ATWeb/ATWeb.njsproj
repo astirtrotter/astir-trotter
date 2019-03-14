@@ -31,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
-    <Compile Include="helpers\msSqlHelper.js" />
     <Compile Include="config\messages.js">
       <SubType>Code</SubType>
     </Compile>
@@ -44,12 +43,16 @@
     <Compile Include="middleware\api_versioning.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="models\user.js">
+    <Compile Include="models\index.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="models\users.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="controllers\index.js" />
     <Compile Include="routes\index.js" />
     <Content Include=".env" />
+    <Content Include="db.sql" />
     <Content Include="package.json" />
     <Content Include="public\favicon.ico" />
     <Content Include="public\stylesheets\main.css" />
@@ -70,7 +73,6 @@
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
     <Folder Include="routes\auth\" />
-    <Folder Include="routes\version\" />
     <Folder Include="routes\settings\" />
     <Folder Include="routes\users\" />
     <Folder Include="views\" />

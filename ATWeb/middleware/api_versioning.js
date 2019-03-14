@@ -1,5 +1,5 @@
 ﻿'use strict';
-var Messages = require('../config/messages');
+const Messages = require('../config/messages');
 
 module.exports = function (app) {
 
