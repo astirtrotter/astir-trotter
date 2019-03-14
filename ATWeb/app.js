@@ -1,5 +1,4 @@
 ﻿'use strict';
-const debug = require('debug');
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -30,8 +29,4 @@ require('./routes')(app);
 // middleware
 require('./middleware/exceptions')(app);
 
-// server
-app.set('port', process.env.PORT || 3000);
-var server = app.listen(app.get('port'), function () {
-    debug('Server is running on port ' + server.address().port);
-});
+module.exports = app;

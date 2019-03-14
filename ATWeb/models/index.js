@@ -28,7 +28,7 @@ fs.readdirSync(__dirname)
 
 Object.keys(models).forEach(modelName => {
     if (models[modelName].associate) {
-        dmodelsb[modelName].associate(models);
+        models[modelName].associate(models);
     }
 });
 

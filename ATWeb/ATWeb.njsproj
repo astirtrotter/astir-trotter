@@ -13,7 +13,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>36fad004-b3ff-4db1-9284-f95b340e1483</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.js</StartupFile>
+    <StartupFile>bin\www.js</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -31,6 +31,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="bin\www.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="config\messages.js">
       <SubType>Code</SubType>
     </Compile>
@@ -62,6 +65,7 @@
     <Content Include="views\error.pug" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\" />
     <Folder Include="helpers\" />
     <Folder Include="models\" />
     <Folder Include="config\" />
