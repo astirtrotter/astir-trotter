@@ -2,17 +2,25 @@
 var Tedious = require("tedious");
 var Promise = require("bluebird");
 
+var config = {
+    server: process.env.MSSQL_SERVER,
+    options: {
+        encrypt: false,
+        instanceName: process.env.MSSQL_INSTANCE,
+        database: process.env.MSSQL_DATABASE,
+    },
+    authentication: {
+        type: 'default',
+        options: {
+            userName: process.env.MSSQL_USERNAME,
+            password: process.env.MSSQL_PASSWORD
+        }
+    }
+};
+
 var msSqlConnecter = function () {
     var currentConnect = this;
-    currentConnect.config = {
-        server: 'localhost\\devnamedinstance',
-        options: {
-            database: 'AstirTrotterDB'
-        },
-        authentication: {
-            type: 'default'
-        }
-    };
+    currentConnect.config = config;
     currentConnect.errorHandler;
     currentConnect.connectedHandler;
     currentConnect.connection;
@@ -34,7 +42,7 @@ var msSqlConnecter = function () {
         currentRequest.result = [];
 
         currentRequest.errorHandler;
-        currentRequest.onComplateHandler;
+        currentRequest.completeHandler;
 
         currentRequest.addParam = function (key, type, value) {
             currentRequest.params.push({ key: key, type: type, value: value });
@@ -47,7 +55,7 @@ var msSqlConnecter = function () {
                     currentRequest.errorHandler(err);
                 }
                 else {
-                    currentRequest.onComplateHandler(rowCount, currentRequest.result);
+                    currentRequest.completeHandler(rowCount, currentRequest.result);
                 }
             });
 
@@ -73,15 +81,15 @@ var msSqlConnecter = function () {
             return currentRequest;
         };
 
-        currentRequest.onComplate = function (callback) {
-            currentRequest.onComplateHandler = callback;
+        currentRequest.onComplete = function (callback) {
+            currentRequest.completeHandler = callback;
 
             return currentRequest;
         };
     }
 
     currentConnect.connect = function () {
-        var connection = new Tedious.Connection(config);
+        var connection = new Tedious.Connection(currentConnect.config);
         currentConnect.connection = connection;
         return Promise.promisify(connection.on.bind(connection))("connect");
     }
@@ -91,22 +99,22 @@ module.exports = {
     /**
      * insert record
      * @param {any} table - table name
-     * @param {any} params - array of {field, type, value}
+     * @param {any} params - array of {key, type, value}
      * @param {any} callback - function(count)
      */
     insert: function (table, params, callback) {
-        var con = new msSqlConnecter.msSqlConnecter();
+        var con = new msSqlConnecter();
         con.connect().then(function () {
-            var fields = [];
-            params.forEach(param) {
-                fields.push(param.field);
-            };
-            var values = " values(@".concat(fields.join(",@")).concat(")");
+            var keys = [];
+            params.forEach(function (param) {
+                keys.push(param.key);
+            });
+            var values = " values(@".concat(keys.join(",@")).concat(")");
             var request = new con.Request("insert into ".concat(table).concat(values));
-            params.forEach(param) {
-                request.addParam(param.field, param.type, param.value);
-            };
-            request.onComplate(function (count) {
+            params.forEach(function (param) {
+                request.addParam(param.key, param.type, param.value);
+            });
+            request.onComplete(function (count) {
                 if (callback)
                     callback(count);
             })
@@ -125,14 +133,15 @@ module.exports = {
      * @param {any} callback - function(count, data)
      */
     query: function (table, criteria, callback) {
-        var con = new msSqlConnecter.msSqlConnecter();
+        var con = new msSqlConnecter();
         con.connect().then(function () {
             var query = "select * from ".concat(table);
             if (criteria) {
                 query = query.concat(" where ").concat(criteria);
             }
             new con.Request(query)
-                .onComplate(function (count, data) {
+                .onComplete(function (count, data) {
+                    console.log(data);
                     if (callback)
                         callback(count, data);
                 })
@@ -151,18 +160,18 @@ module.exports = {
      * @param {any} callback - function(count)
      */
     update: function (table, params, criteria, callback) {
-        var con = new msSqlConnecter.msSqlConnecter();
+        var con = new msSqlConnecter();
         con.connect().then(function () {
-            var fields = [];
-            params.forEach(param) {
-                fields.push(param.field.concat("=@").concat(param.field));
-            };
-            var sets = " set ".concat(fields.join(",")).concat(" where ");
+            var keys = [];
+            params.forEach(function (param) {
+                keys.push(param.key.concat("=@").concat(param.key));
+            });
+            var sets = " set ".concat(keys.join(",")).concat(" where ");
             var request = new con.Request("update ".concat(table).concat(sets).concat(criteria));
-            params.forEach(param) {
-                request.addParam(param.field, param.type, param.value);
-            };
-            request.onComplate(function (count) {
+            params.forEach(function (param) {
+                request.addParam(param.key, param.type, param.value);
+            });
+            request.onComplete(function (count) {
                 if (callback)
                     callback(count);
             })
@@ -181,10 +190,10 @@ module.exports = {
      * @param {any} callback - function(count)
      */
     delete: function (table, criteria, callback) {
-        var con = new msSqlConnecter.msSqlConnecter();
+        var con = new msSqlConnecter();
         con.connect().then(function () {
             new con.Request("delete from ".concat(table).concat(" where ").concat(criteria))
-                .onComplate(function (count) {
+                .onComplete(function (count) {
                     if (callback)
                         callback(count);
                 })
