@@ -4,7 +4,7 @@ var fs = require('fs');
 var path = require('path');
 var Sequelize = require('sequelize');
 var basename = path.basename(__filename);
-var db = {};
+var models = {};
 var sequelize = new Sequelize(
     process.env.MSSQL_DATABASE,
     process.env.MSSQL_USERNAME,
@@ -23,16 +23,16 @@ fs.readdirSync(__dirname)
     })
     .forEach(file => {
         var model = sequelize['import'](path.join(__dirname, file));
-        db[model.name] = model;
+        models[model.name] = model;
     });
 
-Object.keys(db).forEach(modelName => {
-    if (db[modelName].associate) {
-        db[modelName].associate(db);
+Object.keys(models).forEach(modelName => {
+    if (models[modelName].associate) {
+        dmodelsb[modelName].associate(models);
     }
 });
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
+models.sequelize = sequelize;
+models.Sequelize = Sequelize;
 
-module.exports = db;
+module.exports = models;
