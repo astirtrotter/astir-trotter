@@ -31,14 +31,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
-    <Compile Include="helpers\msSqlConnecter.js" />
-    <Compile Include="helpers\version.js">
+    <Compile Include="helpers\msSqlHelper.js" />
+    <Compile Include="helpers\messages.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="models\user.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="msSqlConnecter.js" />
     <Compile Include="routes\frontend\index.js" />
     <Compile Include="routes\backend\index.js" />
     <Content Include=".env" />
