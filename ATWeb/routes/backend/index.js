@@ -25,7 +25,7 @@ module.exports = function (app) {
         next();
     });
     
-    app.get(process.env.API_BASE_URL + process.env.VERSION + '/', function (req, res, next) {
-        res.send('abc');
+    app.get(process.env.API_BASE_URL + process.env.VERSION + '/:userId', function (req, res, next) {
+        res.send(req.user);
     });
 };
