@@ -32,16 +32,26 @@
   <ItemGroup>
     <Compile Include="app.js" />
     <Compile Include="helpers\msSqlHelper.js" />
-    <Compile Include="helpers\messages.js">
+    <Compile Include="config\messages.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="middleware\api_params.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="middleware\exceptions.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="middleware\api_versioning.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="models\user.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="routes\frontend\index.js" />
-    <Compile Include="routes\backend\index.js" />
+    <Compile Include="controllers\index.js" />
+    <Compile Include="routes\index.js" />
     <Content Include=".env" />
     <Content Include="package.json" />
+    <Content Include="public\favicon.ico" />
     <Content Include="public\stylesheets\main.css" />
     <Content Include="README.md" />
     <Content Include="views\index.pug" />
@@ -51,17 +61,18 @@
   <ItemGroup>
     <Folder Include="helpers\" />
     <Folder Include="models\" />
+    <Folder Include="config\" />
+    <Folder Include="controllers\" />
+    <Folder Include="middleware\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
-    <Folder Include="routes\backend\auth\" />
-    <Folder Include="routes\backend\version\" />
-    <Folder Include="routes\backend\settings\" />
-    <Folder Include="routes\backend\users\" />
-    <Folder Include="routes\frontend\" />
-    <Folder Include="routes\backend\" />
+    <Folder Include="routes\auth\" />
+    <Folder Include="routes\version\" />
+    <Folder Include="routes\settings\" />
+    <Folder Include="routes\users\" />
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>

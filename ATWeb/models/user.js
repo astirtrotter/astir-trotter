@@ -8,7 +8,6 @@ var user = {
         db.query("Users", "UserId='" + userId + "'", function (count, data) {
             ret = data;
         });
-
         return ret;
     }
 };

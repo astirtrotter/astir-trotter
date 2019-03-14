@@ -6,9 +6,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var frontendRoutes = require('./routes/frontend/index');
-var backendRoutes = require('./routes/backend/index');
 var app = express();
 
 require('dotenv').config();
@@ -23,28 +20,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// frontend
-//app.use(favicon(__dirname + '/public/favicon.ico'));
-frontendRoutes(app);
+// webapp
+app.use(favicon(__dirname + '/public/favicon.ico'));
+require('./controllers/index')(app);
 
-// backend
-backendRoutes(app);
+// API
+require('./routes/index')(app);
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
-
-// no stacktraces leaked to user
-app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: err
-    });
-});
+// middleware
+require('./middleware/exceptions')(app);
 
 // server
 app.set('port', process.env.PORT || 3000);
