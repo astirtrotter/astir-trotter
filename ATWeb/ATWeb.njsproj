@@ -40,6 +40,7 @@
     <Compile Include="middleware\api_params.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="middleware\log.js" />
     <Compile Include="middleware\exceptions.js">
       <SubType>Code</SubType>
     </Compile>
@@ -50,6 +51,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="controllers\index.js" />
+    <Compile Include="models\log.js" />
     <Compile Include="models\user-setting.js" />
     <Compile Include="models\user-work-history.js" />
     <Compile Include="models\user-education-history.js" />
@@ -59,7 +61,6 @@
     <Compile Include="models\user.js" />
     <Compile Include="routes\index.js" />
     <Content Include=".env" />
-    <Content Include="db.sql" />
     <Content Include="package.json" />
     <Content Include="public\favicon.ico" />
     <Content Include="public\stylesheets\main.css" />

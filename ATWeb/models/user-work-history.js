@@ -1,6 +1,7 @@
 ﻿'use strict';
 
 module.exports = (sequelize, DataTypes) => {
+    const Op = require('sequelize').Op;
     const UserWorkHistory = sequelize.define('UserWorkHistory',
         {
             periodStart: { type: DataTypes.DATEONLY, allowNull: false },

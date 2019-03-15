@@ -19,6 +19,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// middleware
+require('./middleware/log')(app);
+
 // webapp
 app.use(favicon(__dirname + '/public/favicon.ico'));
 require('./controllers')(app);
