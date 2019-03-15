@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
-var models = {};
+const models = {};
 const sequelize = new Sequelize(
     process.env.MSSQL_DATABASE,
     process.env.MSSQL_USERNAME,
