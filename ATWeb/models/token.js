@@ -1,7 +1,6 @@
 ﻿'use strict';
 
 module.exports = (sequelize, DataTypes) => {
-    const Op = require('sequelize').Op;
     const Token = sequelize.define('Token',
         {
             token: { type: DataTypes.STRING(512), allowNull: false, primaryKey: true }

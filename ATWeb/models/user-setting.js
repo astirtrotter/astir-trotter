@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
         }, {
             timestamps: true,
             scopes: {
-                byToken: function (token) { return { where: { token: { [Op.like]: token } }, limit: 1 }; }
+                byUserId: function (token) { return { where: { userId: { [Op.like]: userId } }, limit: 1 }; }
             }
         });
 
