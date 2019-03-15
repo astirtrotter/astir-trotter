@@ -26,10 +26,9 @@ module.exports = (sequelize, DataTypes) => {
             verified: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: 0 }
         }, {
             timestamps: true,
-            paranoid: true
-        }, {
+            paranoid: true,
             scopes: {
-                byId: function (id) { return { where: { id: { [Op.like]: id } } }; },
+                byId: function (id) { return { where: { id: { [Op.like]: id } }, limit: 1 }; },
                 live: { where: { deletedAt: null } },
                 deleted: { where: { deletedAt: { [Op.ne]: null } } },
                 verified: { where: { verified: true } }
