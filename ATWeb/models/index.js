@@ -1,17 +1,18 @@
 ﻿'use strict';
 
-var fs = require('fs');
-var path = require('path');
-var Sequelize = require('sequelize');
-var basename = path.basename(__filename);
+const fs = require('fs');
+const path = require('path');
+const Sequelize = require('sequelize');
+const basename = path.basename(__filename);
 var models = {};
-var sequelize = new Sequelize(
+const sequelize = new Sequelize(
     process.env.MSSQL_DATABASE,
     process.env.MSSQL_USERNAME,
     process.env.MSSQL_PASSWORD,
     {
         dialect: 'mssql',
         host: process.env.MSSQL_SERVER,
+        port: 1433,
         dialectOptions: {
             instanceName: process.env.MSSQL_INSTANCE
         }
