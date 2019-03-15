@@ -38,6 +38,7 @@ module.exports = (sequelize, DataTypes) => {
     User.associate = function (models) {
         User.hasMany(models.Token);
         User.hasMany(models.UserEducationHistory);
+        User.hasMany(models.UserWorkHistory);
     }
 
     return User;

@@ -50,6 +50,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="controllers\index.js" />
+    <Compile Include="models\user-work-history.js" />
     <Compile Include="models\user-education-history.js" />
     <Compile Include="models\token.js">
       <SubType>Code</SubType>

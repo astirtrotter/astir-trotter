@@ -2,13 +2,13 @@
 
 module.exports = (sequelize, DataTypes) => {
     const Op = require('sequelize').Op;
-    const UserEducationHistory = sequelize.define('UserEducationHistory',
+    const UserWorkHistory = sequelize.define('UserWorkHistory',
         {
             periodStart: { type: DataTypes.DATEONLY, allowNull: false },
             periodEnd: { type: DataTypes.DATEONLY },
-            schoolName: { type: DataTypes.STRING(128), allowNull: false },
-            schoolAddress: { type: DataTypes.STRING(256), allowNull: false },
-            degree: { type: DataTypes.STRING(50) },
+            companyName: { type: DataTypes.STRING(128), allowNull: false },
+            companyAddress: { type: DataTypes.STRING(256), allowNull: false },
+            position: { type: DataTypes.STRING(50), allowNull: false },
             details: { type: DataTypes.STRING(512) },
         }, {
             timestamps: true,
@@ -23,5 +23,5 @@ module.exports = (sequelize, DataTypes) => {
             }
         });
 
-    return UserEducationHistory;
+    return UserWorkHistory;
 };
