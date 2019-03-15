@@ -2,9 +2,10 @@
 
 module.exports = (sequelize, DataTypes) => {
     const Op = require('sequelize').Op;
-    const Token = sequelize.define('Token',
+    const UserSetting = sequelize.define('UserSetting',
         {
-            token: { type: DataTypes.STRING(512), allowNull: false, primaryKey: true }
+            pwd: { type: DataTypes.STRING(512), allowNull: false },
+            share: { type: DataTypes.STRING(512) }
         }, {
             timestamps: true,
             scopes: {
@@ -12,5 +13,5 @@ module.exports = (sequelize, DataTypes) => {
             }
         });
 
-    return Token;
+    return UserSetting;
 };

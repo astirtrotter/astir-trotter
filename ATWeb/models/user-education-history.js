@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
             details: { type: DataTypes.STRING(512) },
         }, {
             timestamps: true,
-            paranoid: false,
             scopes: {
                 byUserId: function (userId) {
                     return {

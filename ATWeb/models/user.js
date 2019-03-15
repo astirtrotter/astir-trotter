@@ -39,6 +39,7 @@ module.exports = (sequelize, DataTypes) => {
         User.hasMany(models.Token);
         User.hasMany(models.UserEducationHistory);
         User.hasMany(models.UserWorkHistory);
+        User.hasOne(models.UserSetting);
     }
 
     return User;
