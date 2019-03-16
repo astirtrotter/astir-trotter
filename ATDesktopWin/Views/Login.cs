@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace ATDesktopWin
 {
-    public partial class frmLogin : Form
+    public partial class FrmLogin : Form
     {
-        public frmLogin()
+        public FrmLogin()
         {
             InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+                   
+        }
+
+        private void btnSignup_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
