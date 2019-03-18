@@ -7,12 +7,11 @@ module.exports = function (app) {
         if (req.url.startsWith(process.env.API_BASE_URL + process.env.API_VERSION + '/')) {
             return next();
         } else {
+            // invalid api url (moved permanently)
             res.status(301);
             return res.send({
                 success: false,
-                error: {
-                    message: Messages.Error.Version
-                }
+                message: Messages.Error.Version
             });
         }
     });
