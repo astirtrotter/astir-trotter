@@ -23,6 +23,7 @@ module.exports = function (req, res, next) {
                                     // respond
                                     res.send({
                                         success: true,
+                                        token: newToken,
                                         user: user
                                     });
                                 } else {
