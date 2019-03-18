@@ -16,8 +16,10 @@ module.exports = function (req, res, next) {
                         const newToken = CredentialsHeper.genToken();
                         if (newToken) {
                             // insert login info into Tokens table
-                            Models.Token.create({ token: newToken, userId: user.id }).then(token => {
+                            Models.Token.create({ token: newToken, userId: userId }).then(token => {
                                 if (token) {
+                                    user.addToken(token);
+
                                     // respond
                                     res.send({
                                         success: true,
