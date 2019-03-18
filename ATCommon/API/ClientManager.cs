@@ -7,7 +7,7 @@ using RestSharp;
 
 namespace ATCommon.API
 {
-    public class ClientManager
+    public partial class ClientManager
     {
         private const string BASE_URL = "http://localhost:8888";
         private const string API_URL = "/api/v1";
@@ -30,7 +30,7 @@ namespace ATCommon.API
         private ClientManager()
         {
             client = new RestClient(BASE_URL + API_URL);
+            client.AddDefaultHeader("Content-Type", "application/json");
         }
-
     }
 }

@@ -6,6 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ATWeb", "ATWeb\ATWeb.njsproj", "{36FAD004-B3FF-4DB1-9284-F95B340E1483}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATDesktopWin", "ATDesktopWin\ATDesktopWin.csproj", "{4FC01083-8B99-4B7C-B34E-8DD271479C1F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{323D611A-ADBF-4269-B401-6F798297A1BA} = {323D611A-ADBF-4269-B401-6F798297A1BA}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATCommon", "ATCommon\ATCommon.csproj", "{323D611A-ADBF-4269-B401-6F798297A1BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,10 @@ Global
 		{4FC01083-8B99-4B7C-B34E-8DD271479C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FC01083-8B99-4B7C-B34E-8DD271479C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FC01083-8B99-4B7C-B34E-8DD271479C1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{323D611A-ADBF-4269-B401-6F798297A1BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{323D611A-ADBF-4269-B401-6F798297A1BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{323D611A-ADBF-4269-B401-6F798297A1BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{323D611A-ADBF-4269-B401-6F798297A1BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

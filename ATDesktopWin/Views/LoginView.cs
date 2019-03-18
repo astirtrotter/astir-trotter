@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ATDesktopWin.Controllers;
 
 namespace ATDesktopWin.Views
 {
@@ -25,14 +19,15 @@ namespace ATDesktopWin.Views
 
         public Form Form => this;
 
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(txtUserID.Text);
+            ((LoginController)AppManager.Instance._currentController).login(txtUserID.Text, txtPassword.Text);
         }
 
         private void btnSignup_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(txtPassword.Text);
+            ((LoginController)AppManager.Instance._currentController).signup();
         }
     }
 }

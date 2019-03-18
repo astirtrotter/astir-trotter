@@ -54,7 +54,6 @@
     <Compile Include="Config\Backend.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\_Controller.cs" />
-    <Compile Include="Helpers\APIsHelper.cs" />
     <Compile Include="Helpers\LocalStorageHelper.cs" />
     <Compile Include="Views\IView.cs" />
     <Compile Include="Views\LoginView.cs">
@@ -97,6 +96,15 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ATCommon\ATCommon.csproj">
+      <Project>{323d611a-adbf-4269-b401-6f798297a1ba}</Project>
+      <Name>ATCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.1</Version>
+    </PackageReference>
     <PackageReference Include="RestSharp">
       <Version>106.6.9</Version>
     </PackageReference>

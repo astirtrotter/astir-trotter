@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ATDesktopWin.Views;
+using ATCommon.API;
+using System.Windows.Forms;
 
 namespace ATDesktopWin.Controllers
 {
@@ -23,5 +21,31 @@ namespace ATDesktopWin.Controllers
         }
 
         public override bool Loadable() => true;
+
+        internal void login(string userId, string pwd)
+        {
+            ClientManager.Instance.login(userId, pwd, loginResponse => {   
+                if (loginResponse == null)
+                {
+                    MessageBox.Show("The response is null.");
+                }
+                else if (loginResponse.success)
+                {
+                    MessageBox.Show(loginResponse.token + "\n" +
+                                Newtonsoft.Json.JsonConvert.SerializeObject(loginResponse.user)); 
+                }
+                else
+                {
+                    MessageBox.Show(loginResponse.message);
+                }
+            });
+        }
+
+        internal void signup()
+        {
+            throw new NotImplementedException();
+        }
     }
+
+
 }
