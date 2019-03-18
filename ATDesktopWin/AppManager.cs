@@ -1,5 +1,4 @@
 ﻿using ATDesktopWin.Controllers;
-using ATDesktopWin.Views;
 using System;
 using System.Threading;
 using System.Windows.Forms;
@@ -24,35 +23,28 @@ namespace ATDesktopWin
         }
 
         /// <summary>
-        /// The current WinForms-Form instance
+        /// The current _Controller instance
         /// </summary>
-        private IView _currentView;
+        public _Controller _currentController;
 
         /// <summary>
         /// Private constructor to prevent instantiation
         /// </summary>
         private AppManager() { }
-
-        /// <summary>
-        /// Starts the AppManager and creates a singleton for this class
-        /// </summary>
-        public static void Start<T>()
-            where T : _Controller
-        {
-            if (_started) return;
-
-            _started = true;
-            _instance = new AppManager();
-            _instance.Load<T>();
-        }
-
+        
         /// <summary>
         /// Loads a Controller, handles the loading state
         /// </summary>
         /// <typeparam name="T">Generic Type where T extends Controller</typeparam>
-        public void Load<T>()
+        public static void Load<T>()
             where T : _Controller
         {
+            if (!_started)
+            {
+                _started = true;
+                _instance = new AppManager();
+            }
+
             T controller = Activator.CreateInstance<T>();
 
             if (controller != null)
@@ -78,13 +70,13 @@ namespace ATDesktopWin
         /// <param name="controller">The controller instance</param>
         public void Show(_Controller controller)
         {
-            if (_currentView != null)
+            if (_currentController != null)
             {
-                _currentView.Close();
-                _currentView.Form.Dispose();
+                _currentController.View.Form.Close();
+                _currentController.View.Form.Dispose();
             }
 
-            _currentView = controller.View;
+            _currentController = controller;
 
             Thread th = new Thread(openForm);
             th.SetApartmentState(ApartmentState.STA);
@@ -96,7 +88,7 @@ namespace ATDesktopWin
         /// </summary>
         private void openForm()
         {
-            Application.Run(_currentView.Form);
+            Application.Run(_currentController.View.Form);
         }
     }
 }

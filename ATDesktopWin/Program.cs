@@ -17,7 +17,7 @@ namespace ATDesktopWin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            AppManager.Start<LoginController>();
+            AppManager.Load<LoginController>();
         }
     }
 }
