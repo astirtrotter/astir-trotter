@@ -37,6 +37,9 @@
     <Compile Include="config\messages.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="helpers\credentialsHelper.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="middleware\api_params.js">
       <SubType>Code</SubType>
     </Compile>
@@ -59,6 +62,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="models\user.js" />
+    <Compile Include="routes\auth\signup.js" />
+    <Compile Include="routes\auth\login.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes\index.js" />
     <Content Include=".env" />
     <Content Include="package.json" />
