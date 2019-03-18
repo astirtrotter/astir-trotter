@@ -1,5 +1,10 @@
 ﻿'use strict';
 
+const apiEndpoints = [
+    { url: '/auth/login', method: 'post'},
+    { url: '/auth/signup', method: 'post'}
+];
+
 module.exports = function (app) {
 
     process.env.API_URL = process.env.API_BASE_URL + process.env.API_VERSION;
@@ -8,12 +13,9 @@ module.exports = function (app) {
     require('../middleware/api_versioning')(app);
     require('../middleware/api_params')(app);
 
+
     // routes
-    app.get(process.env.API_URL + '/:userId', function (req, res, next) {
-        if (req.user) {
-            res.send(req.user);
-        } else {
-            res.send("This user doesn't exist.");
-        }
-    });
+    // auth
+    app.post(process.env.API_URL + '/auth/login', function (req, res, next) { require('./auth/login')(req, res, next); });
+    app.post(process.env.API_URL + '/auth/signup', function (req, res, next) { require('./auth/signup')(req, res, next); });
 };
