@@ -29,5 +29,21 @@ namespace ATDesktopWin.Views
         {
             ((LoginController)AppManager.Instance._currentController).signup();
         }
+
+        private void txtUserID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtPassword.Focus();
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+            }
+        }
     }
 }
