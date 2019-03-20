@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="AppManager.cs" />
     <Compile Include="Config\Backend.cs" />
+    <Compile Include="Controllers\SignupController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\_Controller.cs" />
     <Compile Include="Helpers\LocalStorageHelper.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Views\SignupView.resx">
       <DependentUpon>SignupView.cs</DependentUpon>
@@ -100,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="Resources\user-profile-picture.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

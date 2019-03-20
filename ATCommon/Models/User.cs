@@ -8,10 +8,11 @@ namespace ATCommon.Models
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string nickName { get; set; }
-        public bool gender { get; set; }
+        public string gender { get; set; }
         public DateTime birthday { get; set; }
         public string birthPlace { get; set; }
         public string address { get; set; }
+        public string party { get; set; }
         public string classOrigin { get; set; }
         public string socialOrigin { get; set; }
         public string nationalOrigin { get; set; }
@@ -20,6 +21,7 @@ namespace ATCommon.Models
         public string phoneNumber { get; set; }
         public string email { get; set; }
         public string moreContactInfo { get; set; }
+        public string familyId { get; set; }
         public string fatherId { get; set; }
         public string motherId { get; set; }
         public string spouseId { get; set; }

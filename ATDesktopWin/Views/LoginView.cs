@@ -6,11 +6,6 @@ namespace ATDesktopWin.Views
 {
     public partial class LoginView : Form, IView
     {
-        public LoginView()
-        {
-            InitializeComponent();
-        }
-
         public string Title
         {
             get => Text;
@@ -20,6 +15,11 @@ namespace ATDesktopWin.Views
         public Form Form => this;
 
 
+        public LoginView()
+        {
+            InitializeComponent();
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             ((LoginController)AppManager.Instance._currentController).Login(txtUserID.Text, txtPassword.Text);
@@ -27,7 +27,7 @@ namespace ATDesktopWin.Views
 
         private void btnSignup_Click(object sender, EventArgs e)
         {
-            ((LoginController)AppManager.Instance._currentController).signup();
+            ((LoginController)AppManager.Instance._currentController).Signup();
         }
 
         private void txtUserID_KeyDown(object sender, KeyEventArgs e)

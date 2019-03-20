@@ -46,9 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\ClientManager.cs" />
+    <Compile Include="API\ClientManager_signup.cs" />
     <Compile Include="API\ClientManager_login.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Responses\SignupResponse.cs" />
     <Compile Include="Responses\LoginResponse.cs" />
     <Compile Include="Responses\_Response.cs" />
   </ItemGroup>

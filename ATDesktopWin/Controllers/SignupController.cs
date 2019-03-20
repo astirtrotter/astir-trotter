@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace ATDesktopWin.Controllers
 {
-    class LoginController : _Controller
+    class SignupController : _Controller
     {
         private IView _view;
         public override IView View
@@ -14,7 +14,7 @@ namespace ATDesktopWin.Controllers
             {
                 if (_view == null)
                 {
-                    _view = new LoginView();
+                    _view = new SignupView();
                 }
                 return _view;
             }
@@ -22,7 +22,7 @@ namespace ATDesktopWin.Controllers
 
         public override bool Loadable() => true;
 
-        internal void Login(string userId, string pwd)
+        internal void Signup(string userId, string pwd)
         {
             ClientManager.Instance.Login(userId, pwd, loginResponse => {   
                 if (loginResponse == null)
@@ -41,9 +41,9 @@ namespace ATDesktopWin.Controllers
             });
         }
 
-        internal void Signup()
+        internal void signup()
         {
-            AppManager.Load<SignupController>();
+            throw new NotImplementedException();
         }
     }
 
