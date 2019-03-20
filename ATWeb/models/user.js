@@ -5,9 +5,9 @@ module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define('User',
         {
             id: { type: DataTypes.STRING(32), allowNull: false, primaryKey: true, validate: { is: /^[a-zA-Z_0-9]+$/ } },
-            firstName: { type: DataTypes.STRING(20), allowNull: false },
-            lastName: { type: DataTypes.STRING(20), allowNull: false },
-            nickName: { type: DataTypes.STRING(50) },
+            firstName: { type: DataTypes.STRING(20), allowNull: false, validate: { is: /^[a-zA-Z]+$/ } },
+            lastName: { type: DataTypes.STRING(20), allowNull: false, validate: { is: /^[a-zA-Z]+$/ } },
+            nickName: { type: DataTypes.STRING(50), validate: { is: /^[a-zA-Z ]+$/ } },
             birthday: { type: DataTypes.DATEONLY, allowNull: false },
             birthPlace: { type: DataTypes.STRING },
             address: { type: DataTypes.STRING },
