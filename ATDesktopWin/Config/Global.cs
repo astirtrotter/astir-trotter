@@ -17,5 +17,11 @@ namespace ATDesktopWin.Config
         public static List<_OriginClass> classOrigins;
         public static List<_OriginSocial> socialOrigins;
         public static List<_OriginNational> nationalOrigins;
+
+        // token
+        public static string token;
+
+        // user
+        public static User user;
     }
 }

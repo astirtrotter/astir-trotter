@@ -273,7 +273,6 @@
             // 
             // cbGender
             // 
-            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGender.FormattingEnabled = true;
             this.cbGender.Location = new System.Drawing.Point(125, 288);
             this.cbGender.Name = "cbGender";
@@ -282,7 +281,6 @@
             // 
             // cbClassOrigin
             // 
-            this.cbClassOrigin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbClassOrigin.FormattingEnabled = true;
             this.cbClassOrigin.Location = new System.Drawing.Point(125, 468);
             this.cbClassOrigin.Name = "cbClassOrigin";
@@ -291,7 +289,6 @@
             // 
             // cbSocialOrigin
             // 
-            this.cbSocialOrigin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSocialOrigin.FormattingEnabled = true;
             this.cbSocialOrigin.Location = new System.Drawing.Point(339, 468);
             this.cbSocialOrigin.Name = "cbSocialOrigin";
@@ -300,7 +297,6 @@
             // 
             // cbNationalOrigin
             // 
-            this.cbNationalOrigin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNationalOrigin.FormattingEnabled = true;
             this.cbNationalOrigin.Location = new System.Drawing.Point(555, 421);
             this.cbNationalOrigin.Name = "cbNationalOrigin";
@@ -309,7 +305,6 @@
             // 
             // cbParty
             // 
-            this.cbParty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbParty.FormattingEnabled = true;
             this.cbParty.Location = new System.Drawing.Point(125, 421);
             this.cbParty.Name = "cbParty";
@@ -402,7 +397,6 @@
             // 
             // cbNationality
             // 
-            this.cbNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNationality.FormattingEnabled = true;
             this.cbNationality.Location = new System.Drawing.Point(339, 421);
             this.cbNationality.Name = "cbNationality";
@@ -463,7 +457,6 @@
             this.Name = "SignupView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Astir Trotter (Sign Up)";
-            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

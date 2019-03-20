@@ -112,7 +112,6 @@
             this.Name = "LoginView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Astir Trotter (Log In)";
-            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

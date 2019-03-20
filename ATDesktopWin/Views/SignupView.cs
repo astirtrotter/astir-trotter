@@ -1,4 +1,5 @@
-﻿using ATDesktopWin.Controllers;
+﻿using ATDesktopWin.Config;
+using ATDesktopWin.Controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,38 @@ namespace ATDesktopWin.Views
         public SignupView()
         {
             InitializeComponent();
+            
+            cbGender.DataSource = Global.genders;
+            cbGender.DisplayMember = "value";
+            cbGender.ValueMember = "value";
+            cbGender.SelectedIndex = -1;
+
+            cbParty.DataSource = Global.parties;
+            cbParty.DisplayMember = "value";
+            cbParty.ValueMember = "value";
+            cbParty.SelectedIndex = -1;
+
+            cbNationality.DataSource = Global.nationalities;
+            cbNationality.DisplayMember = "value";
+            cbNationality.ValueMember = "value";
+            cbNationality.SelectedIndex = -1;
+
+            cbClassOrigin.DataSource = Global.classOrigins;
+            cbClassOrigin.DisplayMember = "value";
+            cbClassOrigin.ValueMember = "value";
+            cbClassOrigin.SelectedIndex = -1;
+
+            cbSocialOrigin.DataSource = Global.socialOrigins;
+            cbSocialOrigin.DisplayMember = "value";
+            cbSocialOrigin.ValueMember = "value";
+            cbSocialOrigin.SelectedIndex = -1;
+
+            cbNationalOrigin.DataSource = Global.nationalOrigins;
+            cbNationalOrigin.DisplayMember = "value";
+            cbNationalOrigin.ValueMember = "value";
+            cbNationalOrigin.SelectedIndex = -1;
+
+            dtpBirthday.MaxDate = DateTime.Today;
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)

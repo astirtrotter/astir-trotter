@@ -62,7 +62,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SplashView";
-            this.TopMost = true;
             this.UseWaitCursor = true;
             this.Shown += new System.EventHandler(this.SplashView_Shown);
             this.ResumeLayout(false);
