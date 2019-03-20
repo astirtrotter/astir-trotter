@@ -102,48 +102,7 @@ module.exports = function (req, res, next) {
                                                                     models.UserSetting.create({ pwdHash: pwdHash }).then(userSetting => {
                                                                         if (userSetting) {
                                                                             user.setUserSetting(userSetting);
-
-                                                                            // generate token
-                                                                            const newToken = CredentialsHeper.genToken();
-                                                                            if (newToken) {
-                                                                                // insert login info into Tokens table
-                                                                                models.Token.create({ token: newToken, userId: userId }).then(token => {
-                                                                                    if (token) {
-                                                                                        user.addToken(token);
-
-                                                                                        // generate family
-                                                                                        const familyId = CredentialsHeper.genUUID();
-                                                                                        models.Family.create({ id: familyId }).then(family => {
-                                                                                            if (family) {
-                                                                                                family.addUser(user);
-                                                                                                user.familyId = family.id;
-
-                                                                                                // respond
-                                                                                                res.send({
-                                                                                                    success: true,
-                                                                                                    token: newToken,
-                                                                                                    user: user
-                                                                                                });
-                                                                                            } else {
-                                                                                                // cannot save family
-                                                                                                var err = new Error(Messages.Error.SaveData);
-                                                                                                err.status = 500;
-                                                                                                next(err);
-                                                                                            }
-                                                                                        });
-                                                                                    } else {
-                                                                                        // cannot save token
-                                                                                        var err = new Error(Messages.Error.SaveData);
-                                                                                        err.status = 500;
-                                                                                        next(err);
-                                                                                    }
-                                                                                });
-                                                                            } else {
-                                                                                // cannot generate token (internal error)
-                                                                                var err = new Error(Messages.Error.GenToken);
-                                                                                err.status = 500;
-                                                                                next(err);
-                                                                            }
+                                                                            res.send({ success: true });
                                                                         } else {
                                                                             // cannot save user setting
                                                                             var err = new Error(Messages.Error.SaveData);

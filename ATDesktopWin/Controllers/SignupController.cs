@@ -2,6 +2,7 @@
 using ATDesktopWin.Views;
 using ATCommon.API;
 using System.Windows.Forms;
+using ATDesktopWin.Config;
 
 namespace ATDesktopWin.Controllers
 {
@@ -39,8 +40,8 @@ namespace ATDesktopWin.Controllers
                 }
                 else if (signupResponse.success)
                 {
-                    MessageBox.Show(signupResponse.token + "\n" +
-                                Newtonsoft.Json.JsonConvert.SerializeObject(signupResponse.user));
+                    MessageBox.Show("You have successfully signed up. Please log in with that credentials.");
+                    Back();
                 }
                 else
                 {

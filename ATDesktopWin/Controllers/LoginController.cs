@@ -2,6 +2,7 @@
 using ATDesktopWin.Views;
 using ATCommon.API;
 using System.Windows.Forms;
+using ATDesktopWin.Config;
 
 namespace ATDesktopWin.Controllers
 {
@@ -31,8 +32,10 @@ namespace ATDesktopWin.Controllers
                 }
                 else if (loginResponse.success)
                 {
-                    MessageBox.Show(loginResponse.token + "\n" +
-                                Newtonsoft.Json.JsonConvert.SerializeObject(loginResponse.user)); 
+                    Global.token = loginResponse.token;
+                    Global.user = loginResponse.user;
+
+                    // goto main screen
                 }
                 else
                 {

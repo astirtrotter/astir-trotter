@@ -2,7 +2,7 @@
 
 namespace ATCommon.Responses
 {
-    public class SignupResponse : LoginResponse
+    public class SignupResponse : _Response
     {
 
     }
