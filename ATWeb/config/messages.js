@@ -7,7 +7,8 @@ module.exports = {
         Nationality: 'nationality',
         ClassOrigin: 'class origin',
         SocialOrigin: 'social origin',
-        NationalOrigin: 'national origin'
+        NationalOrigin: 'national origin',
+        Party: 'party'
     },
     Warning: {
         NotExistUser: 'No user exists with that userId.',

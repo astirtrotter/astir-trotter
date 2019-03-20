@@ -40,12 +40,13 @@
     <Compile Include="config\seed\index.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="config\seed\user-country.js" />
-    <Compile Include="config\seed\user-origin-class.js" />
-    <Compile Include="config\seed\user-origin-social.js" />
-    <Compile Include="config\seed\user-origin-national.js" />
-    <Compile Include="config\seed\user-nationality.js" />
-    <Compile Include="config\seed\user-gender.js">
+    <Compile Include="config\seed\_country.js" />
+    <Compile Include="config\seed\_party.js" />
+    <Compile Include="config\seed\_origin-class.js" />
+    <Compile Include="config\seed\_origin-social.js" />
+    <Compile Include="config\seed\_origin-national.js" />
+    <Compile Include="config\seed\_nationality.js" />
+    <Compile Include="config\seed\_gender.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="helpers\credentialsHelper.js">
@@ -67,6 +68,7 @@
     <Compile Include="controllers\index.js" />
     <Compile Include="models\log.js" />
     <Compile Include="models\family.js" />
+    <Compile Include="models\_party.js" />
     <Compile Include="models\_gender.js" />
     <Compile Include="models\_country.js" />
     <Compile Include="models\_nationality.js" />
@@ -82,6 +84,9 @@
     <Compile Include="models\user.js" />
     <Compile Include="routes\auth\signup.js" />
     <Compile Include="routes\auth\login.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="routes\config\seed.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="routes\index.js" />
@@ -108,6 +113,7 @@
     <Folder Include="public\stylesheets\" />
     <Folder Include="routes\" />
     <Folder Include="routes\auth\" />
+    <Folder Include="routes\config\" />
     <Folder Include="routes\settings\" />
     <Folder Include="routes\users\" />
     <Folder Include="views\" />
