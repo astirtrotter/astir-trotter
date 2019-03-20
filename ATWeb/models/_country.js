@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     const Op = require('sequelize').Op;
     const Country = sequelize.define('Country',
         {
-            value: { type: DataTypes.STRING(128), allowNull: false, primaryKey: true },
+            value: { type: DataTypes.STRING(50), allowNull: false, primaryKey: true },
             code: { type: DataTypes.STRING(2), allowNull: false }
         }, {
             timestamps: false,
