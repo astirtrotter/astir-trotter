@@ -1,6 +1,7 @@
 ﻿'use strict';
 const Crypto = require('crypto');
 const Sha256 = require('sha256');
+const uuid = require('uuid');
 
 module.exports = {
     genToken: function () {
@@ -13,5 +14,8 @@ module.exports = {
     },
     genPwdHash: function (pwd) {
         return Sha256.x2(pwd);
+    },
+    genUUID: function () {
+        return uuid.v1();
     }
 };
