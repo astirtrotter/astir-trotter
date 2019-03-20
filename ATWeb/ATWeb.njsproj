@@ -40,7 +40,6 @@
     <Compile Include="config\seed\index.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="config\seed\_country.js" />
     <Compile Include="config\seed\_party.js" />
     <Compile Include="config\seed\_origin-class.js" />
     <Compile Include="config\seed\_origin-social.js" />
@@ -70,7 +69,6 @@
     <Compile Include="models\family.js" />
     <Compile Include="models\_party.js" />
     <Compile Include="models\_gender.js" />
-    <Compile Include="models\_country.js" />
     <Compile Include="models\_nationality.js" />
     <Compile Include="models\_origin-national.js" />
     <Compile Include="models\_origin-class.js" />
@@ -90,6 +88,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="routes\index.js" />
+    <Compile Include="routes\users\get-info.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="routes\users\relation-confirm.js" />
+    <Compile Include="routes\users\relation-request.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Content Include=".env" />
     <Content Include="package.json" />
     <Content Include="public\favicon.ico" />

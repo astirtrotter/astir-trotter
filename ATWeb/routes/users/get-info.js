@@ -1,5 +1,4 @@
 ﻿'use strict';
-const models = require('../../models');
 
 module.exports = function (req, res, next) {
     res.send({
