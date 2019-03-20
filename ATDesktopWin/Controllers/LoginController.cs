@@ -22,7 +22,7 @@ namespace ATDesktopWin.Controllers
 
         public override bool Loadable() => true;
 
-        internal void login(string userId, string pwd)
+        internal void Login(string userId, string pwd)
         {
             ClientManager.Instance.login(userId, pwd, loginResponse => {   
                 if (loginResponse == null)

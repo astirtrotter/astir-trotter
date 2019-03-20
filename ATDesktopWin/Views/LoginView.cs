@@ -22,7 +22,7 @@ namespace ATDesktopWin.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            ((LoginController)AppManager.Instance._currentController).login(txtUserID.Text, txtPassword.Text);
+            ((LoginController)AppManager.Instance._currentController).Login(txtUserID.Text, txtPassword.Text);
         }
 
         private void btnSignup_Click(object sender, EventArgs e)
