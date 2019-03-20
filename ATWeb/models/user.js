@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
             firstName: { type: DataTypes.STRING(20), allowNull: false },
             lastName: { type: DataTypes.STRING(20), allowNull: false },
             nickName: { type: DataTypes.STRING(50) },
-            birthDay: { type: DataTypes.DATEONLY },
+            birthDay: { type: DataTypes.DATEONLY, allowNull: false },
             birthPlace: { type: DataTypes.STRING },
             address: { type: DataTypes.STRING },
             picture: { type: DataTypes.STRING, validate: { isUrl: true } },
