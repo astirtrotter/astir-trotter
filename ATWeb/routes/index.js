@@ -23,5 +23,8 @@ module.exports = function (app) {
 
     // users
     app.get(process.env.API_URL + '/users/:userId', function (req, res, next) { require('./users/get-info')(req, res, next); });
+    app.post(process.env.API_URL + '/users/:userId/relation/:anotherUserId', function (req, res, next) { require('./users/relation-request')(req, res, next); });
+    app.post(process.env.API_URL + '/users/:userId/relation/:anotherUserId', function (req, res, next) { require('./users/relation-confirm')(req, res, next); });
+    app.get(process.env.API_URL + '/users/:userId/family', function (req, res, next) { require('./users/get-family')(req, res, next); });
 
 };

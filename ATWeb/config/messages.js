@@ -18,8 +18,9 @@ module.exports = {
     },
     Error: {
         NotFound: 'Not Found',
-        Version: 'The version of the client you are using is incorrect. Please update and try again.',
-        NoSetting: 'User info had not been stored correctly. Please contact admin.',
+        Version: 'The version of the client you are using is incorrect. You should update your client app first.',
+        NoSetting: 'User settings had not been stored correctly. Please contact admin.',
+        NoFamily: 'User family data had not been stored correctly. Please contact admin.',
         GenToken: 'Cannot generate a token. Please contact admin.',
         SaveData: 'Cannot save token of new login. Please contact admin.'
     }
