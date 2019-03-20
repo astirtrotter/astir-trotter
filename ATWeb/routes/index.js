@@ -14,11 +14,14 @@ module.exports = function (app) {
     require('../middleware/api_params')(app);
 
 
-    // routes
     // config
     app.get(process.env.API_URL + '/config/seed', function (req, res, next) { require('./config/seed')(req, res, next); });
 
     // auth
     app.post(process.env.API_URL + '/auth/login', function (req, res, next) { require('./auth/login')(req, res, next); });
     app.post(process.env.API_URL + '/auth/signup', function (req, res, next) { require('./auth/signup')(req, res, next); });
+
+    // users
+    app.get(process.env.API_URL + '/users/:userId', function (req, res, next) { require('./users/get-info')(req, res, next); });
+
 };
