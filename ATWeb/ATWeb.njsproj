@@ -66,12 +66,13 @@
     </Compile>
     <Compile Include="controllers\index.js" />
     <Compile Include="models\log.js" />
-    <Compile Include="models\user-gender.js" />
-    <Compile Include="models\user-country.js" />
-    <Compile Include="models\user-nationality.js" />
-    <Compile Include="models\user-origin-national.js" />
-    <Compile Include="models\user-origin-class.js" />
-    <Compile Include="models\user-origin-social.js" />
+    <Compile Include="models\family.js" />
+    <Compile Include="models\_gender.js" />
+    <Compile Include="models\_country.js" />
+    <Compile Include="models\_nationality.js" />
+    <Compile Include="models\_origin-national.js" />
+    <Compile Include="models\_origin-class.js" />
+    <Compile Include="models\_origin-social.js" />
     <Compile Include="models\user-setting.js" />
     <Compile Include="models\user-history-work.js" />
     <Compile Include="models\user-history-education.js" />

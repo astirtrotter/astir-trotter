@@ -1,6 +1,14 @@
 ﻿'use strict';
 
 module.exports = {
+    General: {
+        Gender: 'gender',
+        Country: 'country',
+        Nationality: 'nationality',
+        ClassOrigin: 'class origin',
+        SocialOrigin: 'social origin',
+        NationalOrigin: 'national origin'
+    },
     Warning: {
         NotExistUser: 'No user exists with that userId.',
         WrongPassword: 'The password is incorrect.',

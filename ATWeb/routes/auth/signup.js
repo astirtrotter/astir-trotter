@@ -19,42 +19,42 @@ module.exports = function (req, res, next) {
                 if (req.body.gender && !gender) {
                     res.send({
                         success: false,
-                        message: Messages.Warning.InvalidInput
+                        message: Messages.Warning.InvalidInput + Messages.General.Gender
                     });
                 } else {
                     models.Country.scope({ method: ['byValue', req.body.country] }).findOne().then(country => {
                         if (req.body.country && !country) {
                             res.send({
                                 success: false,
-                                message: Messages.Warning.InvalidInput
+                                message: Messages.Warning.InvalidInput + Messages.General.Country
                             });
                         } else {
                             models.ClassOrigin.scope({ method: ['byValue', req.body.classOrigin] }).findOne().then(classOrigin => {
                                 if (req.body.classOrigin && !classOrigin) {
                                     res.send({
                                         success: false,
-                                        message: Messages.Warning.InvalidInput
+                                        message: Messages.Warning.InvalidInput + Messages.General.ClassOrigin
                                     });
                                 } else {
                                     models.SocialOrigin.scope({ method: ['byValue', req.body.socialOrigin] }).findOne().then(socialOrigin => {
                                         if (req.body.socialOrigin && !socialOrigin) {
                                             res.send({
                                                 success: false,
-                                                message: Messages.Warning.InvalidInput
+                                                message: Messages.Warning.InvalidInput + Messages.General.SocialOrigin
                                             });
                                         } else {
                                             models.NationalOrigin.scope({ method: ['byValue', req.body.nationalOrigin] }).findOne().then(nationalOrigin => {
                                                 if (req.body.nationalOrigin && !nationalOrigin) {
                                                     res.send({
                                                         success: false,
-                                                        message: Messages.Warning.InvalidInput
+                                                        message: Messages.Warning.InvalidInput + Messages.General.NationalOrigin
                                                     });
                                                 } else {
                                                     models.Nationality.scope({ method: ['byValue', req.body.nationality] }).findOne().then(nationality => {
                                                         if (req.body.nationality && !nationality) {
                                                             res.send({
                                                                 success: false,
-                                                                message: Messages.Warning.InvalidInput
+                                                                message: Messages.Warning.InvalidInput + Messages.General.Nationality
                                                             });
                                                         } else {
                                                             models.User.create({
