@@ -43,7 +43,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -57,19 +56,18 @@
             this.cbClassOrigin = new System.Windows.Forms.ComboBox();
             this.cbSocialOrigin = new System.Windows.Forms.ComboBox();
             this.cbNationalOrigin = new System.Windows.Forms.ComboBox();
-            this.cbNationality = new System.Windows.Forms.ComboBox();
-            this.cbCountry = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbParty = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMoreContactInfo = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUserId = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtPasswordConfirm = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cbNationality = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,28 +195,19 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "Social Origin";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(469, 471);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 13);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "National Origin";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(489, 424);
+            this.label11.Location = new System.Drawing.Point(469, 424);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(56, 13);
+            this.label11.Size = new System.Drawing.Size(76, 13);
             this.label11.TabIndex = 11;
-            this.label11.Text = "Nationality";
+            this.label11.Text = "National Origin";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(37, 515);
+            this.label12.Location = new System.Drawing.Point(467, 471);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(78, 13);
             this.label12.TabIndex = 11;
@@ -227,7 +216,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(297, 515);
+            this.label13.Location = new System.Drawing.Point(83, 515);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(32, 13);
             this.label13.TabIndex = 11;
@@ -249,16 +238,16 @@
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(125, 512);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(555, 468);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(100, 20);
             this.txtPhoneNumber.TabIndex = 16;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(339, 512);
+            this.txtEmail.Location = new System.Drawing.Point(125, 512);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(164, 20);
             this.txtEmail.TabIndex = 17;
             // 
             // btnSignUp
@@ -269,6 +258,7 @@
             this.btnSignUp.TabIndex = 19;
             this.btnSignUp.Text = "Sign Up";
             this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // btnBack
             // 
@@ -279,9 +269,11 @@
             this.btnBack.TabIndex = 20;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // cbGender
             // 
+            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGender.FormattingEnabled = true;
             this.cbGender.Location = new System.Drawing.Point(125, 288);
             this.cbGender.Name = "cbGender";
@@ -290,6 +282,7 @@
             // 
             // cbClassOrigin
             // 
+            this.cbClassOrigin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbClassOrigin.FormattingEnabled = true;
             this.cbClassOrigin.Location = new System.Drawing.Point(125, 468);
             this.cbClassOrigin.Name = "cbClassOrigin";
@@ -298,6 +291,7 @@
             // 
             // cbSocialOrigin
             // 
+            this.cbSocialOrigin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSocialOrigin.FormattingEnabled = true;
             this.cbSocialOrigin.Location = new System.Drawing.Point(339, 468);
             this.cbSocialOrigin.Name = "cbSocialOrigin";
@@ -306,44 +300,21 @@
             // 
             // cbNationalOrigin
             // 
+            this.cbNationalOrigin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNationalOrigin.FormattingEnabled = true;
-            this.cbNationalOrigin.Location = new System.Drawing.Point(555, 468);
+            this.cbNationalOrigin.Location = new System.Drawing.Point(555, 421);
             this.cbNationalOrigin.Name = "cbNationalOrigin";
             this.cbNationalOrigin.Size = new System.Drawing.Size(100, 21);
-            this.cbNationalOrigin.TabIndex = 15;
+            this.cbNationalOrigin.TabIndex = 12;
             // 
-            // cbNationality
+            // cbParty
             // 
-            this.cbNationality.FormattingEnabled = true;
-            this.cbNationality.Location = new System.Drawing.Point(555, 421);
-            this.cbNationality.Name = "cbNationality";
-            this.cbNationality.Size = new System.Drawing.Size(100, 21);
-            this.cbNationality.TabIndex = 12;
-            // 
-            // cbCountry
-            // 
-            this.cbCountry.FormattingEnabled = true;
-            this.cbCountry.Location = new System.Drawing.Point(339, 421);
-            this.cbCountry.Name = "cbCountry";
-            this.cbCountry.Size = new System.Drawing.Size(100, 21);
-            this.cbCountry.TabIndex = 11;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(286, 424);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(43, 13);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "Country";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(125, 421);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 10;
+            this.cbParty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbParty.FormattingEnabled = true;
+            this.cbParty.Location = new System.Drawing.Point(125, 421);
+            this.cbParty.Name = "cbParty";
+            this.cbParty.Size = new System.Drawing.Size(100, 21);
+            this.cbParty.TabIndex = 10;
             // 
             // label15
             // 
@@ -354,17 +325,17 @@
             this.label15.TabIndex = 20;
             this.label15.Text = "Party";
             // 
-            // textBox1
+            // txtMoreContactInfo
             // 
-            this.textBox1.Location = new System.Drawing.Point(555, 512);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 18;
+            this.txtMoreContactInfo.Location = new System.Drawing.Point(414, 512);
+            this.txtMoreContactInfo.Name = "txtMoreContactInfo";
+            this.txtMoreContactInfo.Size = new System.Drawing.Size(241, 20);
+            this.txtMoreContactInfo.TabIndex = 18;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(453, 515);
+            this.label16.Location = new System.Drawing.Point(312, 515);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(92, 13);
             this.label16.TabIndex = 11;
@@ -388,20 +359,20 @@
             this.label18.TabIndex = 24;
             this.label18.Text = "Password*";
             // 
-            // textBox2
+            // txtPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(414, 114);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(198, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtPassword.Location = new System.Drawing.Point(414, 114);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(198, 20);
+            this.txtPassword.TabIndex = 1;
             // 
-            // textBox3
+            // txtUserId
             // 
-            this.textBox3.Location = new System.Drawing.Point(414, 70);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(198, 20);
-            this.textBox3.TabIndex = 0;
+            this.txtUserId.Location = new System.Drawing.Point(414, 70);
+            this.txtUserId.Name = "txtUserId";
+            this.txtUserId.Size = new System.Drawing.Size(198, 20);
+            this.txtUserId.TabIndex = 0;
             // 
             // label19
             // 
@@ -412,13 +383,31 @@
             this.label19.TabIndex = 26;
             this.label19.Text = "Confirm*";
             // 
-            // textBox4
+            // txtPasswordConfirm
             // 
-            this.textBox4.Location = new System.Drawing.Point(414, 154);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '*';
-            this.textBox4.Size = new System.Drawing.Size(198, 20);
-            this.textBox4.TabIndex = 2;
+            this.txtPasswordConfirm.Location = new System.Drawing.Point(414, 154);
+            this.txtPasswordConfirm.Name = "txtPasswordConfirm";
+            this.txtPasswordConfirm.PasswordChar = '*';
+            this.txtPasswordConfirm.Size = new System.Drawing.Size(198, 20);
+            this.txtPasswordConfirm.TabIndex = 2;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(273, 424);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(56, 13);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Nationality";
+            // 
+            // cbNationality
+            // 
+            this.cbNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNationality.FormattingEnabled = true;
+            this.cbNationality.Location = new System.Drawing.Point(339, 421);
+            this.cbNationality.Name = "cbNationality";
+            this.cbNationality.Size = new System.Drawing.Size(100, 21);
+            this.cbNationality.TabIndex = 11;
             // 
             // SignupView
             // 
@@ -427,11 +416,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(708, 620);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbParty);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.cbCountry);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.cbNationality);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.cbNationalOrigin);
             this.Controls.Add(this.cbSocialOrigin);
             this.Controls.Add(this.cbClassOrigin);
@@ -443,7 +431,6 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
@@ -459,15 +446,15 @@
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMoreContactInfo);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtPasswordConfirm);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUserId);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(724, 659);
@@ -476,6 +463,7 @@
             this.Name = "SignupView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignupView";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -498,7 +486,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -512,18 +499,17 @@
         private System.Windows.Forms.ComboBox cbClassOrigin;
         private System.Windows.Forms.ComboBox cbSocialOrigin;
         private System.Windows.Forms.ComboBox cbNationalOrigin;
-        private System.Windows.Forms.ComboBox cbNationality;
-        private System.Windows.Forms.ComboBox cbCountry;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbParty;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMoreContactInfo;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUserId;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPasswordConfirm;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cbNationality;
     }
 }

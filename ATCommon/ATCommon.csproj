@@ -46,10 +46,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\ClientManager.cs" />
-    <Compile Include="API\ClientManager_signup.cs" />
-    <Compile Include="API\ClientManager_login.cs" />
+    <Compile Include="API\ClientManager_config_seed.cs" />
+    <Compile Include="API\ClientManager_auth_signup.cs" />
+    <Compile Include="API\ClientManager_auth_login.cs" />
+    <Compile Include="Models\_Gender.cs" />
+    <Compile Include="Models\_Nationality.cs" />
+    <Compile Include="Models\_OriginClass.cs" />
+    <Compile Include="Models\_OriginSocial.cs" />
+    <Compile Include="Models\_OriginNational.cs" />
+    <Compile Include="Models\_Party.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Responses\SeedResponse.cs" />
     <Compile Include="Responses\SignupResponse.cs" />
     <Compile Include="Responses\LoginResponse.cs" />
     <Compile Include="Responses\_Response.cs" />

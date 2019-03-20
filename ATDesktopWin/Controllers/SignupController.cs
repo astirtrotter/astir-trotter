@@ -21,29 +21,37 @@ namespace ATDesktopWin.Controllers
         }
 
         public override bool Loadable() => true;
+       
 
-        internal void Signup(string userId, string pwd)
+        internal void Signup(
+            string userId, string password, string firstName, string lastName,
+            string nickName, string gender, string birthday, string address, 
+            string birthPlace, string party, string nationality, string nationalOrigin, 
+            string classOrigin, string socialOrigin, string phoneNumber, string email,
+            string moreContactInfo)
         {
-            ClientManager.Instance.Login(userId, pwd, loginResponse => {   
-                if (loginResponse == null)
+            ClientManager.Instance.Signup(userId, password, firstName, lastName, nickName, gender,
+                    birthday, address, birthPlace, party, nationality, nationalOrigin,
+                    classOrigin, socialOrigin, phoneNumber, email, moreContactInfo, signupResponse => {
+                if (signupResponse == null)
                 {
                     MessageBox.Show("The response is null.");
                 }
-                else if (loginResponse.success)
+                else if (signupResponse.success)
                 {
-                    MessageBox.Show(loginResponse.token + "\n" +
-                                Newtonsoft.Json.JsonConvert.SerializeObject(loginResponse.user)); 
+                    MessageBox.Show(signupResponse.token + "\n" +
+                                Newtonsoft.Json.JsonConvert.SerializeObject(signupResponse.user));
                 }
                 else
                 {
-                    MessageBox.Show(loginResponse.message);
+                    MessageBox.Show(signupResponse.message);
                 }
             });
         }
 
-        internal void signup()
+        internal void Back()
         {
-            throw new NotImplementedException();
+            AppManager.Load<LoginController>();
         }
     }
 
