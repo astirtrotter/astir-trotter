@@ -1,6 +1,7 @@
 ﻿'use strict';
 
 module.exports = (sequelize, DataTypes) => {
+    const Op = require('sequelize').Op;
     const SocialOrigin = sequelize.define('SocialOrigin',
         {
             value: { type: DataTypes.STRING(50), allowNull: false, primaryKey: true }
@@ -12,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         });
 
     SocialOrigin.associate = function (models) {
-        SocialOrigin.hasMany(models.User);
+        SocialOrigin.hasMany(models.User, { foreignKey: 'socialOrigin' });
     };
 
     return SocialOrigin;

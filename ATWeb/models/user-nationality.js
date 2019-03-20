@@ -1,6 +1,7 @@
 ﻿'use strict';
 
 module.exports = (sequelize, DataTypes) => {
+    const Op = require('sequelize').Op;
     const Nationality = sequelize.define('Nationality',
         {
             value: { type: DataTypes.STRING(50), allowNull: false, primaryKey: true }
@@ -12,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         });
 
     Nationality.associate = function (models) {
-        Nationality.hasMany(models.User);
+        Nationality.hasMany(models.User, { foreignKey: 'nationality' });
     };
 
     return Nationality;

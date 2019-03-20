@@ -1,6 +1,7 @@
 ﻿'use strict';
 
 module.exports = (sequelize, DataTypes) => {
+    const Op = require('sequelize').Op;
     const ClassOrigin = sequelize.define('ClassOrigin',
         {
             value: { type: DataTypes.STRING(50), allowNull: false, primaryKey: true }
@@ -12,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         });
 
     ClassOrigin.associate = function (models) {
-        ClassOrigin.hasMany(models.User);
+        ClassOrigin.hasMany(models.User, { foreignKey: 'classOrigin' });
     };
 
     return ClassOrigin;
