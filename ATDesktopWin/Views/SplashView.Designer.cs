@@ -28,29 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Timer splashTimeout;
-            this.label1 = new System.Windows.Forms.Label();
-            splashTimeout = new System.Windows.Forms.Timer(this.components);
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // splashTimeout
+            // lblTitle
             // 
-            splashTimeout.Enabled = true;
-            splashTimeout.Interval = 2000;
-            splashTimeout.Tick += new System.EventHandler(this.SplashTimeout_Tick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(135, 139);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Astir Trotter";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTitle.Location = new System.Drawing.Point(135, 139);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(211, 42);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Astir Trotter";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SplashView
             // 
@@ -59,13 +50,15 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(480, 320);
             this.ControlBox = false;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(480, 320);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(480, 320);
             this.Name = "SplashView";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SplashView";
             this.TopMost = true;
@@ -77,6 +70,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

@@ -14,12 +14,16 @@ namespace ATDesktopWin.Views
 {
     public partial class SplashView : Form, IView
     {
-        private bool isTimeout = false;
-        private bool hasSeed = false;
+        Timer timer = new Timer();
 
         public SplashView()
         {
             InitializeComponent();
+
+            timer.Tick += new EventHandler(SplashTimeout_Tick);
+            timer.Interval = 2000;
+            timer.Enabled = true;
+            timer.Start();
         }
 
         public string Title { get => Text; set => Text = value; }
@@ -28,22 +32,31 @@ namespace ATDesktopWin.Views
 
         private void SplashTimeout_Tick(object sender, EventArgs e)
         {
-            isTimeout = true;
-            checkNextStep();
+            timer.Enabled = false;
+            timer.Stop();
+
+            if (Global.hasSeed)
+            {
+                Next();
+            }
         }
 
         private void SplashView_Shown(object sender, EventArgs e)
         {
             ((SplashController)AppManager.Instance._currentController).getSeed(() => {
-                checkNextStep();
+                if (!timer.Enabled)
+                {
+                    Next();
+                }
             });
         }
 
-        private void checkNextStep()
+        private void Next()
         {
-            if (!isTimeout || !Global.hasSeed) return;
-
-            ((SplashController)AppManager.Instance._currentController).gotoLogin();
+            BeginInvoke(new MethodInvoker(delegate
+            {
+                ((SplashController)AppManager.Instance._currentController).gotoLogin();
+            }));
         }
     }
 }

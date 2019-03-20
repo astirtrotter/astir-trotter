@@ -462,7 +462,7 @@
             this.MinimumSize = new System.Drawing.Size(724, 659);
             this.Name = "SignupView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SignupView";
+            this.Text = "Astir Trotter (Sign Up)";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
