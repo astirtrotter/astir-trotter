@@ -1,22 +1,22 @@
 ﻿'use strict';
-const Models = require('../../models');
+const models = require('../../models');
 const Messages = require('../../config/messages');
 const CredentialsHeper = require('../../helpers/credentialsHelper');
 
 module.exports = function (req, res, next) {
     const userId = req.body.userId;
     const pwdHash = CredentialsHeper.genPwdHash(req.body.password);
-    Models.User.scope('live', { method: ['byId', userId] }).findOne().then(user => {
+    models.User.scope('live', { method: ['byId', userId] }).findOne().then(user => {
         if (user) {
             // check password
-            Models.UserSetting.scope({ method: ['byUserId', user.id] }).findOne().then(userSetting => {
+            models.UserSetting.scope({ method: ['byUserId', user.id] }).findOne().then(userSetting => {
                 if (userSetting) {
                     if (userSetting.pwdHash == pwdHash) {
                         // generate token
                         const newToken = CredentialsHeper.genToken();
                         if (newToken) {
                             // insert login info into Tokens table
-                            Models.Token.create({ token: newToken, userId: userId }).then(token => {
+                            models.Token.create({ token: newToken, userId: userId }).then(token => {
                                 if (token) {
                                     user.addToken(token);
 

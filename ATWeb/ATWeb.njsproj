@@ -37,6 +37,17 @@
     <Compile Include="config\messages.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="config\seed\index.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config\seed\user-country.js" />
+    <Compile Include="config\seed\user-origin-class.js" />
+    <Compile Include="config\seed\user-origin-social.js" />
+    <Compile Include="config\seed\user-origin-national.js" />
+    <Compile Include="config\seed\user-nationality.js" />
+    <Compile Include="config\seed\user-gender.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="helpers\credentialsHelper.js">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +66,8 @@
     </Compile>
     <Compile Include="controllers\index.js" />
     <Compile Include="models\log.js" />
+    <Compile Include="models\user-gender.js" />
+    <Compile Include="models\user-country.js" />
     <Compile Include="models\user-nationality.js" />
     <Compile Include="models\user-origin-national.js" />
     <Compile Include="models\user-origin-class.js" />
@@ -82,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="config\seed\" />
     <Folder Include="helpers\" />
     <Folder Include="models\" />
     <Folder Include="config\" />
