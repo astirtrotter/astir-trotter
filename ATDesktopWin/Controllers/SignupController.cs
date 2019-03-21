@@ -21,8 +21,6 @@ namespace ATDesktopWin.Controllers
             }
         }
 
-        public override bool Loadable() => true;
-       
 
         internal void Signup(
             string userId, string password, string firstName, string lastName,

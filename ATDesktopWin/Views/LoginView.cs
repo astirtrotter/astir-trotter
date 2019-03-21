@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using ATDesktopWin.Controllers;
 
@@ -18,9 +19,19 @@ namespace ATDesktopWin.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            ((LoginController)AppManager.Instance._currentController).Login(
-                txtUserID.Text, 
-                txtPassword.Text);
+            string userId = txtUserID.Text,
+                password = txtPassword.Text;
+            List<string> invalidFields = new List<string>();
+            if (userId.Length == 0) invalidFields.Add("User Id");
+            if (password.Length == 0) invalidFields.Add("Password");
+
+            if (invalidFields.Count > 0)
+            {
+                MessageBox.Show("Invalid fields: \n\n" + String.Join("\n", invalidFields));
+            } else
+            {
+                ((LoginController)AppManager.Instance._currentController).Login(userId, password);
+            }
         }
 
         private void btnSignup_Click(object sender, EventArgs e)

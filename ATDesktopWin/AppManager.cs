@@ -49,14 +49,7 @@ namespace ATDesktopWin
 
             if (controller != null)
             {
-                if (controller.Loadable())
-                {
-                    controller.OnLoadSuccess(EventArgs.Empty);
-                }
-                else
-                {
-                    controller.OnLoadFailure(EventArgs.Empty);
-                }
+                controller.OnLoad();
             }
             else
             {

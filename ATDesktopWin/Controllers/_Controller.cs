@@ -9,15 +9,9 @@ namespace ATDesktopWin.Controllers
     {
         public abstract IView View { get; }
 
-        public event EventHandler LoadSuccess, LoadFailed;
-
         public _Controller()
         {
-            LoadSuccess += OnLoadSucceededHandler;
-            LoadFailed += OnLoadFailedHandler;
         }
-
-        public abstract bool Loadable();
 
         protected virtual void OnLoadSucceededHandler(Object sender, EventArgs e)
         {
@@ -32,16 +26,9 @@ namespace ATDesktopWin.Controllers
             }
         }
 
-        public void OnLoadSuccess(EventArgs e)
+        public void OnLoad()
         {
-            if (LoadSuccess != null)
-                LoadSuccess(this, e);
-        }
-
-        public void OnLoadFailure(EventArgs e)
-        {
-            if (LoadFailed != null)
-                LoadFailed(this, e);
+            AppManager.Instance.Show(this);
         }
     }
 }

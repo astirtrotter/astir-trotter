@@ -67,11 +67,18 @@
   <ItemGroup>
     <Compile Include="AppManager.cs" />
     <Compile Include="Config\Global.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SplashController.cs" />
     <Compile Include="Controllers\SignupController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\_Controller.cs" />
     <Compile Include="Helpers\LocalStorageHelper.cs" />
+    <Compile Include="Views\HomeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HomeView.Designer.cs">
+      <DependentUpon>HomeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\IView.cs" />
     <Compile Include="Views\LoginView.cs">
       <SubType>Form</SubType>
@@ -93,6 +100,9 @@
     <Compile Include="Views\SplashView.Designer.cs">
       <DependentUpon>SplashView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\HomeView.resx">
+      <DependentUpon>HomeView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
     </EmbeddedResource>

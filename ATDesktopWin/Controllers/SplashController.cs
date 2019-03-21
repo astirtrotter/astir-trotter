@@ -21,8 +21,6 @@ namespace ATDesktopWin.Controllers
             }
         }
 
-        public override bool Loadable() => true;
-
         internal void getSeed(Action callback)
         {
             ClientManager.Instance.GetSeed(seedResponse => {   

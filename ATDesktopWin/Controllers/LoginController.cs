@@ -21,8 +21,6 @@ namespace ATDesktopWin.Controllers
             }
         }
 
-        public override bool Loadable() => true;
-
         internal void Login(string userId, string pwd)
         {
             ClientManager.Instance.Login(userId, pwd, loginResponse => {   
@@ -35,7 +33,7 @@ namespace ATDesktopWin.Controllers
                     Global.token = loginResponse.token;
                     Global.user = loginResponse.user;
 
-                    // goto main screen
+                    AppManager.Load<HomeController>();
                 }
                 else
                 {
