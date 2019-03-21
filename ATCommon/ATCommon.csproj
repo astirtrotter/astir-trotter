@@ -51,6 +51,8 @@
     <Compile Include="API\ClientManager_config_seed.cs" />
     <Compile Include="API\ClientManager_auth_signup.cs" />
     <Compile Include="API\ClientManager_auth_login.cs" />
+    <Compile Include="Global\Constants.cs" />
+    <Compile Include="Global\LoginInfo.cs" />
     <Compile Include="Models\Family.cs" />
     <Compile Include="Models\_Gender.cs" />
     <Compile Include="Models\_Nationality.cs" />

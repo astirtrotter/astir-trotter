@@ -1,9 +1,9 @@
 ﻿using ATCommon.Models;
 using System.Collections.Generic;
 
-namespace ATDesktopWin.Config
+namespace ATCommon.Global
 {
-    public static class GlobalConstants
+    public static class Constants
     {
         // seed
         public static bool hasSeed = false;
@@ -13,9 +13,5 @@ namespace ATDesktopWin.Config
         public static List<_OriginClass> classOrigins;
         public static List<_OriginSocial> socialOrigins;
         public static List<_OriginNational> nationalOrigins;
-
-        // user
-        public static string token;
-        public static User user;
     }
 }

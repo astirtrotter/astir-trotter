@@ -2,7 +2,7 @@
 using ATDesktopWin.Views;
 using ATCommon.API;
 using System.Windows.Forms;
-using ATDesktopWin.Config;
+using ATCommon.Global;
 
 namespace ATDesktopWin.Controllers
 {
@@ -31,13 +31,13 @@ namespace ATDesktopWin.Controllers
                 }
                 else
                 {
-                    GlobalConstants.hasSeed = true;
-                    GlobalConstants.genders = seedResponse.genders;
-                    GlobalConstants.parties = seedResponse.parties;
-                    GlobalConstants.nationalities = seedResponse.nationalities;
-                    GlobalConstants.classOrigins = seedResponse.classOrigins;
-                    GlobalConstants.socialOrigins = seedResponse.socialOrigins;
-                    GlobalConstants.nationalOrigins = seedResponse.nationalOrigins;
+                    Constants.hasSeed = true;
+                    Constants.genders = seedResponse.genders;
+                    Constants.parties = seedResponse.parties;
+                    Constants.nationalities = seedResponse.nationalities;
+                    Constants.classOrigins = seedResponse.classOrigins;
+                    Constants.socialOrigins = seedResponse.socialOrigins;
+                    Constants.nationalOrigins = seedResponse.nationalOrigins;
                     callback();
                 }
             });

@@ -2,7 +2,7 @@
 using ATDesktopWin.Views;
 using ATCommon.API;
 using System.Windows.Forms;
-using ATDesktopWin.Config;
+using ATCommon.Global;
 
 namespace ATDesktopWin.Controllers
 {
@@ -30,8 +30,8 @@ namespace ATDesktopWin.Controllers
                 }
                 else if (loginResponse.success)
                 {
-                    GlobalConstants.token = loginResponse.token;
-                    GlobalConstants.user = loginResponse.user;
+                    LoginInfo.token = loginResponse.token;
+                    LoginInfo.user = loginResponse.user;
 
                     AppManager.Load<HomeController>();
                 }

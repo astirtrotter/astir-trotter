@@ -66,7 +66,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppManager.cs" />
-    <Compile Include="Config\Global.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SplashController.cs" />
     <Compile Include="Controllers\SignupController.cs" />

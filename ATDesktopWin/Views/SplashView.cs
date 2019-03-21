@@ -1,4 +1,4 @@
-﻿using ATDesktopWin.Config;
+﻿using ATCommon.Global;
 using ATDesktopWin.Controllers;
 using System;
 using System.Collections.Generic;
@@ -35,7 +35,7 @@ namespace ATDesktopWin.Views
             timer.Enabled = false;
             timer.Stop();
 
-            if (GlobalConstants.hasSeed)
+            if (Constants.hasSeed)
             {
                 Next();
             }

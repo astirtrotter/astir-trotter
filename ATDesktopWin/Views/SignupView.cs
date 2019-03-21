@@ -1,4 +1,4 @@
-﻿using ATDesktopWin.Config;
+﻿using ATCommon.Global;
 using ATDesktopWin.Controllers;
 using System;
 using System.Collections.Generic;
@@ -23,32 +23,32 @@ namespace ATDesktopWin.Views
         {
             InitializeComponent();
             
-            cbGender.DataSource = GlobalConstants.genders;
+            cbGender.DataSource = Constants.genders;
             cbGender.DisplayMember = "value";
             cbGender.ValueMember = "value";
             cbGender.SelectedIndex = -1;
 
-            cbParty.DataSource = GlobalConstants.parties;
+            cbParty.DataSource = Constants.parties;
             cbParty.DisplayMember = "value";
             cbParty.ValueMember = "value";
             cbParty.SelectedIndex = -1;
 
-            cbNationality.DataSource = GlobalConstants.nationalities;
+            cbNationality.DataSource = Constants.nationalities;
             cbNationality.DisplayMember = "value";
             cbNationality.ValueMember = "value";
             cbNationality.SelectedIndex = -1;
 
-            cbClassOrigin.DataSource = GlobalConstants.classOrigins;
+            cbClassOrigin.DataSource = Constants.classOrigins;
             cbClassOrigin.DisplayMember = "value";
             cbClassOrigin.ValueMember = "value";
             cbClassOrigin.SelectedIndex = -1;
 
-            cbSocialOrigin.DataSource = GlobalConstants.socialOrigins;
+            cbSocialOrigin.DataSource = Constants.socialOrigins;
             cbSocialOrigin.DisplayMember = "value";
             cbSocialOrigin.ValueMember = "value";
             cbSocialOrigin.SelectedIndex = -1;
 
-            cbNationalOrigin.DataSource = GlobalConstants.nationalOrigins;
+            cbNationalOrigin.DataSource = Constants.nationalOrigins;
             cbNationalOrigin.DisplayMember = "value";
             cbNationalOrigin.ValueMember = "value";
             cbNationalOrigin.SelectedIndex = -1;

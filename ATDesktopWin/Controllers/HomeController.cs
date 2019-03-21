@@ -2,7 +2,6 @@
 using ATDesktopWin.Views;
 using ATCommon.API;
 using System.Windows.Forms;
-using ATDesktopWin.Config;
 
 namespace ATDesktopWin.Controllers
 {
