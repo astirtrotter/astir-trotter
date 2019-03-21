@@ -25,7 +25,8 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: true,
             paranoid: true,
             scopes: {
-                byId: function (id) { return { where: { id: { [Op.like]: id } }, limit: 1 }; }
+                byId: function (id) { return { where: { id: { [Op.like]: id } }, limit: 1 }; },
+                live: { where: { deletedAt: null } }
             }
         });
 
