@@ -1,6 +1,5 @@
 ﻿'use strict';
 
-const GenderSeed = require('./_gender');
 const PartySeed = require('./_party');
 const NationalitySeed = require('./_nationality');
 const ClassOriginSeed = require('./_origin-class');
@@ -10,7 +9,6 @@ const NationalOriginSeed = require('./_origin-national');
 module.exports = function (models, force) {
     if (!force) return;
 
-    models.Gender.bulkCreate(GenderSeed);
     models.Party.bulkCreate(PartySeed);
     models.Nationality.bulkCreate(NationalitySeed);
     models.ClassOrigin.bulkCreate(ClassOriginSeed);

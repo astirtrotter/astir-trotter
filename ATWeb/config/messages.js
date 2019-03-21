@@ -2,8 +2,6 @@
 
 module.exports = {
     General: {
-        Gender: 'gender',
-        Country: 'country',
         Nationality: 'nationality',
         ClassOrigin: 'class origin',
         SocialOrigin: 'social origin',

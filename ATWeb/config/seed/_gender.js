@@ -2,6 +2,5 @@
 
 module.exports = [
     { value: 'Male' },
-    { value: 'Female' },
-    { value: 'Other' }
+    { value: 'Female' }
 ];

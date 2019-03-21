@@ -68,7 +68,6 @@
     <Compile Include="models\log.js" />
     <Compile Include="models\family.js" />
     <Compile Include="models\_party.js" />
-    <Compile Include="models\_gender.js" />
     <Compile Include="models\_nationality.js" />
     <Compile Include="models\_origin-national.js" />
     <Compile Include="models\_origin-class.js" />

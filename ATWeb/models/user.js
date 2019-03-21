@@ -1,4 +1,5 @@
 ﻿'use strict';
+const GenderSeed = require('../config/seed/_gender');
 
 module.exports = (sequelize, DataTypes) => {
     const Op = require('sequelize').Op;
@@ -8,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
             firstName: { type: DataTypes.STRING(20), allowNull: false, validate: { is: /^[a-zA-Z]+$/ } },
             lastName: { type: DataTypes.STRING(20), allowNull: false, validate: { is: /^[a-zA-Z]+$/ } },
             nickName: { type: DataTypes.STRING(50), validate: { is: /^[a-zA-Z ]+$/ } },
+            gender: { type: DataTypes.STRING(10), allowNull: false, validate: { isIn: [GenderSeed.map(it => it.value)] } },
             birthday: { type: DataTypes.DATEONLY, allowNull: false },
             birthPlace: { type: DataTypes.STRING },
             address: { type: DataTypes.STRING },
