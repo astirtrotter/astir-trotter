@@ -14,6 +14,7 @@ namespace ATCommon.Global
         public static List<_OriginSocial> socialOrigins;
         public static List<_OriginNational> nationalOrigins;
 
+        // messages
         public static class Messages
         {
             public static class Info

@@ -20,7 +20,8 @@ namespace ATCommon.Models
         public string picture { get; set; }
         public string phoneNumber { get; set; }
         public string email { get; set; }
-        public string moreContactInfo { get; set; }
+        public string details { get; set; }
+        public DateTime diedDay { get; set; }
         public string familyId { get; set; }
         public string fatherId { get; set; }
         public string motherId { get; set; }
