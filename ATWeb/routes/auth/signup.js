@@ -66,7 +66,8 @@ module.exports = function (req, res, next) {
                                                         picture: req.body.picture,
                                                         phoneNumber: req.body.phoneNumber,
                                                         email: req.body.email,
-                                                        moreContactInfo: req.body.moreContactInfo
+                                                        details: req.body.details,
+                                                        diedDay: req.body.diedDay
                                                     }).then(user => {
                                                         if (user) {
                                                             if (classOrigin) {

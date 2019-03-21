@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
             picture: { type: DataTypes.STRING, validate: { isUrl: true } },
             phoneNumber: { type: DataTypes.STRING },
             email: { type: DataTypes.STRING, validate: { isEmail: true } },
-            moreContactInfos: { type: DataTypes.STRING },
+            diedDay: { type: DataTypes.DATEONLY },
+            details: { type: DataTypes.STRING },
             fatherId: { type: DataTypes.STRING(32) },
             motherId: { type: DataTypes.STRING(32) },
             spouseId: { type: DataTypes.STRING(32) }
@@ -24,9 +25,7 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: true,
             paranoid: true,
             scopes: {
-                byId: function (id) { return { where: { id: { [Op.like]: id } }, limit: 1 }; },
-                live: { where: { deletedAt: null } },
-                deleted: { where: { deletedAt: { [Op.ne]: null } } }
+                byId: function (id) { return { where: { id: { [Op.like]: id } }, limit: 1 }; }
             }
         });
 
