@@ -31,6 +31,7 @@ namespace ATCommon.API
         {
             client = new RestClient(BASE_URL + API_URL);
             client.AddDefaultHeader("Content-Type", "application/json");
+            client.UserAgent = "Astir Trotter (Win)";
         }
     }
 }
