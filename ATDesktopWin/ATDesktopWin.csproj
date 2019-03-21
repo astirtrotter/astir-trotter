@@ -71,8 +71,15 @@
     <Compile Include="Controllers\SignupController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\_Controller.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\LocalStorageHelper.cs" />
     <Compile Include="Helpers\MessageBoxHelper.cs" />
+    <Compile Include="Views\Dialogs\CameraDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dialogs\CameraDialog.Designer.cs">
+      <DependentUpon>CameraDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomeView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +107,9 @@
     <Compile Include="Views\SplashView.Designer.cs">
       <DependentUpon>SplashView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Dialogs\CameraDialog.resx">
+      <DependentUpon>CameraDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\HomeView.resx">
       <DependentUpon>HomeView.cs</DependentUpon>
     </EmbeddedResource>

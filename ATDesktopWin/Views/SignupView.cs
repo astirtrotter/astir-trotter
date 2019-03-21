@@ -1,6 +1,7 @@
 ﻿using ATCommon.Global;
 using ATDesktopWin.Controllers;
 using ATDesktopWin.Helpers;
+using ATDesktopWin.Views.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -126,6 +127,10 @@ namespace ATDesktopWin.Views
 
         private void mnuPictureReset_Click(object sender, EventArgs e)
         {
+            if (pbPicture.Image != null)
+            {
+                pbPicture.Image.Dispose();
+            }
             pbPicture.Image = Properties.Resources.user_profile_picture;
         }
 
@@ -133,7 +138,24 @@ namespace ATDesktopWin.Views
         {
             if (ofdPicture.ShowDialog() == DialogResult.OK)
             {
+                if (pbPicture.Image != null)
+                {
+                    pbPicture.Image.Dispose();
+                }
                 pbPicture.Image = new Bitmap(ofdPicture.FileName);
+            }
+        }
+
+        private void mnuPictureCamera_Click(object sender, EventArgs e)
+        {
+            CameraDialog cameraDialog = new CameraDialog();
+            if (cameraDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (pbPicture.Image != null)
+                {
+                    pbPicture.Image.Dispose();
+                }
+                pbPicture.Image = ImageHelper.CropBitmap(cameraDialog.image, pbPicture.Width, pbPicture.Height);
             }
         }
     }

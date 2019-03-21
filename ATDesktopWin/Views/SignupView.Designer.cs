@@ -32,6 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignupView));
             this.pbPicture = new System.Windows.Forms.PictureBox();
             this.cmsPicture = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuPictureCamera = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPictureImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPictureReset = new System.Windows.Forms.ToolStripMenuItem();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -72,9 +75,6 @@
             this.cbNationality = new System.Windows.Forms.ComboBox();
             this.chbDied = new System.Windows.Forms.CheckBox();
             this.dtpDiedDay = new System.Windows.Forms.DateTimePicker();
-            this.mnuPictureCamera = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPictureImage = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPictureReset = new System.Windows.Forms.ToolStripMenuItem();
             this.ofdPicture = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.cmsPicture.SuspendLayout();
@@ -92,7 +92,7 @@
             this.pbPicture.Location = new System.Drawing.Point(125, 30);
             this.pbPicture.Name = "pbPicture";
             this.pbPicture.Size = new System.Drawing.Size(135, 135);
-            this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPicture.TabIndex = 0;
             this.pbPicture.TabStop = false;
             // 
@@ -104,6 +104,27 @@
             this.mnuPictureReset});
             this.cmsPicture.Name = "cmsPicture";
             this.cmsPicture.Size = new System.Drawing.Size(158, 70);
+            // 
+            // mnuPictureCamera
+            // 
+            this.mnuPictureCamera.Name = "mnuPictureCamera";
+            this.mnuPictureCamera.Size = new System.Drawing.Size(157, 22);
+            this.mnuPictureCamera.Text = "From camera";
+            this.mnuPictureCamera.Click += new System.EventHandler(this.mnuPictureCamera_Click);
+            // 
+            // mnuPictureImage
+            // 
+            this.mnuPictureImage.Name = "mnuPictureImage";
+            this.mnuPictureImage.Size = new System.Drawing.Size(157, 22);
+            this.mnuPictureImage.Text = "From image file";
+            this.mnuPictureImage.Click += new System.EventHandler(this.mnuPictureImage_Click);
+            // 
+            // mnuPictureReset
+            // 
+            this.mnuPictureReset.Name = "mnuPictureReset";
+            this.mnuPictureReset.Size = new System.Drawing.Size(157, 22);
+            this.mnuPictureReset.Text = "Reset";
+            this.mnuPictureReset.Click += new System.EventHandler(this.mnuPictureReset_Click);
             // 
             // txtFirstName
             // 
@@ -448,26 +469,6 @@
             this.dtpDiedDay.Size = new System.Drawing.Size(100, 20);
             this.dtpDiedDay.TabIndex = 18;
             this.dtpDiedDay.Value = new System.DateTime(2019, 3, 20, 0, 0, 0, 0);
-            // 
-            // mnuPictureCamera
-            // 
-            this.mnuPictureCamera.Name = "mnuPictureCamera";
-            this.mnuPictureCamera.Size = new System.Drawing.Size(157, 22);
-            this.mnuPictureCamera.Text = "From camera";
-            // 
-            // mnuPictureImage
-            // 
-            this.mnuPictureImage.Name = "mnuPictureImage";
-            this.mnuPictureImage.Size = new System.Drawing.Size(157, 22);
-            this.mnuPictureImage.Text = "From image file";
-            this.mnuPictureImage.Click += new System.EventHandler(this.mnuPictureImage_Click);
-            // 
-            // mnuPictureReset
-            // 
-            this.mnuPictureReset.Name = "mnuPictureReset";
-            this.mnuPictureReset.Size = new System.Drawing.Size(157, 22);
-            this.mnuPictureReset.Text = "Reset";
-            this.mnuPictureReset.Click += new System.EventHandler(this.mnuPictureReset_Click);
             // 
             // ofdPicture
             // 
