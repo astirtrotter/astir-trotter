@@ -2,9 +2,8 @@
 
 namespace ATCommon.Responses
 {
-    public class LoginResponse : _Response
+    public class LoginResponse : UserResponse
     {
         public string token { get; set; }
-        public User user { get; set; }
     }
 }

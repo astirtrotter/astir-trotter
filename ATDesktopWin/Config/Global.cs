@@ -1,9 +1,5 @@
 ﻿using ATCommon.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ATDesktopWin.Config
 {
@@ -18,10 +14,8 @@ namespace ATDesktopWin.Config
         public static List<_OriginSocial> socialOrigins;
         public static List<_OriginNational> nationalOrigins;
 
-        // token
-        public static string token;
-
         // user
+        public static string token;
         public static User user;
     }
 }
