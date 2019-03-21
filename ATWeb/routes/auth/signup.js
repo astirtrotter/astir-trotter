@@ -102,7 +102,23 @@ module.exports = function (req, res, next) {
                                                                     models.UserSetting.create({ pwdHash: pwdHash }).then(userSetting => {
                                                                         if (userSetting) {
                                                                             user.setUserSetting(userSetting);
-                                                                            res.send({ success: true });
+
+                                                                            // generate family
+                                                                            const familyId = CredentialsHeper.genUUID();
+                                                                            models.Family.create({ id: familyId }).then(family => {
+                                                                                if (family) {
+                                                                                    family.addUser(user);
+                                                                                    user.familyId = family.id;
+
+                                                                                    // respond
+                                                                                    res.send({ success: true });
+                                                                                } else {
+                                                                                    // cannot save family
+                                                                                    var err = new Error(Messages.Error.SaveData);
+                                                                                    err.status = 500;
+                                                                                    next(err);
+                                                                                }
+                                                                            });
                                                                         } else {
                                                                             // cannot save user setting
                                                                             var err = new Error(Messages.Error.SaveData);
