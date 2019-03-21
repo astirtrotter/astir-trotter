@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignupView));
             this.pbPicture = new System.Windows.Forms.PictureBox();
+            this.cmsPicture = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,20 +72,38 @@
             this.cbNationality = new System.Windows.Forms.ComboBox();
             this.chbDied = new System.Windows.Forms.CheckBox();
             this.dtpDiedDay = new System.Windows.Forms.DateTimePicker();
+            this.mnuPictureCamera = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPictureImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPictureReset = new System.Windows.Forms.ToolStripMenuItem();
+            this.ofdPicture = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
+            this.cmsPicture.SuspendLayout();
             this.SuspendLayout();
             // 
             // pbPicture
             // 
             this.pbPicture.BackColor = System.Drawing.Color.Transparent;
-            this.pbPicture.BackgroundImage = global::ATDesktopWin.Properties.Resources.user_profile_picture;
             this.pbPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbPicture.InitialImage = global::ATDesktopWin.Properties.Resources.user_profile_picture;
+            this.pbPicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbPicture.ContextMenuStrip = this.cmsPicture;
+            this.pbPicture.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.pbPicture.Image = global::ATDesktopWin.Properties.Resources.user_profile_picture;
+            this.pbPicture.InitialImage = null;
             this.pbPicture.Location = new System.Drawing.Point(125, 30);
             this.pbPicture.Name = "pbPicture";
             this.pbPicture.Size = new System.Drawing.Size(135, 135);
+            this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbPicture.TabIndex = 0;
             this.pbPicture.TabStop = false;
+            // 
+            // cmsPicture
+            // 
+            this.cmsPicture.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuPictureCamera,
+            this.mnuPictureImage,
+            this.mnuPictureReset});
+            this.cmsPicture.Name = "cmsPicture";
+            this.cmsPicture.Size = new System.Drawing.Size(158, 70);
             // 
             // txtFirstName
             // 
@@ -429,6 +449,30 @@
             this.dtpDiedDay.TabIndex = 18;
             this.dtpDiedDay.Value = new System.DateTime(2019, 3, 20, 0, 0, 0, 0);
             // 
+            // mnuPictureCamera
+            // 
+            this.mnuPictureCamera.Name = "mnuPictureCamera";
+            this.mnuPictureCamera.Size = new System.Drawing.Size(157, 22);
+            this.mnuPictureCamera.Text = "From camera";
+            // 
+            // mnuPictureImage
+            // 
+            this.mnuPictureImage.Name = "mnuPictureImage";
+            this.mnuPictureImage.Size = new System.Drawing.Size(157, 22);
+            this.mnuPictureImage.Text = "From image file";
+            this.mnuPictureImage.Click += new System.EventHandler(this.mnuPictureImage_Click);
+            // 
+            // mnuPictureReset
+            // 
+            this.mnuPictureReset.Name = "mnuPictureReset";
+            this.mnuPictureReset.Size = new System.Drawing.Size(157, 22);
+            this.mnuPictureReset.Text = "Reset";
+            this.mnuPictureReset.Click += new System.EventHandler(this.mnuPictureReset_Click);
+            // 
+            // ofdPicture
+            // 
+            this.ofdPicture.Filter = "Image files (*.bmp, *.jpg, *.png)|*.bmp;*.jpb;*.png|All files (*.*)|*.*";
+            // 
             // SignupView
             // 
             this.AcceptButton = this.btnSignUp;
@@ -486,6 +530,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Astir Trotter (Sign Up)";
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
+            this.cmsPicture.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -534,5 +579,10 @@
         private System.Windows.Forms.ComboBox cbNationality;
         private System.Windows.Forms.CheckBox chbDied;
         private System.Windows.Forms.DateTimePicker dtpDiedDay;
+        private System.Windows.Forms.ContextMenuStrip cmsPicture;
+        private System.Windows.Forms.ToolStripMenuItem mnuPictureCamera;
+        private System.Windows.Forms.ToolStripMenuItem mnuPictureImage;
+        private System.Windows.Forms.ToolStripMenuItem mnuPictureReset;
+        private System.Windows.Forms.OpenFileDialog ofdPicture;
     }
 }

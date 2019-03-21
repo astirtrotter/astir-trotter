@@ -122,5 +122,18 @@ namespace ATDesktopWin.Views
         {
             dtpDiedDay.Enabled = chbDied.Checked;
         }
+
+        private void mnuPictureReset_Click(object sender, EventArgs e)
+        {
+            pbPicture.Image = Properties.Resources.user_profile_picture;
+        }
+
+        private void mnuPictureImage_Click(object sender, EventArgs e)
+        {
+            if (ofdPicture.ShowDialog() == DialogResult.OK)
+            {
+                pbPicture.Image = new Bitmap(ofdPicture.FileName);
+            }
+        }
     }
 }
