@@ -11,7 +11,7 @@ namespace ATCommon.API
             string nickName, string gender, string birthday, string address,
             string birthPlace, string party, string nationality, string nationalOrigin,
             string classOrigin, string socialOrigin, string phoneNumber, string email,
-            string moreContactInfo, Action<LoginResponse> callback)
+            string details, string diedDay, Action<LoginResponse> callback)
         {
             RestRequest request = new RestRequest("auth/signup", Method.POST);
             request.AddJsonBody(new {
@@ -31,7 +31,8 @@ namespace ATCommon.API
                 socialOrigin = socialOrigin,
                 phoneNumber = phoneNumber,
                 email = email,
-                moreContactInfo = moreContactInfo
+                details = details,
+                diedDay = diedDay
             });
             client.ExecuteAsync<LoginResponse>(request, res => {
                 callback.Invoke(res.Data);

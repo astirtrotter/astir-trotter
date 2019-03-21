@@ -30,8 +30,8 @@ namespace ATDesktopWin.Controllers
                 }
                 else if (loginResponse.success)
                 {
-                    Global.token = loginResponse.token;
-                    Global.user = loginResponse.user;
+                    GlobalConstants.token = loginResponse.token;
+                    GlobalConstants.user = loginResponse.user;
 
                     AppManager.Load<HomeController>();
                 }

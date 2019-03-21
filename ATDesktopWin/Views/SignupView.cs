@@ -23,37 +23,38 @@ namespace ATDesktopWin.Views
         {
             InitializeComponent();
             
-            cbGender.DataSource = Global.genders;
+            cbGender.DataSource = GlobalConstants.genders;
             cbGender.DisplayMember = "value";
             cbGender.ValueMember = "value";
             cbGender.SelectedIndex = -1;
 
-            cbParty.DataSource = Global.parties;
+            cbParty.DataSource = GlobalConstants.parties;
             cbParty.DisplayMember = "value";
             cbParty.ValueMember = "value";
             cbParty.SelectedIndex = -1;
 
-            cbNationality.DataSource = Global.nationalities;
+            cbNationality.DataSource = GlobalConstants.nationalities;
             cbNationality.DisplayMember = "value";
             cbNationality.ValueMember = "value";
             cbNationality.SelectedIndex = -1;
 
-            cbClassOrigin.DataSource = Global.classOrigins;
+            cbClassOrigin.DataSource = GlobalConstants.classOrigins;
             cbClassOrigin.DisplayMember = "value";
             cbClassOrigin.ValueMember = "value";
             cbClassOrigin.SelectedIndex = -1;
 
-            cbSocialOrigin.DataSource = Global.socialOrigins;
+            cbSocialOrigin.DataSource = GlobalConstants.socialOrigins;
             cbSocialOrigin.DisplayMember = "value";
             cbSocialOrigin.ValueMember = "value";
             cbSocialOrigin.SelectedIndex = -1;
 
-            cbNationalOrigin.DataSource = Global.nationalOrigins;
+            cbNationalOrigin.DataSource = GlobalConstants.nationalOrigins;
             cbNationalOrigin.DisplayMember = "value";
             cbNationalOrigin.ValueMember = "value";
             cbNationalOrigin.SelectedIndex = -1;
 
             dtpBirthday.MaxDate = DateTime.Today;
+            dtpDiedDay.MaxDate = DateTime.Today;
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
@@ -76,7 +77,8 @@ namespace ATDesktopWin.Views
                 socialOrigin = cbSocialOrigin.Text,
                 phoneNumber = txtPhoneNumber.Text,
                 email = txtEmail.Text,
-                moreContactInfo = txtMoreContactInfo.Text;
+                details = txtDetails.Text,
+                diedDay = dtpDiedDay.Value.ToShortDateString();
 
             List<string> invalidFields = new List<string>();
             if (userId.Length == 0) invalidFields.Add("User Id");
@@ -85,7 +87,6 @@ namespace ATDesktopWin.Views
             if (firstName.Length == 0) invalidFields.Add("First Name");
             if (lastName.Length == 0) invalidFields.Add("Last Name");
             if (gender.Length == 0) invalidFields.Add("Gender");
-            if (birthday.Length == 0) invalidFields.Add("Birthday");
 
             if (invalidFields.Count > 0)
             {
@@ -102,18 +103,24 @@ namespace ATDesktopWin.Views
                 if (socialOrigin.Length == 0) socialOrigin = null;
                 if (phoneNumber.Length == 0) phoneNumber = null;
                 if (email.Length == 0) email = null;
-                if (moreContactInfo.Length == 0) moreContactInfo = null;
+                if (details.Length == 0) details = null;
+                if (!chbDied.Checked) diedDay = null;
 
                 ((SignupController)AppManager.Instance._currentController)
                     .Signup(userId, password, firstName, lastName, nickName, gender, 
                     birthday, address, birthPlace, party, nationality, nationalOrigin, 
-                    classOrigin, socialOrigin, phoneNumber, email, moreContactInfo);
+                    classOrigin, socialOrigin, phoneNumber, email, details, diedDay);
             }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             ((SignupController)AppManager.Instance._currentController).Back();
+        }
+
+        private void chbDied_CheckedChanged(object sender, EventArgs e)
+        {
+            dtpDiedDay.Enabled = chbDied.Checked;
         }
     }
 }

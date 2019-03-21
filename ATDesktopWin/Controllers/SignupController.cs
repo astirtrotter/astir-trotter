@@ -27,11 +27,11 @@ namespace ATDesktopWin.Controllers
             string nickName, string gender, string birthday, string address, 
             string birthPlace, string party, string nationality, string nationalOrigin, 
             string classOrigin, string socialOrigin, string phoneNumber, string email,
-            string moreContactInfo)
+            string details, string diedDay)
         {
             ClientManager.Instance.Signup(userId, password, firstName, lastName, nickName, gender,
                     birthday, address, birthPlace, party, nationality, nationalOrigin,
-                    classOrigin, socialOrigin, phoneNumber, email, moreContactInfo, signupResponse => {
+                    classOrigin, socialOrigin, phoneNumber, email, details, diedDay, signupResponse => {
                 if (signupResponse == null)
                 {
                     MessageBox.Show("The response is null.");

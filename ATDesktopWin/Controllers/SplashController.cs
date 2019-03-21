@@ -31,13 +31,13 @@ namespace ATDesktopWin.Controllers
                 }
                 else
                 {
-                    Global.hasSeed = true;
-                    Global.genders = seedResponse.genders;
-                    Global.parties = seedResponse.parties;
-                    Global.nationalities = seedResponse.nationalities;
-                    Global.classOrigins = seedResponse.classOrigins;
-                    Global.socialOrigins = seedResponse.socialOrigins;
-                    Global.nationalOrigins = seedResponse.nationalOrigins;
+                    GlobalConstants.hasSeed = true;
+                    GlobalConstants.genders = seedResponse.genders;
+                    GlobalConstants.parties = seedResponse.parties;
+                    GlobalConstants.nationalities = seedResponse.nationalities;
+                    GlobalConstants.classOrigins = seedResponse.classOrigins;
+                    GlobalConstants.socialOrigins = seedResponse.socialOrigins;
+                    GlobalConstants.nationalOrigins = seedResponse.nationalOrigins;
                     callback();
                 }
             });

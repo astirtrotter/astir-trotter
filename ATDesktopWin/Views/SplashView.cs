@@ -35,7 +35,7 @@ namespace ATDesktopWin.Views
             timer.Enabled = false;
             timer.Stop();
 
-            if (Global.hasSeed)
+            if (GlobalConstants.hasSeed)
             {
                 Next();
             }

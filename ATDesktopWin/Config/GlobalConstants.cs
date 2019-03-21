@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ATDesktopWin.Config
 {
-    public static class Global
+    public static class GlobalConstants
     {
         // seed
         public static bool hasSeed = false;
