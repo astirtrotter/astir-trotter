@@ -67,6 +67,7 @@
     <Compile Include="controllers\index.js" />
     <Compile Include="models\log.js" />
     <Compile Include="models\family.js" />
+    <Compile Include="models\user-event.js" />
     <Compile Include="models\_party.js" />
     <Compile Include="models\_nationality.js" />
     <Compile Include="models\_origin-national.js" />
