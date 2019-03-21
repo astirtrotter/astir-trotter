@@ -54,6 +54,9 @@
     <Compile Include="Global\Constants.cs" />
     <Compile Include="Global\LoginInfo.cs" />
     <Compile Include="Models\Family.cs" />
+    <Compile Include="Models\UserEvent.cs" />
+    <Compile Include="Models\UserEducationHistory.cs" />
+    <Compile Include="Models\UserWorkHistory.cs" />
     <Compile Include="Models\_Gender.cs" />
     <Compile Include="Models\_Nationality.cs" />
     <Compile Include="Models\_OriginClass.cs" />
