@@ -76,7 +76,10 @@ module.exports = function (req, res, next) {
                 family.getUsers().then(users => {
                     // respond family data with structured format
                     var ret = getNode(users, req.user.id);
-                    res.send(ret);
+                    res.send({
+                        success: true,
+                        family: ret
+                    });
                 });
             } else {
                 // family info doesn't exist (internal error)
