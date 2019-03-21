@@ -63,6 +63,16 @@ namespace ATDesktopWin
         /// <param name="controller">The controller instance</param>
         public void Show(_Controller controller)
         {
+            if (_currentController != null && 
+                _currentController.View.Form.InvokeRequired)
+            {
+                _currentController.View.Form.BeginInvoke((MethodInvoker)delegate
+                {
+                    Show(controller);
+                });
+                return;
+            }
+
             if (_currentController != null)
             {
                 _currentController.View.Form.Close();

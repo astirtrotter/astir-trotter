@@ -53,10 +53,7 @@ namespace ATDesktopWin.Views
 
         private void Next()
         {
-            BeginInvoke(new MethodInvoker(delegate
-            {
-                ((SplashController)AppManager.Instance._currentController).gotoLogin();
-            }));
+            ((SplashController)AppManager.Instance._currentController).gotoLogin();
         }
     }
 }
