@@ -3,6 +3,7 @@ using ATDesktopWin.Views;
 using ATCommon.API;
 using System.Windows.Forms;
 using ATCommon.Global;
+using ATDesktopWin.Helpers;
 
 namespace ATDesktopWin.Controllers
 {
@@ -26,7 +27,7 @@ namespace ATDesktopWin.Controllers
             ClientManager.Instance.Login(userId, pwd, loginResponse => {   
                 if (loginResponse == null)
                 {
-                    MessageBox.Show("The response is null.");
+                    MessageBoxHelper.ShowError(Constants.Messages.Error.NoResponse);
                 }
                 else if (loginResponse.success)
                 {
@@ -37,7 +38,7 @@ namespace ATDesktopWin.Controllers
                 }
                 else
                 {
-                    MessageBox.Show(loginResponse.message);
+                    MessageBoxHelper.ShowWarning(Constants.Messages.Warning.ActionFailed + loginResponse.message);
                 }
             });
         }

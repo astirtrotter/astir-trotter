@@ -2,6 +2,8 @@
 using ATDesktopWin.Views;
 using ATCommon.API;
 using System.Windows.Forms;
+using ATDesktopWin.Helpers;
+using ATCommon.Global;
 
 namespace ATDesktopWin.Controllers
 {
@@ -33,16 +35,16 @@ namespace ATDesktopWin.Controllers
                     classOrigin, socialOrigin, phoneNumber, email, details, diedDay, signupResponse => {
                 if (signupResponse == null)
                 {
-                    MessageBox.Show("The response is null.");
+                    MessageBoxHelper.ShowError(Constants.Messages.Error.NoResponse);
                 }
                 else if (signupResponse.success)
                 {
-                    MessageBox.Show("You have successfully signed up. Please log in with that credentials.");
+                    MessageBoxHelper.ShowInfo(Constants.Messages.Info.SignupSuccess);
                     Back();
                 }
                 else
                 {
-                    MessageBox.Show(signupResponse.message);
+                    MessageBoxHelper.ShowWarning(Constants.Messages.Warning.ActionFailed + signupResponse.message);
                 }
             });
         }

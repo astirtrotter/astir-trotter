@@ -72,6 +72,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\_Controller.cs" />
     <Compile Include="Helpers\LocalStorageHelper.cs" />
+    <Compile Include="Helpers\MessageBoxHelper.cs" />
     <Compile Include="Views\HomeView.cs">
       <SubType>Form</SubType>
     </Compile>

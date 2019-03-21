@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using ATCommon.Global;
 using ATDesktopWin.Controllers;
+using ATDesktopWin.Helpers;
 
 namespace ATDesktopWin.Views
 {
@@ -27,7 +29,7 @@ namespace ATDesktopWin.Views
 
             if (invalidFields.Count > 0)
             {
-                MessageBox.Show("Invalid fields: \n\n" + String.Join("\n", invalidFields));
+                MessageBoxHelper.ShowWarning(Constants.Messages.Warning.InvalidInput + String.Join("\n", invalidFields));
             } else
             {
                 ((LoginController)AppManager.Instance._currentController).Login(userId, password);
