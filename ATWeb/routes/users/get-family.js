@@ -1,6 +1,7 @@
 ﻿'use strict';
 const models = require('../../models');
 const Messages = require('../../config/messages');
+const GenderSeed = require('../../config/seed/_gender');
 
 const findUser = function (users, userId) {
     var ret = null;
@@ -33,14 +34,16 @@ const getNode = function (users, userId, isNeedSpouse, isNeedParents, isNeedSibl
     var ret = {};
     // oneself
     ret.user = findUser(users, userId);
+    users = users.filter(user => user !== ret.user);
+
     // spouse
     if (isNeedSpouse) {
         ret.spouse = getNode(users, ret.user.spouseId, false, true, true, false);
     }
     // parents
     if (isNeedParents) {
-        ret.father = getNode(users, ret.user.fatherId, true, false);
-        ret.mother = getNode(users, ret.user.motherId, true, false);
+        ret.father = getNode(users, ret.user.fatherId, false, true, true, false);
+        ret.mother = getNode(users, ret.user.motherId, false, true, true, false);
     }
     // siblings
     if (isNeedSiblings) {
@@ -53,7 +56,10 @@ const getNode = function (users, userId, isNeedSpouse, isNeedParents, isNeedSibl
     }
     // children
     if (isNeedChildren) {
-        var children = findChildren(users, ret.user.fatherId, ret.user.motherId);
+        const fatherId = ret.user.gender === GenderSeed[0].value ? ret.user.id : ret.user.spouseId;
+        const motherId = ret.user.gender === GenderSeed[0].value ? ret.user.spouseId : ret.user.id;
+
+        var children = findChildren(users, fatherId, motherId);
         children.forEach(child => {
             data.push(getNode(users, child.id, true, false, false, true));
         });
