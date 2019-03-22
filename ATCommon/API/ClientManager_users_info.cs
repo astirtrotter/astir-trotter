@@ -6,7 +6,7 @@ namespace ATCommon.API
 {
     public partial class ClientManager
     {
-        public void GetUser(string userId, Action<UserResponse> callback)
+        public void GetUserInfo(string userId, Action<UserResponse> callback)
         {
             RestRequest request = new RestRequest("users/:userId", Method.GET);
             request.AddUrlSegment("userId", userId);
