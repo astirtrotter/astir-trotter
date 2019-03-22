@@ -1,17 +1,18 @@
 ﻿'use strict';
 
 /*
- GET /config/seed               // get constants including gender, party, class/social/national origins, nationalities
 
-POST /auth/login
-POST /auth/signup
+GET     /config/seed                            // get constants including gender, party, class/social/national origins, nationalities
 
-GET /users/:userId
-GET /users/:userId/family
-*GET /users/relation/:userId/:anotherUserId // get relation between 2 users
-*POST /users/relation/:userId               // request relation-add with someone
-*PUT /users/relation/:userId                // confirm relation-add with requester
-*DEL /users/relation/:userId                // delete relation with 
+POST    /auth/login
+POST    /auth/signup
+
+GET     /users/:userId
+GET     /users/:userId/family
+*GET    /users/relation/:userId/:anotherUserId  // get relation between 2 users
+*POST   /users/relation/:userId                 // request relation-add with someone
+*PUT    /users/relation/:userId                 // confirm relation-add with requester
+*DEL    /users/relation/:userId                 // delete relation with 
   
  */
 
@@ -22,6 +23,7 @@ module.exports = function (app) {
 
     // middleware
     require('../middleware/api_versioning')(app);
+    require('../middleware/api_token')(app);
     require('../middleware/api_params')(app);
 
 
