@@ -31,7 +31,6 @@ module.exports = (sequelize, DataTypes) => {
         });
 
     User.associate = function (models) {
-        User.hasMany(models.Token, { foreignKey: 'userId' });
         User.hasMany(models.UserEducationHistory, { foreignKey: 'userId' });
         User.hasMany(models.UserWorkHistory, { foreignKey: 'userId' });
         User.hasMany(models.UserEvent, { foreignKey: 'userId' });
