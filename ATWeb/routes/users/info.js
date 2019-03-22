@@ -3,10 +3,8 @@ const Messages = require('../../config/messages');
 
 module.exports = function (req, res, next) {
     const caller = req.caller;
-    
-
     const user = req.user;
-    if (user) {
+    if (user.id === caller.id) {
         user.getUserEvents().then(events => {
             user.events = events;
             user.getUserEducationHistories().then(educationHistories => {
@@ -21,9 +19,10 @@ module.exports = function (req, res, next) {
             });
         });
     } else {
+        // send without detailed user info (history, events, etc)
         res.json({
-            success: false,
-            message: Messages.Warning.NotExistUser
+            success: true,
+            user: user
         });
     }
 };

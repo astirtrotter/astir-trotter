@@ -89,8 +89,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="routes\index.js" />
-    <Compile Include="routes\users\get-family.js" />
-    <Compile Include="routes\users\get-info.js">
+    <Compile Include="routes\users\family.js" />
+    <Compile Include="routes\users\info.js">
       <SubType>Code</SubType>
     </Compile>
     <Content Include=".env" />
