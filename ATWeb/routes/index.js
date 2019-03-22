@@ -7,6 +7,8 @@ GET     /config/seed                            // get constants including gende
 POST    /auth/login
 POST    /auth/signup
 
+// following APIs required token in Header (authorization)
+
 GET     /users/:userId
 GET     /users/:userId/family
 *GET    /users/relation/:userId/:anotherUserId  // get relation between 2 users
