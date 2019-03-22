@@ -24,21 +24,21 @@ namespace ATDesktopWin.Controllers
 
         internal void getSeed(Action callback)
         {
-            ClientManager.Instance.GetSeed(seedResponse => {   
-                if (seedResponse == null)
+            ClientManager.Instance.GetSeed((data, errMsg) => {   
+                if (errMsg != null || !data.success)
                 {
-                    MessageBoxHelper.ShowError(Constants.Messages.Error.NoResponse);
+                    MessageBoxHelper.ShowError(Constants.Messages.Error.ActionFailed + errMsg);
                     Application.Exit();
                 }
                 else
                 {
                     Constants.hasSeed = true;
-                    Constants.genders = seedResponse.genders;
-                    Constants.parties = seedResponse.parties;
-                    Constants.nationalities = seedResponse.nationalities;
-                    Constants.classOrigins = seedResponse.classOrigins;
-                    Constants.socialOrigins = seedResponse.socialOrigins;
-                    Constants.nationalOrigins = seedResponse.nationalOrigins;
+                    Constants.genders = data.genders;
+                    Constants.parties = data.parties;
+                    Constants.nationalities = data.nationalities;
+                    Constants.classOrigins = data.classOrigins;
+                    Constants.socialOrigins = data.socialOrigins;
+                    Constants.nationalOrigins = data.nationalOrigins;
                     callback();
                 }
             });

@@ -28,23 +28,24 @@ namespace ATDesktopWin.Controllers
             string nickName, string gender, string birthday, string address, 
             string birthPlace, string party, string nationality, string nationalOrigin, 
             string classOrigin, string socialOrigin, string phoneNumber, string email,
-            string details, string diedDay)
+            string details, string diedDay, byte[] picture)
         {
             ClientManager.Instance.Signup(userId, password, firstName, lastName, nickName, gender,
                     birthday, address, birthPlace, party, nationality, nationalOrigin,
-                    classOrigin, socialOrigin, phoneNumber, email, details, diedDay, signupResponse => {
-                if (signupResponse == null)
+                    classOrigin, socialOrigin, phoneNumber, email, details, diedDay, picture, 
+                    (data, errMsg) => {
+                if (errMsg != null)
                 {
-                    MessageBoxHelper.ShowError(Constants.Messages.Error.NoResponse);
+                    MessageBoxHelper.ShowError(Constants.Messages.Error.ActionFailed + errMsg);
                 }
-                else if (signupResponse.success)
+                else if (data.success)
                 {
                     MessageBoxHelper.ShowInfo(Constants.Messages.Info.SignupSuccess);
                     Back();
                 }
                 else
                 {
-                    MessageBoxHelper.ShowWarning(Constants.Messages.Warning.ActionFailed + signupResponse.message);
+                    MessageBoxHelper.ShowWarning(Constants.Messages.Warning.ActionFailed + data.message);
                 }
             });
         }

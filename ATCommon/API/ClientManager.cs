@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ATCommon.Global;
+using ATCommon.Responses;
 using RestSharp;
 
 namespace ATCommon.API
@@ -30,8 +32,22 @@ namespace ATCommon.API
         private ClientManager()
         {
             client = new RestClient(BASE_URL + API_URL);
-            client.AddDefaultHeader("Content-Type", "application/json");
-            client.UserAgent = "Astir Trotter (Win)";
+            //client.AddDefaultHeader("Accept", "*/*");
+            //client.AddDefaultHeader("Content-Type", "multipart/form-data");
+            //client.AddDefaultHeader("Connection", "keep-alive");
+            //client.AddDefaultHeader("Cache-Control", "no-cache");
+            client.UserAgent = Constants.USER_AGENT + ": " + Environment.OSVersion.ToString();
+        }
+
+        internal string GetErrorMessage<T>(IRestResponse<T> res) where T: _Response
+        {
+            if (res.Data != null)
+            {
+                return null;
+            } else
+            {
+                return res.ErrorMessage;
+            }
         }
     }
 }

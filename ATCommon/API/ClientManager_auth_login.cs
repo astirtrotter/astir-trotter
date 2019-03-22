@@ -6,7 +6,7 @@ namespace ATCommon.API
 {
     public partial class ClientManager
     {
-        public void Login(string userId, string password, Action<LoginResponse> callback)
+        public void Login(string userId, string password, Action<LoginResponse, string> callback)
         {
             IRestRequest request = new RestRequest("auth/login", Method.POST)
                 .AddJsonBody(new
@@ -15,7 +15,7 @@ namespace ATCommon.API
                     password = password
                 });
             client.ExecuteAsync<LoginResponse>(request, res => {
-                callback.Invoke(res.Data);
+                callback.Invoke(res.Data, GetErrorMessage(res));
             });
         }
     }

@@ -24,21 +24,21 @@ namespace ATDesktopWin.Controllers
 
         internal void Login(string userId, string pwd)
         {
-            ClientManager.Instance.Login(userId, pwd, loginResponse => {   
-                if (loginResponse == null)
+            ClientManager.Instance.Login(userId, pwd, (data, errMsg) => {
+                if (data == null)
                 {
-                    MessageBoxHelper.ShowError(Constants.Messages.Error.NoResponse);
+                    MessageBoxHelper.ShowError(Constants.Messages.Error.ActionFailed + errMsg);
                 }
-                else if (loginResponse.success)
+                else if (data.success)
                 {
-                    LoginInfo.token = loginResponse.token;
-                    LoginInfo.user = loginResponse.user;
+                    LoginInfo.token = data.token;
+                    LoginInfo.user = data.user;
 
                     AppManager.Load<HomeController>();
                 }
                 else
                 {
-                    MessageBoxHelper.ShowWarning(Constants.Messages.Warning.ActionFailed + loginResponse.message);
+                    MessageBoxHelper.ShowWarning(Constants.Messages.Warning.ActionFailed + data.message);
                 }
             });
         }
