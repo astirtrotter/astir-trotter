@@ -9,7 +9,7 @@ module.exports = function (req, res, next) {
     models.User.scope({ method: ['byId', userId] }).findOne().then(user => {
         if (user) {
             // duplicated userId
-            res.send({
+            res.json({
                 success: false,
                 message: Messages.Warning.DuplicatedUserId
             });
@@ -17,7 +17,7 @@ module.exports = function (req, res, next) {
             // check class origin
             models.ClassOrigin.scope({ method: ['byValue', req.body.classOrigin] }).findOne().then(classOrigin => {
                 if (req.body.classOrigin && !classOrigin) {
-                    res.send({
+                    res.json({
                         success: false,
                         message: Messages.Warning.InvalidInput + Messages.General.ClassOrigin
                     });
@@ -25,7 +25,7 @@ module.exports = function (req, res, next) {
                     // check social origin
                     models.SocialOrigin.scope({ method: ['byValue', req.body.socialOrigin] }).findOne().then(socialOrigin => {
                         if (req.body.socialOrigin && !socialOrigin) {
-                            res.send({
+                            res.json({
                                 success: false,
                                 message: Messages.Warning.InvalidInput + Messages.General.SocialOrigin
                             });
@@ -33,7 +33,7 @@ module.exports = function (req, res, next) {
                             // check national origin
                             models.NationalOrigin.scope({ method: ['byValue', req.body.nationalOrigin] }).findOne().then(nationalOrigin => {
                                 if (req.body.nationalOrigin && !nationalOrigin) {
-                                    res.send({
+                                    res.json({
                                         success: false,
                                         message: Messages.Warning.InvalidInput + Messages.General.NationalOrigin
                                     });
@@ -41,7 +41,7 @@ module.exports = function (req, res, next) {
                                     // check nationality
                                     models.Nationality.scope({ method: ['byValue', req.body.nationality] }).findOne().then(nationality => {
                                         if (req.body.nationality && !nationality) {
-                                            res.send({
+                                            res.json({
                                                 success: false,
                                                 message: Messages.Warning.InvalidInput + Messages.General.Nationality
                                             });
@@ -49,7 +49,7 @@ module.exports = function (req, res, next) {
                                             // check party
                                             models.Party.scope({ method: ['byValue', req.body.party] }).findOne().then(party => {
                                                 if (req.body.party && !party) {
-                                                    res.send({
+                                                    res.json({
                                                         success: false,
                                                         message: Messages.Warning.InvalidInput + Messages.General.Party
                                                     });
@@ -105,7 +105,7 @@ module.exports = function (req, res, next) {
                                                                             user.familyId = family.id;
 
                                                                             // respond
-                                                                            res.send({ success: true });
+                                                                            res.json({ success: true });
                                                                         } else {
                                                                             // cannot save family
                                                                             var err = new Error(Messages.Error.SaveData);
@@ -129,7 +129,7 @@ module.exports = function (req, res, next) {
                                                     }).catch(err => {
                                                         console.log(err.message);
                                                         // invalid input
-                                                        res.send({
+                                                        res.json({
                                                             success: false,
                                                             message: Messages.Warning.InvalidInput
                                                         });

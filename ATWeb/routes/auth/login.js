@@ -21,7 +21,7 @@ module.exports = function (req, res, next) {
                                     user.addToken(token);
 
                                     // respond
-                                    res.send({
+                                    res.json({
                                         success: true,
                                         token: newToken,
                                         user: user
@@ -41,7 +41,7 @@ module.exports = function (req, res, next) {
                         }
                     } else {
                         // incorrect password
-                        res.send({
+                        res.json({
                             success: false,
                             message: Messages.Warning.WrongPassword
                         });
@@ -55,7 +55,7 @@ module.exports = function (req, res, next) {
             });
         } else {
             // no user exists with that userId
-            res.send({
+            res.json({
                 success: false,
                 message: Messages.Warning.NotExistUser
             });

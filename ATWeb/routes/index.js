@@ -1,9 +1,20 @@
 ﻿'use strict';
 
-const apiEndpoints = [
-    { url: '/auth/login', method: 'post'},
-    { url: '/auth/signup', method: 'post'}
-];
+/*
+ GET /config/seed               // get constants including gender, party, class/social/national origins, nationalities
+
+POST /auth/login
+POST /auth/signup
+
+GET /users/:userId
+GET /users/:userId/family
+*GET /users/relation/:userId/:anotherUserId // get relation between 2 users
+*POST /users/relation/:userId               // request relation-add with someone
+*PUT /users/relation/:userId                // confirm relation-add with requester
+*DEL /users/relation/:userId                // delete relation with 
+  
+ */
+
 
 module.exports = function (app) {
 
@@ -23,8 +34,6 @@ module.exports = function (app) {
 
     // users
     app.get(process.env.API_URL + '/users/:userId', function (req, res, next) { require('./users/get-info')(req, res, next); });
-    app.post(process.env.API_URL + '/users/:userId/relation/:anotherUserId', function (req, res, next) { require('./users/relation-request')(req, res, next); });
-    app.post(process.env.API_URL + '/users/:userId/relation/:anotherUserId', function (req, res, next) { require('./users/relation-confirm')(req, res, next); });
     app.get(process.env.API_URL + '/users/:userId/family', function (req, res, next) { require('./users/get-family')(req, res, next); });
 
 };

@@ -9,7 +9,7 @@ module.exports = function (app) {
         } else {
             // invalid api url (moved permanently)
             res.status(301);
-            return res.send({
+            return res.json({
                 success: false,
                 message: Messages.Error.Version
             });
