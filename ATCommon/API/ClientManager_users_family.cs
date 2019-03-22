@@ -8,8 +8,8 @@ namespace ATCommon.API
     {
         public void GetUserFamily(string userId, Action<FamilyResponse> callback)
         {
-            RestRequest request = new RestRequest("users/:userId/family", Method.GET);
-            request.AddUrlSegment("userId", userId);
+            IRestRequest request = new RestRequest("users/:userId/family", Method.GET)
+                .AddUrlSegment("userId", userId);
             client.ExecuteAsync<FamilyResponse>(request, res => {
                 callback.Invoke(res.Data);
             });

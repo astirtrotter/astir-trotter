@@ -13,27 +13,28 @@ namespace ATCommon.API
             string classOrigin, string socialOrigin, string phoneNumber, string email,
             string details, string diedDay, Action<LoginResponse> callback)
         {
-            RestRequest request = new RestRequest("auth/signup", Method.POST);
-            request.AddJsonBody(new {
-                userId = userId,
-                password = password,
-                firstName = firstName,
-                lastName = lastName,
-                nickName = nickName,
-                gender = gender,
-                birthday = birthday,
-                address = address,
-                birthPlace = birthPlace,
-                party = party,
-                nationality = nationality,
-                nationalOrigin = nationalOrigin,
-                classOrigin = classOrigin,
-                socialOrigin = socialOrigin,
-                phoneNumber = phoneNumber,
-                email = email,
-                details = details,
-                diedDay = diedDay
-            });
+            IRestRequest request = new RestRequest("auth/signup", Method.POST)
+                .AddJsonBody(new
+                {
+                    userId = userId,
+                    password = password,
+                    firstName = firstName,
+                    lastName = lastName,
+                    nickName = nickName,
+                    gender = gender,
+                    birthday = birthday,
+                    address = address,
+                    birthPlace = birthPlace,
+                    party = party,
+                    nationality = nationality,
+                    nationalOrigin = nationalOrigin,
+                    classOrigin = classOrigin,
+                    socialOrigin = socialOrigin,
+                    phoneNumber = phoneNumber,
+                    email = email,
+                    details = details,
+                    diedDay = diedDay
+                });
             client.ExecuteAsync<LoginResponse>(request, res => {
                 callback.Invoke(res.Data);
             });

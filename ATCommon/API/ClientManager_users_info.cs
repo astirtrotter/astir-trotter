@@ -8,8 +8,8 @@ namespace ATCommon.API
     {
         public void GetUserInfo(string userId, Action<UserResponse> callback)
         {
-            RestRequest request = new RestRequest("users/:userId", Method.GET);
-            request.AddUrlSegment("userId", userId);
+            IRestRequest request = new RestRequest("users/:userId", Method.GET)
+                .AddUrlSegment("userId", userId);
             client.ExecuteAsync<UserResponse>(request, res => {
                 callback.Invoke(res.Data);
             });
