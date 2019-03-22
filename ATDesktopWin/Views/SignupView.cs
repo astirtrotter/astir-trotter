@@ -142,6 +142,7 @@ namespace ATDesktopWin.Views
             if (pbPicture.Image != null)
             {
                 pbPicture.Image.Dispose();
+                pbPicture.Image = null;
             }
         }
 
