@@ -76,7 +76,7 @@ module.exports = function (req, res, next) {
                 family.getUsers().then(users => {
                     // respond family data with structured format
                     var ret = getNode(users, req.user.id);
-                    res.send({
+                    res.json({
                         success: true,
                         family: ret
                     });
@@ -89,7 +89,7 @@ module.exports = function (req, res, next) {
             }
         });
     } else {
-        res.send({
+        res.json({
             success: false,
             message: Messages.Warning.NotExistUser
         });

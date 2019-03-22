@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 module.exports = function (req, res, next) {
-    res.send({
+    res.json({
         success: true,
         genders: require('../../config/seed/_gender'),
         parties: require('../../config/seed/_party'),

@@ -10,7 +10,7 @@ module.exports = function (req, res, next) {
                 user.educationHistories = educationHistories;
                 user.getUserWorkHistories().then(workHistories => {
                     user.workHistories = workHistories;
-                    res.send({
+                    res.json({
                         success: true,
                         user: user
                     });
@@ -18,7 +18,7 @@ module.exports = function (req, res, next) {
             });
         });
     } else {
-        res.send({
+        res.json({
             success: false,
             message: Messages.Warning.NotExistUser
         });
