@@ -5,6 +5,10 @@ namespace ATCommon.Global
 {
     public static class Constants
     {
+        // api
+        public const string USER_AGENT = "Astir Trotter";
+        public const string TOKEN_PREFIX = "Bearer ";
+
         // seed
         public static bool hasSeed = false;
         public static List<_Gender> genders;
@@ -33,8 +37,7 @@ namespace ATCommon.Global
             public static class Error
             {
                 public const string Title = "Error";
-                public const string NoConnection = "Cannot connect to server. Check your network configuration and try again.";
-                public const string NoResponse = "Cannot receive any responses from the server.";
+                public const string ActionFailed = "Action failed. \n\nReason:\n";
             }
         }
     }
