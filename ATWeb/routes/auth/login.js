@@ -13,32 +13,25 @@ module.exports = function (req, res, next) {
                 if (userSetting) {
                     if (userSetting.pwdHash == pwdHash) {
                         // generate token
-                        const newToken = CredentialsHeper.genToken();
-                        if (newToken) {
-                            // insert login info into Tokens table
-                            models.Token.create({ token: newToken, userId: userId }).then(token => {
-                                if (token) {
-                                    user.addToken(token);
+                        const newToken = CredentialsHeper.genToken(userId);
+                        // insert login info into Tokens table
+                        models.Token.create({ token: newToken, userId: userId }).then(token => {
+                            if (token) {
+                                token.setUser(user);
 
-                                    // respond
-                                    res.json({
-                                        success: true,
-                                        token: newToken,
-                                        user: user
-                                    });
-                                } else {
-                                    // cannot save token
-                                    var err = new Error(Messages.Error.SaveData);
-                                    err.status = 500;
-                                    next(err);
-                                }
-                            });
-                        } else {
-                            // cannot generate token (internal error)
-                            var err = new Error(Messages.Error.GenToken);
-                            err.status = 500;
-                            next(err);
-                        }
+                                // respond
+                                res.json({
+                                    success: true,
+                                    token: newToken,
+                                    user: user
+                                });
+                            } else {
+                                // cannot save token
+                                var err = new Error(Messages.Error.SaveData);
+                                err.status = 500;
+                                next(err);
+                            }
+                        });
                     } else {
                         // incorrect password
                         res.json({

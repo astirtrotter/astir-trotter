@@ -51,6 +51,7 @@
     <Compile Include="helpers\credentialsHelper.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="middleware\api_token.js" />
     <Compile Include="middleware\api_params.js">
       <SubType>Code</SubType>
     </Compile>
@@ -90,10 +91,6 @@
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users\get-family.js" />
     <Compile Include="routes\users\get-info.js">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="routes\users\relation-confirm.js" />
-    <Compile Include="routes\users\relation-request.js">
       <SubType>Code</SubType>
     </Compile>
     <Content Include=".env" />
