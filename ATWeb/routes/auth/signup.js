@@ -122,9 +122,11 @@ module.exports = function (req, res, next) {
                                                             });
                                                         } else {
                                                             // cannot save user
-                                                            var err = new Error(Messages.Error.SaveData);
-                                                            err.status = 500;
-                                                            next(err);
+                                                            // invalid input
+                                                            res.json({
+                                                                success: false,
+                                                                message: Messages.Warning.InvalidInput
+                                                            });
                                                         }
                                                     }).catch(err => {
                                                         console.log(err.message);
