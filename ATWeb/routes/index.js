@@ -1,5 +1,7 @@
 ﻿'use strict';
 
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' })
 /*
 
 GET     /config/seed                            // get constants including gender, party, class/social/national origins, nationalities
@@ -34,7 +36,7 @@ module.exports = function (app) {
 
     // auth
     app.post(process.env.API_URL + '/auth/login', function (req, res, next) { require('./auth/login')(req, res, next); });
-    app.post(process.env.API_URL + '/auth/signup', function (req, res, next) { require('./auth/signup')(req, res, next); });
+    app.post(process.env.API_URL + '/auth/signup', upload.single('picture'), function (req, res, next) { require('./auth/signup')(req, res, next); });
 
     // users
     app.get(process.env.API_URL + '/users/:userId', function (req, res, next) { require('./users/info')(req, res, next); });

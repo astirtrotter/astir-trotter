@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,7 +82,7 @@ namespace ATDesktopWin.Views
                 email = txtEmail.Text,
                 details = txtDetails.Text,
                 diedDay = dtpDiedDay.Value.ToShortDateString();
-
+            
             List<string> invalidFields = new List<string>();
             if (userId.Length == 0) invalidFields.Add("User Id");
             if (password.Length == 0) invalidFields.Add("Password");
@@ -108,10 +109,18 @@ namespace ATDesktopWin.Views
                 if (details.Length == 0) details = null;
                 if (!chbDied.Checked) diedDay = null;
 
+                byte[] picture;
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    pbPicture.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    picture = ms.ToArray();
+                }
+
                 ((SignupController)AppManager.Instance._currentController)
                     .Signup(userId, password, firstName, lastName, nickName, gender, 
                     birthday, address, birthPlace, party, nationality, nationalOrigin, 
-                    classOrigin, socialOrigin, phoneNumber, email, details, diedDay);
+                    classOrigin, socialOrigin, phoneNumber, email, details, diedDay, 
+                    picture);
             }
         }
 
