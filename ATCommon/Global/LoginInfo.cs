@@ -9,7 +9,13 @@ namespace ATCommon.Global
 {
     public static class LoginInfo
     {
-        public static string token;
+        private static string _token;
+        public static string token
+        {
+            get => Constants.TOKEN_PREFIX + _token;
+            set => _token = value;
+        }
+
         public static User user;
     }
 }
