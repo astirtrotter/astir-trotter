@@ -37,7 +37,7 @@ module.exports = function (app) {
     app.post(process.env.API_URL + '/auth/signup', function (req, res, next) { require('./auth/signup')(req, res, next); });
 
     // users
-    app.get(process.env.API_URL + '/users/:userId', function (req, res, next) { require('./users/get-info')(req, res, next); });
-    app.get(process.env.API_URL + '/users/:userId/family', function (req, res, next) { require('./users/get-family')(req, res, next); });
+    app.get(process.env.API_URL + '/users/:userId', function (req, res, next) { require('./users/info')(req, res, next); });
+    app.get(process.env.API_URL + '/users/:userId/family', function (req, res, next) { require('./users/family')(req, res, next); });
 
 };
