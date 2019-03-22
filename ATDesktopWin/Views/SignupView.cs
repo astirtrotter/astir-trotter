@@ -109,11 +109,14 @@ namespace ATDesktopWin.Views
                 if (details.Length == 0) details = null;
                 if (!chbDied.Checked) diedDay = null;
 
-                byte[] picture;
-                using (MemoryStream ms = new MemoryStream())
+                byte[] picture = null;
+                if (pbPicture.Image != null)
                 {
-                    pbPicture.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                    picture = ms.ToArray();
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        pbPicture.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                        picture = ms.ToArray();
+                    }
                 }
 
                 ((SignupController)AppManager.Instance._currentController)
@@ -140,7 +143,6 @@ namespace ATDesktopWin.Views
             {
                 pbPicture.Image.Dispose();
             }
-            pbPicture.Image = Properties.Resources.user_profile_picture;
         }
 
         private void mnuPictureImage_Click(object sender, EventArgs e)

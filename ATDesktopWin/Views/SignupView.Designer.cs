@@ -83,11 +83,11 @@
             // pbPicture
             // 
             this.pbPicture.BackColor = System.Drawing.Color.Transparent;
-            this.pbPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbPicture.BackgroundImage = global::ATDesktopWin.Properties.Resources.user_profile_picture;
+            this.pbPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbPicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbPicture.ContextMenuStrip = this.cmsPicture;
             this.pbPicture.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pbPicture.Image = global::ATDesktopWin.Properties.Resources.user_profile_picture;
             this.pbPicture.InitialImage = null;
             this.pbPicture.Location = new System.Drawing.Point(125, 30);
             this.pbPicture.Name = "pbPicture";
