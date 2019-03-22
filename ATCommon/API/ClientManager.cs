@@ -32,10 +32,8 @@ namespace ATCommon.API
         private ClientManager()
         {
             client = new RestClient(BASE_URL + API_URL);
-            //client.AddDefaultHeader("Accept", "*/*");
-            //client.AddDefaultHeader("Content-Type", "multipart/form-data");
-            //client.AddDefaultHeader("Connection", "keep-alive");
-            //client.AddDefaultHeader("Cache-Control", "no-cache");
+            client.AddDefaultHeader("Accept", "application/json");
+            client.AddDefaultHeader("Content-Type", "application/json");
             client.UserAgent = Constants.USER_AGENT + ": " + Environment.OSVersion.ToString();
         }
 
@@ -46,7 +44,7 @@ namespace ATCommon.API
                 return null;
             } else
             {
-                return res.ErrorMessage;
+                return "(" + res.StatusDescription + ")\n" + res.ErrorMessage;
             }
         }
     }
