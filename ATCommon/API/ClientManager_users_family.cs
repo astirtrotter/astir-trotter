@@ -1,4 +1,5 @@
-﻿using ATCommon.Responses;
+﻿using ATCommon.Global;
+using ATCommon.Responses;
 using RestSharp;
 using System;
 
@@ -9,7 +10,8 @@ namespace ATCommon.API
         public void GetUserFamily(string userId, Action<FamilyResponse, string> callback)
         {
             IRestRequest request = new RestRequest("users/:userId/family", Method.GET)
-                .AddUrlSegment("userId", userId);
+                .AddUrlSegment("userId", userId)
+                .AddHeader("Authorization", LoginInfo.token);
             client.ExecuteAsync<FamilyResponse>(request, res => {
                 callback.Invoke(res.Data, GetErrorMessage(res));
             });
