@@ -37,6 +37,9 @@
     <Compile Include="config\messages.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="config\multer.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="config\seed\index.js">
       <SubType>Code</SubType>
     </Compile>
