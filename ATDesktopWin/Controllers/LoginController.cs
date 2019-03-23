@@ -24,7 +24,14 @@ namespace ATDesktopWin.Controllers
 
         internal void Login(string userId, string pwd)
         {
+            View.Form.Enabled = false;
+
             ClientManager.Instance.Login(userId, pwd, (data, errMsg) => {
+                View.Form.BeginInvoke((MethodInvoker)delegate
+                {
+                    View.Form.Enabled = true;
+                });
+
                 if (data == null)
                 {
                     MessageBoxHelper.ShowError(Constants.Messages.Error.ActionFailed + errMsg);

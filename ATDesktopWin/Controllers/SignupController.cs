@@ -30,10 +30,17 @@ namespace ATDesktopWin.Controllers
             string classOrigin, string socialOrigin, string phoneNumber, string email,
             string details, string diedDay, byte[] picture)
         {
+            View.Form.Enabled = false;
+
             ClientManager.Instance.Signup(userId, password, firstName, lastName, nickName, gender,
                     birthday, address, birthPlace, party, nationality, nationalOrigin,
                     classOrigin, socialOrigin, phoneNumber, email, details, diedDay, picture, 
                     (data, errMsg) => {
+                View.Form.BeginInvoke((MethodInvoker)delegate
+                {
+                    View.Form.Enabled = true;
+                });
+
                 if (errMsg != null)
                 {
                     MessageBoxHelper.ShowError(Constants.Messages.Error.ActionFailed + errMsg);
