@@ -12,7 +12,8 @@ module.exports = {
         NotExistUser: 'No user exists with that userId.',
         WrongPassword: 'The password is incorrect.',
         DuplicatedUserId: 'Duplicated userId. Please input another one.',
-        InvalidInput: 'Invalid input.'
+        InvalidInput: 'Invalid input.',
+        ImageUploadingFailed: 'Failed to upload image.'
     },
     Error: {
         NotFound: 'Not Found',

@@ -34,6 +34,9 @@
     <Compile Include="bin\www.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="config\cloudinary.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="config\messages.js">
       <SubType>Code</SubType>
     </Compile>

@@ -36,7 +36,7 @@ module.exports = function (app) {
 
     // auth
     app.post(process.env.API_URL + '/auth/login', function (req, res, next) { require('./auth/login')(req, res, next); });
-    app.post(process.env.API_URL + '/auth/signup', MulterConfig.MemoryUpload.single('picture'), function (req, res, next) { require('./auth/signup')(req, res, next); });
+    app.post(process.env.API_URL + '/auth/signup', MulterConfig.DiskUpload.single('picture'), function (req, res, next) { require('./auth/signup')(req, res, next); });
 
     // users
     app.get(process.env.API_URL + '/users/:userId/info', function (req, res, next) { require('./users/info')(req, res, next); });
