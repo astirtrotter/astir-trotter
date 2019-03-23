@@ -9,7 +9,7 @@ namespace ATCommon.API
     {
         public void GetUserInfo(string userId, Action<UserResponse, string> callback)
         {
-            IRestRequest request = new RestRequest("users/:userId", Method.GET)
+            IRestRequest request = new RestRequest("users/:userId/info", Method.GET)
                 .AddUrlSegment("userId", userId)
                 .AddHeader("Authorization", LoginInfo.token);
             client.ExecuteAsync<UserResponse>(request, res => {
