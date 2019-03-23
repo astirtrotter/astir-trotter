@@ -137,7 +137,7 @@ namespace ATDesktopWin.Views
             dtpDiedDay.Enabled = chbDied.Checked;
         }
 
-        private void mnuPictureReset_Click(object sender, EventArgs e)
+        private void mnuItemPictureReset_Click(object sender, EventArgs e)
         {
             if (pbPicture.Image != null)
             {
@@ -146,7 +146,7 @@ namespace ATDesktopWin.Views
             }
         }
 
-        private void mnuPictureImage_Click(object sender, EventArgs e)
+        private void mnuItemPictureImage_Click(object sender, EventArgs e)
         {
             if (ofdPicture.ShowDialog() == DialogResult.OK)
             {
@@ -158,7 +158,7 @@ namespace ATDesktopWin.Views
             }
         }
 
-        private void mnuPictureCamera_Click(object sender, EventArgs e)
+        private void mnuItemPictureCamera_Click(object sender, EventArgs e)
         {
             CameraDialog cameraDialog = new CameraDialog();
             if (cameraDialog.ShowDialog() == DialogResult.OK)

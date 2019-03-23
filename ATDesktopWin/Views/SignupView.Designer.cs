@@ -32,9 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignupView));
             this.pbPicture = new System.Windows.Forms.PictureBox();
             this.cmsPicture = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.mnuPictureCamera = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPictureImage = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPictureReset = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuItemPictureCamera = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuItemPictureImage = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuItemPictureReset = new System.Windows.Forms.ToolStripMenuItem();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -99,32 +99,32 @@
             // cmsPicture
             // 
             this.cmsPicture.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuPictureCamera,
-            this.mnuPictureImage,
-            this.mnuPictureReset});
+            this.mnuItemPictureCamera,
+            this.mnuItemPictureImage,
+            this.mnuItemPictureReset});
             this.cmsPicture.Name = "cmsPicture";
             this.cmsPicture.Size = new System.Drawing.Size(158, 70);
             // 
             // mnuPictureCamera
             // 
-            this.mnuPictureCamera.Name = "mnuPictureCamera";
-            this.mnuPictureCamera.Size = new System.Drawing.Size(157, 22);
-            this.mnuPictureCamera.Text = "From camera";
-            this.mnuPictureCamera.Click += new System.EventHandler(this.mnuPictureCamera_Click);
+            this.mnuItemPictureCamera.Name = "mnuPictureCamera";
+            this.mnuItemPictureCamera.Size = new System.Drawing.Size(157, 22);
+            this.mnuItemPictureCamera.Text = "From camera";
+            this.mnuItemPictureCamera.Click += new System.EventHandler(this.mnuItemPictureCamera_Click);
             // 
             // mnuPictureImage
             // 
-            this.mnuPictureImage.Name = "mnuPictureImage";
-            this.mnuPictureImage.Size = new System.Drawing.Size(157, 22);
-            this.mnuPictureImage.Text = "From image file";
-            this.mnuPictureImage.Click += new System.EventHandler(this.mnuPictureImage_Click);
+            this.mnuItemPictureImage.Name = "mnuPictureImage";
+            this.mnuItemPictureImage.Size = new System.Drawing.Size(157, 22);
+            this.mnuItemPictureImage.Text = "From image file";
+            this.mnuItemPictureImage.Click += new System.EventHandler(this.mnuItemPictureImage_Click);
             // 
             // mnuPictureReset
             // 
-            this.mnuPictureReset.Name = "mnuPictureReset";
-            this.mnuPictureReset.Size = new System.Drawing.Size(157, 22);
-            this.mnuPictureReset.Text = "Reset";
-            this.mnuPictureReset.Click += new System.EventHandler(this.mnuPictureReset_Click);
+            this.mnuItemPictureReset.Name = "mnuPictureReset";
+            this.mnuItemPictureReset.Size = new System.Drawing.Size(157, 22);
+            this.mnuItemPictureReset.Text = "Reset";
+            this.mnuItemPictureReset.Click += new System.EventHandler(this.mnuItemPictureReset_Click);
             // 
             // txtFirstName
             // 
@@ -582,9 +582,9 @@
         private System.Windows.Forms.CheckBox chbDied;
         private System.Windows.Forms.DateTimePicker dtpDiedDay;
         private System.Windows.Forms.ContextMenuStrip cmsPicture;
-        private System.Windows.Forms.ToolStripMenuItem mnuPictureCamera;
-        private System.Windows.Forms.ToolStripMenuItem mnuPictureImage;
-        private System.Windows.Forms.ToolStripMenuItem mnuPictureReset;
+        private System.Windows.Forms.ToolStripMenuItem mnuItemPictureCamera;
+        private System.Windows.Forms.ToolStripMenuItem mnuItemPictureImage;
+        private System.Windows.Forms.ToolStripMenuItem mnuItemPictureReset;
         private System.Windows.Forms.OpenFileDialog ofdPicture;
     }
 }
