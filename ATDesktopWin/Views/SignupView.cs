@@ -154,7 +154,7 @@ namespace ATDesktopWin.Views
                 {
                     pbPicture.Image.Dispose();
                 }
-                pbPicture.Image = new Bitmap(ofdPicture.FileName);
+                pbPicture.Image = ImageHelper.CropBitmap(new Bitmap(ofdPicture.FileName), pbPicture.Width, pbPicture.Height); 
             }
         }
 
