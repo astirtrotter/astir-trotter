@@ -4,6 +4,7 @@ using ATCommon.API;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using ATDesktopWin.Controllers.PageControllers;
+using ATCommon.Global;
 
 namespace ATDesktopWin.Controllers
 {
@@ -46,12 +47,17 @@ namespace ATDesktopWin.Controllers
 
         private void RefreshHeaderBar()
         {
+            // TODO: fetch /users/:userId/Info
 
+
+            RepresentHeaderBar();
         }
 
         internal void RepresentHeaderBar()
         {
-
+            ((HomeView)View.Form).SetScreenName(CurrentPageController.Title);
+            ((HomeView)View.Form).SetUserPicture(LoginInfo.user.picture);
+            ((HomeView)View.Form).SetUserName(LoginInfo.user.FullName);
         }
 
         internal void Refresh()
