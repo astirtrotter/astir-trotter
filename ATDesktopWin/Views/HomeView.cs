@@ -27,5 +27,32 @@ namespace ATDesktopWin.Views
             AppManager.Instance.GetCurController<HomeController>().RepresentHeaderBar();
             AppManager.Instance.GetCurController<HomeController>().SwitchToPage(HomeController.Page.DASHBOARD);
         }
+
+        internal void SetScreenName(string title)
+        {
+            lblHeaderTitle.Text = title;
+        }
+
+        internal void SetUserPicture(string userPicture)
+        {
+            try
+            {
+                pbHeaderPicture.LoadAsync(userPicture);
+            }
+            catch (InvalidOperationException e)
+            {
+
+            }
+        }
+
+        internal void SetUserName(string userName)
+        {
+            lblHeaderName.Text = userName;
+        }
+
+        internal void SetUserName(object fullName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
