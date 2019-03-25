@@ -32,5 +32,14 @@ namespace ATCommon.Models
         public List<UserEducationHistory> educationHistories { get; set; }
         public List<UserWorkHistory> workHistories { get; set; }
         public List<UserEvent> workEvents { get; set; }
+
+        /// <summary>
+        /// Internal methods
+        /// </summary>
+
+        public string FullName
+        {
+            get => firstName + " " + lastName;
+        }
     }
 }
