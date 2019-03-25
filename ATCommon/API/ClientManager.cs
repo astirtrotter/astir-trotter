@@ -11,9 +11,6 @@ namespace ATCommon.API
 {
     public partial class ClientManager
     {
-        private const string BASE_URL = "http://localhost:8888";
-        private const string API_URL = "/api/v1";
-        
         private static ClientManager _instance;
         public static ClientManager Instance
         {
@@ -31,7 +28,7 @@ namespace ATCommon.API
 
         private ClientManager()
         {
-            client = new RestClient(BASE_URL + API_URL);
+            client = new RestClient(Constants.BASE_URL + Constants.API_URL);
             client.AddDefaultHeader("Accept", "application/json");
             client.AddDefaultHeader("Content-Type", "application/json");
             client.UserAgent = Constants.USER_AGENT + ": " + Environment.OSVersion.ToString();

@@ -6,6 +6,8 @@ namespace ATCommon.Global
     public static class Constants
     {
         // api
+        public const string BASE_URL = "http://localhost:8888";
+        public const string API_URL = "/api/v1";
         public const string USER_AGENT = "Astir Trotter";
         public const string TOKEN_PREFIX = "Bearer ";
 
