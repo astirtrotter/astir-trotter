@@ -50,25 +50,25 @@
             this.feedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scMain = new System.Windows.Forms.SplitContainer();
+            this.scHeader = new System.Windows.Forms.SplitContainer();
+            this.lblHeaderTitle = new System.Windows.Forms.Label();
+            this.lblHeaderName = new System.Windows.Forms.Label();
+            this.pbHeaderPicture = new System.Windows.Forms.PictureBox();
             this.tcPages = new System.Windows.Forms.TabControl();
             this.tpFamilyTree = new System.Windows.Forms.TabPage();
             this.tpFamilyTable = new System.Windows.Forms.TabPage();
-            this.scHeader = new System.Windows.Forms.SplitContainer();
-            this.lblHeaderTitle = new System.Windows.Forms.Label();
-            this.pbHeaderPicture = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             tpDashboard = new System.Windows.Forms.TabPage();
             this.menuMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
             this.scMain.Panel2.SuspendLayout();
             this.scMain.SuspendLayout();
-            this.tcPages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scHeader)).BeginInit();
             this.scHeader.Panel1.SuspendLayout();
             this.scHeader.Panel2.SuspendLayout();
             this.scHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHeaderPicture)).BeginInit();
+            this.tcPages.SuspendLayout();
             this.SuspendLayout();
             // 
             // tpDashboard
@@ -136,7 +136,7 @@
             // dashboardToolStripMenuItem
             // 
             this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.dashboardToolStripMenuItem.Text = "&Dashboard";
             // 
             // familyToolStripMenuItem
@@ -145,7 +145,7 @@
             this.tableToolStripMenuItem,
             this.treeToolStripMenuItem});
             this.familyToolStripMenuItem.Name = "familyToolStripMenuItem";
-            this.familyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.familyToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.familyToolStripMenuItem.Text = "&Family";
             // 
             // tableToolStripMenuItem
@@ -163,19 +163,19 @@
             // discoverToolStripMenuItem
             // 
             this.discoverToolStripMenuItem.Name = "discoverToolStripMenuItem";
-            this.discoverToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.discoverToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.discoverToolStripMenuItem.Text = "D&iscover";
             // 
             // messagesToolStripMenuItem
             // 
             this.messagesToolStripMenuItem.Name = "messagesToolStripMenuItem";
-            this.messagesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.messagesToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.messagesToolStripMenuItem.Text = "&Messages";
             // 
             // albumToolStripMenuItem
             // 
             this.albumToolStripMenuItem.Name = "albumToolStripMenuItem";
-            this.albumToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.albumToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.albumToolStripMenuItem.Text = "&Album";
             // 
             // settingsToolStripMenuItem
@@ -242,6 +242,61 @@
             this.scMain.SplitterWidth = 1;
             this.scMain.TabIndex = 1;
             // 
+            // scHeader
+            // 
+            this.scHeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.scHeader.IsSplitterFixed = true;
+            this.scHeader.Location = new System.Drawing.Point(0, 0);
+            this.scHeader.Name = "scHeader";
+            // 
+            // scHeader.Panel1
+            // 
+            this.scHeader.Panel1.Controls.Add(this.lblHeaderTitle);
+            // 
+            // scHeader.Panel2
+            // 
+            this.scHeader.Panel2.Controls.Add(this.lblHeaderName);
+            this.scHeader.Panel2.Controls.Add(this.pbHeaderPicture);
+            this.scHeader.Size = new System.Drawing.Size(1008, 60);
+            this.scHeader.SplitterDistance = 710;
+            this.scHeader.SplitterWidth = 1;
+            this.scHeader.TabIndex = 0;
+            // 
+            // lblHeaderTitle
+            // 
+            this.lblHeaderTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblHeaderTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblHeaderTitle.Name = "lblHeaderTitle";
+            this.lblHeaderTitle.Size = new System.Drawing.Size(710, 60);
+            this.lblHeaderTitle.TabIndex = 0;
+            this.lblHeaderTitle.Text = "Screen Name";
+            this.lblHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblHeaderName
+            // 
+            this.lblHeaderName.AutoSize = true;
+            this.lblHeaderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderName.Location = new System.Drawing.Point(91, 18);
+            this.lblHeaderName.Name = "lblHeaderName";
+            this.lblHeaderName.Size = new System.Drawing.Size(119, 25);
+            this.lblHeaderName.TabIndex = 1;
+            this.lblHeaderName.Text = "User Name";
+            // 
+            // pbHeaderPicture
+            // 
+            this.pbHeaderPicture.BackgroundImage = global::ATDesktopWin.Properties.Resources.user_profile_picture;
+            this.pbHeaderPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbHeaderPicture.ErrorImage = global::ATDesktopWin.Properties.Resources.user_profile_picture;
+            this.pbHeaderPicture.InitialImage = global::ATDesktopWin.Properties.Resources.user_profile_picture;
+            this.pbHeaderPicture.Location = new System.Drawing.Point(49, 12);
+            this.pbHeaderPicture.Name = "pbHeaderPicture";
+            this.pbHeaderPicture.Size = new System.Drawing.Size(36, 36);
+            this.pbHeaderPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbHeaderPicture.TabIndex = 0;
+            this.pbHeaderPicture.TabStop = false;
+            // 
             // tcPages
             // 
             this.tcPages.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
@@ -263,7 +318,7 @@
             this.tpFamilyTree.Location = new System.Drawing.Point(4, 29);
             this.tpFamilyTree.Name = "tpFamilyTree";
             this.tpFamilyTree.Padding = new System.Windows.Forms.Padding(3);
-            this.tpFamilyTree.Size = new System.Drawing.Size(1000, 608);
+            this.tpFamilyTree.Size = new System.Drawing.Size(1000, 611);
             this.tpFamilyTree.TabIndex = 1;
             this.tpFamilyTree.Text = "FamilyTree";
             this.tpFamilyTree.UseVisualStyleBackColor = true;
@@ -272,59 +327,10 @@
             // 
             this.tpFamilyTable.Location = new System.Drawing.Point(4, 29);
             this.tpFamilyTable.Name = "tpFamilyTable";
-            this.tpFamilyTable.Size = new System.Drawing.Size(1000, 608);
+            this.tpFamilyTable.Size = new System.Drawing.Size(1000, 611);
             this.tpFamilyTable.TabIndex = 2;
             this.tpFamilyTable.Text = "FamilyTable";
             this.tpFamilyTable.UseVisualStyleBackColor = true;
-            // 
-            // scHeader
-            // 
-            this.scHeader.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scHeader.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
-            this.scHeader.Location = new System.Drawing.Point(0, 0);
-            this.scHeader.Name = "scHeader";
-            // 
-            // scHeader.Panel1
-            // 
-            this.scHeader.Panel1.Controls.Add(this.lblHeaderTitle);
-            // 
-            // scHeader.Panel2
-            // 
-            this.scHeader.Panel2.Controls.Add(this.label1);
-            this.scHeader.Panel2.Controls.Add(this.pbHeaderPicture);
-            this.scHeader.Size = new System.Drawing.Size(1008, 60);
-            this.scHeader.SplitterDistance = 704;
-            this.scHeader.SplitterWidth = 1;
-            this.scHeader.TabIndex = 0;
-            // 
-            // lblHeaderTitle
-            // 
-            this.lblHeaderTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblHeaderTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeaderTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblHeaderTitle.Name = "lblHeaderTitle";
-            this.lblHeaderTitle.Size = new System.Drawing.Size(704, 60);
-            this.lblHeaderTitle.TabIndex = 0;
-            this.lblHeaderTitle.Text = "Screen Name";
-            this.lblHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pbHeaderPicture
-            // 
-            this.pbHeaderPicture.Location = new System.Drawing.Point(49, 12);
-            this.pbHeaderPicture.Name = "pbHeaderPicture";
-            this.pbHeaderPicture.Size = new System.Drawing.Size(36, 36);
-            this.pbHeaderPicture.TabIndex = 0;
-            this.pbHeaderPicture.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(91, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "User Name";
             // 
             // HomeView
             // 
@@ -345,13 +351,13 @@
             this.scMain.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).EndInit();
             this.scMain.ResumeLayout(false);
-            this.tcPages.ResumeLayout(false);
             this.scHeader.Panel1.ResumeLayout(false);
             this.scHeader.Panel2.ResumeLayout(false);
             this.scHeader.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scHeader)).EndInit();
             this.scHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbHeaderPicture)).EndInit();
+            this.tcPages.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,7 +390,7 @@
         private System.Windows.Forms.TabPage tpFamilyTable;
         private System.Windows.Forms.SplitContainer scHeader;
         private System.Windows.Forms.Label lblHeaderTitle;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblHeaderName;
         private System.Windows.Forms.PictureBox pbHeaderPicture;
     }
 }
