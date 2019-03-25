@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATCommon.Global;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,19 +18,21 @@ namespace ATDesktopWin.Controllers.PageControllers
             get => null;
         }
 
+        internal override string Title => Constants.DASHBOARD;
+
         protected override void LoadPageData(Action actionOnSuccess)
         {
-            throw new NotImplementedException();
+            actionOnSuccess();
         }
 
         protected override void RepresentPageData()
         {
-            throw new NotImplementedException();
+            
         }
 
         protected override void ShowPage()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
