@@ -17,5 +17,13 @@ namespace ATCommon.Global
         }
 
         public static User user;
+        public static Family family;
+
+        public static void Reset()
+        {
+            token = null;
+            user = null;
+            family = null;
+        }
     }
 }
