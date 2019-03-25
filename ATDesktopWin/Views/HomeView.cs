@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATDesktopWin.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,12 @@ namespace ATDesktopWin.Views
         public HomeView()
         {
             InitializeComponent();
+        }
+
+        private void HomeView_Shown(object sender, EventArgs e)
+        {
+            AppManager.Instance.GetCurController<HomeController>().RepresentHeaderBar();
+            AppManager.Instance.GetCurController<HomeController>().SwitchToPage(HomeController.Page.DASHBOARD);
         }
     }
 }
