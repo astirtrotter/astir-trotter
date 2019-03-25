@@ -2,7 +2,7 @@
 
 const models = require('../models');
 const Messages = require('../config/messages');
-const CredentialsHelper = require('../helpers/credentialsHelper');
+const CredentialsHelper = require('../helpers/credentials');
 
 const invalidToken = function (next) {
     var err = new Error(Messages.Error.InvalidToken);

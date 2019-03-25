@@ -1,7 +1,7 @@
 ﻿'use strict';
 const models = require('../../models');
 const Messages = require('../../config/messages');
-const CredentialsHeper = require('../../helpers/credentialsHelper');
+const CredentialsHeper = require('../../helpers/credentials');
 const CloudinaryUploader = require('../../config/cloudinary');
 
 module.exports = function (req, res, next) {

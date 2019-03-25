@@ -54,9 +54,7 @@
     <Compile Include="config\seed\_gender.js">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="helpers\credentialsHelper.js">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="helpers\credentials.js" />
     <Compile Include="middleware\api_token.js" />
     <Compile Include="middleware\api_params.js">
       <SubType>Code</SubType>
