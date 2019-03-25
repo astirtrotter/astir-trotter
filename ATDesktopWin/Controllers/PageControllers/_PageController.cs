@@ -9,6 +9,8 @@ namespace ATDesktopWin.Controllers.PageControllers
     public abstract class _PageController
     {
         protected _Controller viewController;
+
+        internal abstract string Title { get;  }
         
         protected abstract Object PageData { get; }
 
@@ -18,7 +20,7 @@ namespace ATDesktopWin.Controllers.PageControllers
         }
 
         /// <summary>
-        /// Show page and indicate loading....
+        /// Show page in tab control and indicate loading....
         /// </summary>
         protected abstract void ShowPage();
 
@@ -27,8 +29,16 @@ namespace ATDesktopWin.Controllers.PageControllers
         /// </summary>
         protected abstract void RepresentPageData();
 
+        /// <summary>
+        /// Fetch data from server and perform actionOnSuccess.
+        /// </summary>
+        /// <param name="actionOnSuccess"></param>
         protected abstract void LoadPageData(Action actionOnSuccess);
 
+        /// <summary>
+        /// Refresh entire screen (header bar + current page).
+        /// </summary>
+        /// <param name="force">if true, LoadPageData is called.</param>
         public void Refresh(bool force = false)
         {
             ShowPage();
