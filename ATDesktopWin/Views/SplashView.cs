@@ -43,7 +43,7 @@ namespace ATDesktopWin.Views
 
         private void SplashView_Shown(object sender, EventArgs e)
         {
-            ((SplashController)AppManager.Instance._currentController).getSeed(() => {
+            AppManager.Instance.GetCurController<SplashController>().getSeed(() => {
                 if (!timer.Enabled)
                 {
                     Next();
@@ -53,7 +53,7 @@ namespace ATDesktopWin.Views
 
         private void Next()
         {
-            ((SplashController)AppManager.Instance._currentController).gotoLogin();
+            AppManager.Instance.GetCurController<SplashController>().gotoLogin();
         }
     }
 }

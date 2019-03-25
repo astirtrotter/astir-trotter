@@ -119,7 +119,7 @@ namespace ATDesktopWin.Views
                     }
                 }
 
-                ((SignupController)AppManager.Instance._currentController)
+                AppManager.Instance.GetCurController<SignupController>()
                     .Signup(userId, password, firstName, lastName, nickName, gender, 
                     birthday, address, birthPlace, party, nationality, nationalOrigin, 
                     classOrigin, socialOrigin, phoneNumber, email, details, diedDay, 
@@ -129,7 +129,7 @@ namespace ATDesktopWin.Views
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            ((SignupController)AppManager.Instance._currentController).Back();
+            AppManager.Instance.GetCurController<SignupController>().Back();
         }
 
         private void chbDied_CheckedChanged(object sender, EventArgs e)

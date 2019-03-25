@@ -25,7 +25,11 @@ namespace ATDesktopWin
         /// <summary>
         /// The current _Controller instance
         /// </summary>
-        public _Controller _currentController;
+        private _Controller curController;
+
+        public T GetCurController<T>() 
+            where T: _Controller
+            => (T)curController;
 
         /// <summary>
         /// Private constructor to prevent instantiation
@@ -63,23 +67,23 @@ namespace ATDesktopWin
         /// <param name="controller">The controller instance</param>
         public void Show(_Controller controller)
         {
-            if (_currentController != null && 
-                _currentController.View.Form.InvokeRequired)
+            if (curController != null && 
+                curController.View.Form.InvokeRequired)
             {
-                _currentController.View.Form.BeginInvoke((MethodInvoker)delegate
+                curController.View.Form.BeginInvoke((MethodInvoker)delegate
                 {
                     Show(controller);
                 });
                 return;
             }
 
-            if (_currentController != null)
+            if (curController != null)
             {
-                _currentController.View.Form.Close();
-                _currentController.View.Form.Dispose();
+                curController.View.Form.Close();
+                curController.View.Form.Dispose();
             }
 
-            _currentController = controller;
+            curController = controller;
 
             Thread th = new Thread(openForm);
             th.SetApartmentState(ApartmentState.STA);
@@ -91,7 +95,7 @@ namespace ATDesktopWin
         /// </summary>
         private void openForm()
         {
-            Application.Run(_currentController.View.Form);
+            Application.Run(curController.View.Form);
         }
     }
 }

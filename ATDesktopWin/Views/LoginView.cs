@@ -32,13 +32,13 @@ namespace ATDesktopWin.Views
                 MessageBoxHelper.ShowWarning(Constants.Messages.Warning.InvalidInput + String.Join("\n", invalidFields));
             } else
             {
-                ((LoginController)AppManager.Instance._currentController).Login(userId, password);
+                AppManager.Instance.GetCurController<LoginController>().Login(userId, password);
             }
         }
 
         private void btnSignup_Click(object sender, EventArgs e)
         {
-            ((LoginController)AppManager.Instance._currentController).Signup();
+            AppManager.Instance.GetCurController<LoginController>().Signup();
         }
 
         private void txtUserID_KeyDown(object sender, KeyEventArgs e)
