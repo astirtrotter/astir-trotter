@@ -34,17 +34,22 @@ namespace ATDesktopWin.Controllers
                 {
                     pageControllers = new Dictionary<Page, _PageController>();
                 }
-                _PageController ret = pageControllers[currentPage];
-                if (ret == null)
+                
+                if (!pageControllers.ContainsKey(currentPage))
                 {
-                    ret = _PageController.Create(currentPage);
+                    pageControllers.Add(currentPage, _PageController.Create(currentPage));
                 }
 
-                return ret;
+                return pageControllers[currentPage];
             }
         }
 
         private void RefreshHeaderBar()
+        {
+
+        }
+
+        internal void RepresentHeaderBar()
         {
 
         }
