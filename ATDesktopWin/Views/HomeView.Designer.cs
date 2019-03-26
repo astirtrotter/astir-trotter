@@ -57,6 +57,7 @@
             this.tpDashboard = new System.Windows.Forms.TabPage();
             this.tpFamilyTree = new System.Windows.Forms.TabPage();
             this.tpFamilyTable = new System.Windows.Forms.TabPage();
+            this.familyTreePanel = new System.Windows.Forms.Panel();
             this.menuMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
@@ -68,6 +69,7 @@
             this.scHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHeaderPicture)).BeginInit();
             this.tcPages.SuspendLayout();
+            this.tpFamilyTree.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuMain
@@ -98,6 +100,7 @@
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
             this.refreshToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.refreshToolStripMenuItem.Text = "&Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -313,6 +316,7 @@
             // 
             // tpFamilyTree
             // 
+            this.tpFamilyTree.Controls.Add(this.familyTreePanel);
             this.tpFamilyTree.Location = new System.Drawing.Point(4, 29);
             this.tpFamilyTree.Name = "tpFamilyTree";
             this.tpFamilyTree.Padding = new System.Windows.Forms.Padding(3);
@@ -329,6 +333,16 @@
             this.tpFamilyTable.TabIndex = 2;
             this.tpFamilyTable.Text = "FamilyTable";
             this.tpFamilyTable.UseVisualStyleBackColor = true;
+            // 
+            // familyTreePanel
+            // 
+            this.familyTreePanel.AutoScroll = true;
+            this.familyTreePanel.AutoSize = true;
+            this.familyTreePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.familyTreePanel.Location = new System.Drawing.Point(3, 3);
+            this.familyTreePanel.Name = "familyTreePanel";
+            this.familyTreePanel.Size = new System.Drawing.Size(994, 605);
+            this.familyTreePanel.TabIndex = 0;
             // 
             // HomeView
             // 
@@ -356,6 +370,8 @@
             this.scHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbHeaderPicture)).EndInit();
             this.tcPages.ResumeLayout(false);
+            this.tpFamilyTree.ResumeLayout(false);
+            this.tpFamilyTree.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,5 +407,6 @@
         private System.Windows.Forms.Label lblHeaderName;
         private System.Windows.Forms.PictureBox pbHeaderPicture;
         private System.Windows.Forms.TabPage tpDashboard;
+        private System.Windows.Forms.Panel familyTreePanel;
     }
 }
