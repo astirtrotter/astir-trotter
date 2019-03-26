@@ -46,6 +46,7 @@
     <Compile Include="config\seed\index.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="config\seed\_relationship.js" />
     <Compile Include="config\seed\_party.js" />
     <Compile Include="config\seed\_origin-class.js" />
     <Compile Include="config\seed\_origin-social.js" />
@@ -73,6 +74,7 @@
     <Compile Include="models\log.js" />
     <Compile Include="models\family.js" />
     <Compile Include="models\user-event.js" />
+    <Compile Include="models\_relationship.js" />
     <Compile Include="models\_party.js" />
     <Compile Include="models\_nationality.js" />
     <Compile Include="models\_origin-national.js" />

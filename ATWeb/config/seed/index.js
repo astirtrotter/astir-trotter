@@ -5,6 +5,7 @@ const NationalitySeed = require('./_nationality');
 const ClassOriginSeed = require('./_origin-class');
 const SocialOriginSeed = require('./_origin-social');
 const NationalOriginSeed = require('./_origin-national');
+const RelationshipSeed = require('./_relationship');
 
 module.exports = function (models, force) {
     if (!force) return;
@@ -14,4 +15,5 @@ module.exports = function (models, force) {
     models.ClassOrigin.bulkCreate(ClassOriginSeed);
     models.SocialOrigin.bulkCreate(SocialOriginSeed);
     models.NationalOrigin.bulkCreate(NationalOriginSeed);
+    models.Relationship.bulkCreate(RelationshipSeed);
 };
