@@ -262,3 +262,6 @@ __pycache__/
 
 # Project test files
 AtWeb/uploads/
+
+# Project Environment Setup
+ATWeb/.env
