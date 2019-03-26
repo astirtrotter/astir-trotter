@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATDesktopWin.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,12 +23,18 @@ namespace ATDesktopWin.Controllers.PageControllers
         /// <summary>
         /// Show page in tab control and indicate loading....
         /// </summary>
-        protected abstract void ShowPage();
+        protected void ShowPage()
+        {
+            ((HomeView)viewController.View).StartLoading();
+        }
 
         /// <summary>
         /// Represent page data and stop loading indication.
         /// </summary>
-        protected abstract void RepresentPageData();
+        protected void RepresentPageData()
+        {
+            ((HomeView)viewController.View).EndLoading();
+        }
 
         /// <summary>
         /// Fetch data from server and perform actionOnSuccess.

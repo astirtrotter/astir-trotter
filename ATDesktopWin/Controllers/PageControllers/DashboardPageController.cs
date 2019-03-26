@@ -1,4 +1,5 @@
 ﻿using ATCommon.Global;
+using ATDesktopWin.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,17 +23,22 @@ namespace ATDesktopWin.Controllers.PageControllers
 
         protected override void LoadPageData(Action actionOnSuccess)
         {
+            // TODO
+
             actionOnSuccess();
         }
 
-        protected override void RepresentPageData()
+        protected new void RepresentPageData()
         {
-            
+            // TODO
+
+            base.RepresentPageData();
         }
 
-        protected override void ShowPage()
+        protected new void ShowPage()
         {
-            
+            base.ShowPage();
+            ((HomeView)viewController.View).ShowPage(HomeController.Page.DASHBOARD);
         }
     }
 }
