@@ -37,9 +37,5 @@ module.exports = (sequelize, DataTypes) => {
         User.hasOne(models.UserSetting, { foreignKey: 'userId' });
     };
 
-    User.Instance.prototype.isMale = function () {
-        return gender === GenderSeed[0].value;
-    };
-
     return User;
 };
