@@ -62,16 +62,18 @@ namespace ATDesktopWin.Views
         #region page
         internal void ShowPage(HomeController.Page page)
         {
+            controller.RepresentHeaderBar();
+
             switch (page)
             {
                 case HomeController.Page.DASHBOARD:
-                    tcPages.SelectTab(tpDashboard);
+                    tcPages.SelectedTab = tpDashboard;
                     break;
                 case HomeController.Page.FAMILY_TABLE:
-                    tcPages.SelectTab(tpFamilyTable);
+                    tcPages.SelectedTab = tpFamilyTable;
                     break;
                 case HomeController.Page.FAMILY_TREE:
-                    tcPages.SelectTab(tpFamilyTree);
+                    tcPages.SelectedTab = tpFamilyTree;
                     break;
             }
         }
@@ -90,6 +92,26 @@ namespace ATDesktopWin.Views
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
             controller.Refresh();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controller.SwitchToPage(HomeController.Page.DASHBOARD);
+        }
+
+        private void tableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controller.SwitchToPage(HomeController.Page.FAMILY_TABLE);
+        }
+
+        private void treeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controller.SwitchToPage(HomeController.Page.FAMILY_TREE);
         }
     }
 }

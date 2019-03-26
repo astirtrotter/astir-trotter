@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ATDesktopWin.Controllers.PageControllers
 {
-    public class DashboardPageController : _PageController
+    public class FamilyTablePageController : _PageController
     {
-        public DashboardPageController(_Controller parent) : base(parent)
+        public FamilyTablePageController(_Controller parent) : base(parent)
         {
             
         }
@@ -19,7 +19,7 @@ namespace ATDesktopWin.Controllers.PageControllers
             get => null;
         }
 
-        internal override string Title => Constants.DASHBOARD;
+        internal override string Title => Constants.FAMILY_TABLE;
 
         protected override void LoadPageData(Action actionOnSuccess)
         {
@@ -38,7 +38,7 @@ namespace ATDesktopWin.Controllers.PageControllers
         protected override void ShowPage()
         {
             base.ShowPage();
-            ((HomeView)viewController.View).ShowPage(HomeController.Page.DASHBOARD);
+            ((HomeView)viewController.View).ShowPage(HomeController.Page.FAMILY_TABLE);
         }
     }
 }

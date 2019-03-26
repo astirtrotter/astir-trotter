@@ -23,7 +23,7 @@ namespace ATDesktopWin.Controllers.PageControllers
         /// <summary>
         /// Show page in tab control and indicate loading....
         /// </summary>
-        protected void ShowPage()
+        protected virtual void ShowPage()
         {
             ((HomeView)viewController.View).StartLoading();
         }
@@ -31,7 +31,7 @@ namespace ATDesktopWin.Controllers.PageControllers
         /// <summary>
         /// Represent page data and stop loading indication.
         /// </summary>
-        protected void RepresentPageData()
+        protected virtual void RepresentPageData()
         {
             ((HomeView)viewController.View).EndLoading();
         }
@@ -65,10 +65,10 @@ namespace ATDesktopWin.Controllers.PageControllers
             {
                 case HomeController.Page.DASHBOARD:
                     return new DashboardPageController(parent);
-                //case HomeController.Page.FAMILY_TABLE:
-                //    return new FamilyTablePageController(parent);
-                //case HomeController.Page.FAMILY_TREE:
-                //    return new FamilyTreePageController(parent);
+                case HomeController.Page.FAMILY_TABLE:
+                    return new FamilyTablePageController(parent);
+                case HomeController.Page.FAMILY_TREE:
+                    return new FamilyTreePageController(parent);
                 default:
                     throw new NotImplementedException();
             }

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ATDesktopWin.Controllers.PageControllers
 {
-    public class FamilyTreeController : _PageController
+    public class FamilyTreePageController : _PageController
     {
-        public FamilyTreeController(_Controller parent) : base(parent)
+        public FamilyTreePageController(_Controller parent) : base(parent)
         {
             
         }
@@ -19,7 +19,7 @@ namespace ATDesktopWin.Controllers.PageControllers
             get => null;
         }
 
-        internal override string Title => Constants.DASHBOARD;
+        internal override string Title => Constants.FAMILY_TREE;
 
         protected override void LoadPageData(Action actionOnSuccess)
         {
@@ -28,14 +28,14 @@ namespace ATDesktopWin.Controllers.PageControllers
             actionOnSuccess();
         }
 
-        protected new void RepresentPageData()
+        protected override void RepresentPageData()
         {
             // TODO
 
             base.RepresentPageData();
         }
 
-        protected new void ShowPage()
+        protected override void ShowPage()
         {
             base.ShowPage();
             ((HomeView)viewController.View).ShowPage(HomeController.Page.FAMILY_TREE);
