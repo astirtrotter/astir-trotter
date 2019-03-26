@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATCommon.Global;
+using System;
 using System.Collections.Generic;
 
 namespace ATCommon.Models
@@ -34,12 +35,10 @@ namespace ATCommon.Models
         public List<UserEvent> workEvents { get; set; }
 
         /// <summary>
-        /// Internal methods
+        /// methods
         /// </summary>
 
-        public string FullName
-        {
-            get => firstName + " " + lastName;
-        }
+        public string FullName { get => firstName + " " + lastName; }
+        public bool IsMale { get => gender == Constants.genders[0].value; }
     }
 }
