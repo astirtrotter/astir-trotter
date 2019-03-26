@@ -76,6 +76,7 @@
             this.chbDied = new System.Windows.Forms.CheckBox();
             this.dtpDiedDay = new System.Windows.Forms.DateTimePicker();
             this.ofdPicture = new System.Windows.Forms.OpenFileDialog();
+            this.ttPicture = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.cmsPicture.SuspendLayout();
             this.SuspendLayout();
@@ -95,6 +96,7 @@
             this.pbPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPicture.TabIndex = 0;
             this.pbPicture.TabStop = false;
+            this.ttPicture.SetToolTip(this.pbPicture, "Click mouse right button to change or reset\r\n");
             // 
             // cmsPicture
             // 
@@ -105,23 +107,23 @@
             this.cmsPicture.Name = "cmsPicture";
             this.cmsPicture.Size = new System.Drawing.Size(158, 70);
             // 
-            // mnuPictureCamera
+            // mnuItemPictureCamera
             // 
-            this.mnuItemPictureCamera.Name = "mnuPictureCamera";
+            this.mnuItemPictureCamera.Name = "mnuItemPictureCamera";
             this.mnuItemPictureCamera.Size = new System.Drawing.Size(157, 22);
             this.mnuItemPictureCamera.Text = "From camera";
             this.mnuItemPictureCamera.Click += new System.EventHandler(this.mnuItemPictureCamera_Click);
             // 
-            // mnuPictureImage
+            // mnuItemPictureImage
             // 
-            this.mnuItemPictureImage.Name = "mnuPictureImage";
+            this.mnuItemPictureImage.Name = "mnuItemPictureImage";
             this.mnuItemPictureImage.Size = new System.Drawing.Size(157, 22);
             this.mnuItemPictureImage.Text = "From image file";
             this.mnuItemPictureImage.Click += new System.EventHandler(this.mnuItemPictureImage_Click);
             // 
-            // mnuPictureReset
+            // mnuItemPictureReset
             // 
-            this.mnuItemPictureReset.Name = "mnuPictureReset";
+            this.mnuItemPictureReset.Name = "mnuItemPictureReset";
             this.mnuItemPictureReset.Size = new System.Drawing.Size(157, 22);
             this.mnuItemPictureReset.Text = "Reset";
             this.mnuItemPictureReset.Click += new System.EventHandler(this.mnuItemPictureReset_Click);
@@ -586,5 +588,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuItemPictureImage;
         private System.Windows.Forms.ToolStripMenuItem mnuItemPictureReset;
         private System.Windows.Forms.OpenFileDialog ofdPicture;
+        private System.Windows.Forms.ToolTip ttPicture;
     }
 }
