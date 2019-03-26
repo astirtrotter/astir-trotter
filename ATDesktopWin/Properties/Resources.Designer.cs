@@ -63,9 +63,19 @@ namespace ATDesktopWin.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap user_profile_picture {
+        internal static System.Drawing.Bitmap default_user_female {
             get {
-                object obj = ResourceManager.GetObject("user-profile-picture", resourceCulture);
+                object obj = ResourceManager.GetObject("default_user_female", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap default_user_male {
+            get {
+                object obj = ResourceManager.GetObject("default_user_male", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

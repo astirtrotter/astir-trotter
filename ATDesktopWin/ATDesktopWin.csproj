@@ -76,6 +76,17 @@
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\LocalStorageHelper.cs" />
     <Compile Include="Helpers\MessageBoxHelper.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\FamilyTreeNode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\FamilyTreeNode.Designer.cs">
+      <DependentUpon>FamilyTreeNode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dialogs\CameraDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +120,9 @@
     <Compile Include="Views\SplashView.Designer.cs">
       <DependentUpon>SplashView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Controls\FamilyTreeNode.resx">
+      <DependentUpon>FamilyTreeNode.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Dialogs\CameraDialog.resx">
       <DependentUpon>CameraDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,14 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Views\SignupView.resx">
       <DependentUpon>SignupView.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,7 +158,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
-    <None Include="Resources\user-profile-picture.png" />
+    <None Include="Resources\default-user-male.png" />
+    <None Include="Resources\default-user-female.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
