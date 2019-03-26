@@ -172,7 +172,7 @@ namespace ATDesktopWin.Views
 
         private void cbGender_SelectedValueChanged(object sender, EventArgs e)
         {
-            pbPicture.BackgroundImage = cbGender.SelectedValue == Constants.genders[0].value
+            pbPicture.BackgroundImage = (string)cbGender.SelectedValue == Constants.genders[0].value
                 ? Properties.Resources.default_user_male
                 : Properties.Resources.default_user_female;
         }
