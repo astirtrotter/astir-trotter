@@ -34,7 +34,7 @@ namespace ATDesktopWin.Controllers
 
                 if (data == null)
                 {
-                    MessageBoxHelper.ShowError(Constants.Messages.Error.ActionFailed + errMsg);
+                    MessageBoxHelper.ShowError(View.Form, Constants.Messages.Error.ActionFailed + errMsg);
                 }
                 else if (data.success)
                 {
@@ -45,7 +45,7 @@ namespace ATDesktopWin.Controllers
                 }
                 else
                 {
-                    MessageBoxHelper.ShowWarning(Constants.Messages.Warning.ActionFailed + data.message);
+                    MessageBoxHelper.ShowWarning(View.Form, Constants.Messages.Warning.ActionFailed + data.message);
                 }
             });
         }

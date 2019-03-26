@@ -27,7 +27,7 @@ namespace ATDesktopWin.Controllers
             ClientManager.Instance.GetSeed((data, errMsg) => {   
                 if (errMsg != null || !data.success)
                 {
-                    MessageBoxHelper.ShowError(Constants.Messages.Error.ActionFailed + errMsg);
+                    MessageBoxHelper.ShowError(View.Form, Constants.Messages.Error.ActionFailed + errMsg);
                     Application.Exit();
                 }
                 else

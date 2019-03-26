@@ -10,25 +10,28 @@ namespace ATDesktopWin.Helpers
 {
     public static class MessageBoxHelper
     {
-        public static DialogResult ShowInfo(string message,
+        public static DialogResult ShowInfo(IWin32Window owner, 
+            string message,
             MessageBoxButtons buttons = MessageBoxButtons.OK,
             MessageBoxIcon icon = MessageBoxIcon.None)
         {
-            return MessageBox.Show(message, Constants.Messages.Info.Title, buttons, icon);
+            return MessageBox.Show(owner, message, Constants.Messages.Info.Title, buttons, icon);
         }
 
-        public static DialogResult ShowWarning(string message, 
+        public static DialogResult ShowWarning(IWin32Window owner, 
+            string message, 
             MessageBoxButtons buttons = MessageBoxButtons.OK,
             MessageBoxIcon icon = MessageBoxIcon.Warning)
         {
-            return MessageBox.Show(message, Constants.Messages.Warning.Title, buttons, icon);
+            return MessageBox.Show(owner, message, Constants.Messages.Warning.Title, buttons, icon);
         }
 
-        public static DialogResult ShowError(string message, 
+        public static DialogResult ShowError(IWin32Window owner, 
+            string message, 
             MessageBoxButtons buttons = MessageBoxButtons.OK,
             MessageBoxIcon icon = MessageBoxIcon.Error)
         {
-            return MessageBox.Show(message, Constants.Messages.Error.Title, buttons, icon);
+            return MessageBox.Show(owner, message, Constants.Messages.Error.Title, buttons, icon);
         }
     }
 }

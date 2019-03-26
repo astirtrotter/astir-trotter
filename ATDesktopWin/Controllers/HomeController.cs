@@ -38,7 +38,7 @@ namespace ATDesktopWin.Controllers
                 
                 if (!pageControllers.ContainsKey(currentPage))
                 {
-                    pageControllers.Add(currentPage, _PageController.Create(currentPage));
+                    pageControllers.Add(currentPage, _PageController.Create(this, currentPage));
                 }
 
                 return pageControllers[currentPage];

@@ -43,16 +43,16 @@ namespace ATDesktopWin.Controllers
 
                 if (errMsg != null)
                 {
-                    MessageBoxHelper.ShowError(Constants.Messages.Error.ActionFailed + errMsg);
+                    MessageBoxHelper.ShowError(View.Form, Constants.Messages.Error.ActionFailed + errMsg);
                 }
                 else if (data.success)
                 {
-                    MessageBoxHelper.ShowInfo(Constants.Messages.Info.SignupSuccess);
+                    MessageBoxHelper.ShowInfo(View.Form, Constants.Messages.Info.SignupSuccess);
                     Back();
                 }
                 else
                 {
-                    MessageBoxHelper.ShowWarning(Constants.Messages.Warning.ActionFailed + data.message);
+                    MessageBoxHelper.ShowWarning(View.Form, Constants.Messages.Warning.ActionFailed + data.message);
                 }
             });
         }

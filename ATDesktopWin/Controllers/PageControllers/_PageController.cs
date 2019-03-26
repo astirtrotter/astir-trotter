@@ -59,13 +59,16 @@ namespace ATDesktopWin.Controllers.PageControllers
             }
         }
 
-        internal static _PageController Create(HomeController.Page page)
+        internal static _PageController Create(HomeController parent, HomeController.Page page)
         {
-            HomeController parent = AppManager.Instance.GetCurController<HomeController>();
             switch (page)
             {
                 case HomeController.Page.DASHBOARD:
                     return new DashboardPageController(parent);
+                //case HomeController.Page.FAMILY_TABLE:
+                //    return new FamilyTablePageController(parent);
+                //case HomeController.Page.FAMILY_TREE:
+                //    return new FamilyTreePageController(parent);
                 default:
                     throw new NotImplementedException();
             }

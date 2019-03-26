@@ -93,7 +93,7 @@ namespace ATDesktopWin.Views
 
             if (invalidFields.Count > 0)
             {
-                MessageBoxHelper.ShowWarning(Constants.Messages.Warning.InvalidInput + String.Join("\n", invalidFields));
+                MessageBoxHelper.ShowWarning(this, Constants.Messages.Warning.InvalidInput + String.Join("\n", invalidFields));
             } else
             {
                 if (nickName.Length == 0) nickName = null;

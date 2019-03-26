@@ -29,7 +29,7 @@ namespace ATDesktopWin.Views
 
             if (invalidFields.Count > 0)
             {
-                MessageBoxHelper.ShowWarning(Constants.Messages.Warning.InvalidInput + String.Join("\n", invalidFields));
+                MessageBoxHelper.ShowWarning(this, Constants.Messages.Warning.InvalidInput + String.Join("\n", invalidFields));
             } else
             {
                 AppManager.Instance.GetCurController<LoginController>().Login(userId, password);

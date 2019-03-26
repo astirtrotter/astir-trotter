@@ -62,6 +62,12 @@ namespace ATDesktopWin.Views
                 case HomeController.Page.DASHBOARD:
                     tcPages.SelectTab(tpDashboard);
                     break;
+                case HomeController.Page.FAMILY_TABLE:
+                    tcPages.SelectTab(tpFamilyTable);
+                    break;
+                case HomeController.Page.FAMILY_TREE:
+                    tcPages.SelectTab(tpFamilyTree);
+                    break;
             }
         }
 
