@@ -60,7 +60,7 @@
             this.pbWife.ErrorImage = global::ATDesktopWin.Properties.Resources.default_user_female;
             this.pbWife.Image = global::ATDesktopWin.Properties.Resources.default_user_female;
             this.pbWife.InitialImage = global::ATDesktopWin.Properties.Resources.default_user_female;
-            this.pbWife.Location = new System.Drawing.Point(120, 40);
+            this.pbWife.Location = new System.Drawing.Point(100, 40);
             this.pbWife.Name = "pbWife";
             this.pbWife.Size = new System.Drawing.Size(80, 80);
             this.pbWife.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -96,7 +96,7 @@
             this.pbWifeMother.ErrorImage = global::ATDesktopWin.Properties.Resources.default_user_female;
             this.pbWifeMother.Image = global::ATDesktopWin.Properties.Resources.default_user_female;
             this.pbWifeMother.InitialImage = global::ATDesktopWin.Properties.Resources.default_user_female;
-            this.pbWifeMother.Location = new System.Drawing.Point(165, 0);
+            this.pbWifeMother.Location = new System.Drawing.Point(145, 0);
             this.pbWifeMother.Name = "pbWifeMother";
             this.pbWifeMother.Size = new System.Drawing.Size(30, 30);
             this.pbWifeMother.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -108,7 +108,7 @@
             this.pbWifeFather.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbWifeFather.ErrorImage")));
             this.pbWifeFather.Image = ((System.Drawing.Image)(resources.GetObject("pbWifeFather.Image")));
             this.pbWifeFather.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbWifeFather.InitialImage")));
-            this.pbWifeFather.Location = new System.Drawing.Point(125, 0);
+            this.pbWifeFather.Location = new System.Drawing.Point(105, 0);
             this.pbWifeFather.Name = "pbWifeFather";
             this.pbWifeFather.Size = new System.Drawing.Size(30, 30);
             this.pbWifeFather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -119,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.pbWifeMother);
             this.Controls.Add(this.pbWifeFather);
             this.Controls.Add(this.pbHusbandMother);
@@ -127,7 +127,7 @@
             this.Controls.Add(this.pbWife);
             this.Controls.Add(this.pbHusband);
             this.Name = "FamilyTreeNode";
-            this.Size = new System.Drawing.Size(200, 120);
+            this.Size = new System.Drawing.Size(180, 120);
             ((System.ComponentModel.ISupportInitialize)(this.pbHusband)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWife)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHusbandFather)).EndInit();
