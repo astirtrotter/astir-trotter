@@ -39,14 +39,14 @@
             this.pbFrame.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbFrame.Location = new System.Drawing.Point(0, 0);
             this.pbFrame.Name = "pbFrame";
-            this.pbFrame.Size = new System.Drawing.Size(624, 441);
+            this.pbFrame.Size = new System.Drawing.Size(640, 480);
             this.pbFrame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbFrame.TabIndex = 0;
             this.pbFrame.TabStop = false;
             // 
             // btnCapture
             // 
-            this.btnCapture.Location = new System.Drawing.Point(225, 406);
+            this.btnCapture.Location = new System.Drawing.Point(233, 445);
             this.btnCapture.Name = "btnCapture";
             this.btnCapture.Size = new System.Drawing.Size(75, 23);
             this.btnCapture.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(324, 406);
+            this.btnSelect.Location = new System.Drawing.Point(332, 445);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(75, 23);
             this.btnSelect.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 441);
+            this.ClientSize = new System.Drawing.Size(640, 480);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.btnCapture);
             this.Controls.Add(this.pbFrame);
