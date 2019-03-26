@@ -54,5 +54,25 @@ namespace ATDesktopWin.Views
         {
             throw new NotImplementedException();
         }
+
+        internal void ShowPage(HomeController.Page page)
+        {
+            switch (page)
+            {
+                case HomeController.Page.DASHBOARD:
+                    tcPages.SelectTab(tpDashboard);
+                    break;
+            }
+        }
+
+        internal void StartLoading()
+        {
+            tcPages.Enabled = false;
+        }
+
+        internal void EndLoading()
+        {
+            tcPages.Enabled = true;
+        }
     }
 }

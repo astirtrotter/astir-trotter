@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TabPage tpDashboard;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeView));
             this.menuMain = new System.Windows.Forms.MenuStrip();
             this.appToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +56,7 @@
             this.tcPages = new System.Windows.Forms.TabControl();
             this.tpFamilyTree = new System.Windows.Forms.TabPage();
             this.tpFamilyTable = new System.Windows.Forms.TabPage();
-            tpDashboard = new System.Windows.Forms.TabPage();
+            this.tpDashboard = new System.Windows.Forms.TabPage();
             this.menuMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
@@ -70,16 +69,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbHeaderPicture)).BeginInit();
             this.tcPages.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tpDashboard
-            // 
-            tpDashboard.Location = new System.Drawing.Point(4, 29);
-            tpDashboard.Name = "tpDashboard";
-            tpDashboard.Padding = new System.Windows.Forms.Padding(3);
-            tpDashboard.Size = new System.Drawing.Size(1000, 611);
-            tpDashboard.TabIndex = 0;
-            tpDashboard.Text = "Dashboard";
-            tpDashboard.UseVisualStyleBackColor = true;
             // 
             // menuMain
             // 
@@ -259,7 +248,7 @@
             this.scHeader.Panel2.Controls.Add(this.lblHeaderName);
             this.scHeader.Panel2.Controls.Add(this.pbHeaderPicture);
             this.scHeader.Size = new System.Drawing.Size(1008, 60);
-            this.scHeader.SplitterDistance = 710;
+            this.scHeader.SplitterDistance = 713;
             this.scHeader.SplitterWidth = 1;
             this.scHeader.TabIndex = 0;
             // 
@@ -269,7 +258,7 @@
             this.lblHeaderTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeaderTitle.Location = new System.Drawing.Point(0, 0);
             this.lblHeaderTitle.Name = "lblHeaderTitle";
-            this.lblHeaderTitle.Size = new System.Drawing.Size(710, 60);
+            this.lblHeaderTitle.Size = new System.Drawing.Size(713, 60);
             this.lblHeaderTitle.TabIndex = 0;
             this.lblHeaderTitle.Text = "Screen Name";
             this.lblHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -300,7 +289,7 @@
             // tcPages
             // 
             this.tcPages.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tcPages.Controls.Add(tpDashboard);
+            this.tcPages.Controls.Add(this.tpDashboard);
             this.tcPages.Controls.Add(this.tpFamilyTree);
             this.tcPages.Controls.Add(this.tpFamilyTable);
             this.tcPages.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -331,6 +320,15 @@
             this.tpFamilyTable.TabIndex = 2;
             this.tpFamilyTable.Text = "FamilyTable";
             this.tpFamilyTable.UseVisualStyleBackColor = true;
+            // 
+            // tpDashboard
+            // 
+            this.tpDashboard.Location = new System.Drawing.Point(4, 29);
+            this.tpDashboard.Name = "tpDashboard";
+            this.tpDashboard.Size = new System.Drawing.Size(1000, 611);
+            this.tpDashboard.TabIndex = 3;
+            this.tpDashboard.Text = "Dashboard";
+            this.tpDashboard.UseVisualStyleBackColor = true;
             // 
             // HomeView
             // 
@@ -392,5 +390,6 @@
         private System.Windows.Forms.Label lblHeaderTitle;
         private System.Windows.Forms.Label lblHeaderName;
         private System.Windows.Forms.PictureBox pbHeaderPicture;
+        private System.Windows.Forms.TabPage tpDashboard;
     }
 }
