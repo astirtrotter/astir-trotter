@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="AppManager.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PageControllers\FamilyTreeController.cs" />
     <Compile Include="Controllers\PageControllers\DashboardPageController.cs" />
     <Compile Include="Controllers\PageControllers\_PageController.cs" />
     <Compile Include="Controllers\SplashController.cs" />
