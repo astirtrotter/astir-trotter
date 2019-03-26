@@ -9,8 +9,8 @@ namespace ATDesktopWin.Controllers
 {
     class SignupController : _Controller
     {
-        private IView _view;
-        public override IView View
+        private _View _view;
+        public override _View View
         {
             get
             {
@@ -39,21 +39,21 @@ namespace ATDesktopWin.Controllers
                 View.Form.BeginInvoke((MethodInvoker)delegate
                 {
                     View.Form.Enabled = true;
-                });
 
-                if (errMsg != null)
-                {
-                    MessageBoxHelper.ShowError(View.Form, Constants.Messages.Error.ActionFailed + errMsg);
-                }
-                else if (data.success)
-                {
-                    MessageBoxHelper.ShowInfo(View.Form, Constants.Messages.Info.SignupSuccess);
-                    Back();
-                }
-                else
-                {
-                    MessageBoxHelper.ShowWarning(View.Form, Constants.Messages.Warning.ActionFailed + data.message);
-                }
+                    if (errMsg != null)
+                    {
+                        MessageBoxHelper.ShowError(View.Form, Constants.Messages.Error.ActionFailed + errMsg);
+                    }
+                    else if (data.success)
+                    {
+                        MessageBoxHelper.ShowInfo(View.Form, Constants.Messages.Info.SignupSuccess);
+                        Back();
+                    }
+                    else
+                    {
+                        MessageBoxHelper.ShowWarning(View.Form, Constants.Messages.Warning.ActionFailed + data.message);
+                    }
+                });
             });
         }
 

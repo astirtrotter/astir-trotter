@@ -9,8 +9,8 @@ namespace ATDesktopWin.Controllers
 {
     class SplashController : _Controller
     {
-        private IView _view;
-        public override IView View
+        private _View _view;
+        public override _View View
         {
             get
             {
@@ -24,24 +24,27 @@ namespace ATDesktopWin.Controllers
 
         internal void getSeed(Action callback)
         {
-            ClientManager.Instance.GetSeed((data, errMsg) => {   
-                if (errMsg != null || !data.success)
+            ClientManager.Instance.GetSeed((data, errMsg) => {
+                View.Form.BeginInvoke((MethodInvoker)delegate
                 {
-                    MessageBoxHelper.ShowError(View.Form, Constants.Messages.Error.ActionFailed + errMsg);
-                    Application.Exit();
-                }
-                else
-                {
-                    Constants.hasSeed = true;
-                    Constants.genders = data.genders;
-                    Constants.parties = data.parties;
-                    Constants.nationalities = data.nationalities;
-                    Constants.classOrigins = data.classOrigins;
-                    Constants.socialOrigins = data.socialOrigins;
-                    Constants.nationalOrigins = data.nationalOrigins;
-                    Constants.relationships = data.relationships;
-                    callback();
-                }
+                    if (errMsg != null || !data.success)
+                    {
+                        MessageBoxHelper.ShowError(View.Form, Constants.Messages.Error.ActionFailed + errMsg);
+                        Application.Exit();
+                    }
+                    else
+                    {
+                        Constants.hasSeed = true;
+                        Constants.genders = data.genders;
+                        Constants.parties = data.parties;
+                        Constants.nationalities = data.nationalities;
+                        Constants.classOrigins = data.classOrigins;
+                        Constants.socialOrigins = data.socialOrigins;
+                        Constants.nationalOrigins = data.nationalOrigins;
+                        Constants.relationships = data.relationships;
+                        callback();
+                    }
+                });
             });
         }
 

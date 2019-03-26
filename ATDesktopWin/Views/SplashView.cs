@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ATDesktopWin.Views
 {
-    public partial class SplashView : Form, IView
+    public partial class SplashView : Form, _View
     {
         Timer timer = new Timer();
 

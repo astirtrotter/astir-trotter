@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace ATDesktopWin.Views
 {
-    public partial class SignupView : Form, IView
+    public partial class SignupView : Form, _View
     {
         public string Title { get => Text; set => Text = value; }
 

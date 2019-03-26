@@ -54,9 +54,9 @@
             this.lblHeaderName = new System.Windows.Forms.Label();
             this.pbHeaderPicture = new System.Windows.Forms.PictureBox();
             this.tcPages = new System.Windows.Forms.TabControl();
+            this.tpDashboard = new System.Windows.Forms.TabPage();
             this.tpFamilyTree = new System.Windows.Forms.TabPage();
             this.tpFamilyTable = new System.Windows.Forms.TabPage();
-            this.tpDashboard = new System.Windows.Forms.TabPage();
             this.menuMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
@@ -248,7 +248,7 @@
             this.scHeader.Panel2.Controls.Add(this.lblHeaderName);
             this.scHeader.Panel2.Controls.Add(this.pbHeaderPicture);
             this.scHeader.Size = new System.Drawing.Size(1008, 60);
-            this.scHeader.SplitterDistance = 713;
+            this.scHeader.SplitterDistance = 719;
             this.scHeader.SplitterWidth = 1;
             this.scHeader.TabIndex = 0;
             // 
@@ -258,7 +258,7 @@
             this.lblHeaderTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeaderTitle.Location = new System.Drawing.Point(0, 0);
             this.lblHeaderTitle.Name = "lblHeaderTitle";
-            this.lblHeaderTitle.Size = new System.Drawing.Size(713, 60);
+            this.lblHeaderTitle.Size = new System.Drawing.Size(719, 60);
             this.lblHeaderTitle.TabIndex = 0;
             this.lblHeaderTitle.Text = "Screen Name";
             this.lblHeaderTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -275,10 +275,10 @@
             // 
             // pbHeaderPicture
             // 
-            this.pbHeaderPicture.BackgroundImage = global::ATDesktopWin.Properties.Resources.user_profile_picture;
+            this.pbHeaderPicture.BackgroundImage = global::ATDesktopWin.Properties.Resources.default_user_male;
             this.pbHeaderPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbHeaderPicture.ErrorImage = global::ATDesktopWin.Properties.Resources.user_profile_picture;
-            this.pbHeaderPicture.InitialImage = global::ATDesktopWin.Properties.Resources.user_profile_picture;
+            this.pbHeaderPicture.ErrorImage = null;
+            this.pbHeaderPicture.InitialImage = null;
             this.pbHeaderPicture.Location = new System.Drawing.Point(49, 12);
             this.pbHeaderPicture.Name = "pbHeaderPicture";
             this.pbHeaderPicture.Size = new System.Drawing.Size(36, 36);
@@ -302,6 +302,15 @@
             this.tcPages.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tcPages.TabIndex = 2;
             // 
+            // tpDashboard
+            // 
+            this.tpDashboard.Location = new System.Drawing.Point(4, 29);
+            this.tpDashboard.Name = "tpDashboard";
+            this.tpDashboard.Size = new System.Drawing.Size(1000, 611);
+            this.tpDashboard.TabIndex = 3;
+            this.tpDashboard.Text = "Dashboard";
+            this.tpDashboard.UseVisualStyleBackColor = true;
+            // 
             // tpFamilyTree
             // 
             this.tpFamilyTree.Location = new System.Drawing.Point(4, 29);
@@ -320,15 +329,6 @@
             this.tpFamilyTable.TabIndex = 2;
             this.tpFamilyTable.Text = "FamilyTable";
             this.tpFamilyTable.UseVisualStyleBackColor = true;
-            // 
-            // tpDashboard
-            // 
-            this.tpDashboard.Location = new System.Drawing.Point(4, 29);
-            this.tpDashboard.Name = "tpDashboard";
-            this.tpDashboard.Size = new System.Drawing.Size(1000, 611);
-            this.tpDashboard.TabIndex = 3;
-            this.tpDashboard.Text = "Dashboard";
-            this.tpDashboard.UseVisualStyleBackColor = true;
             // 
             // HomeView
             // 

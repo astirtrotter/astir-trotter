@@ -7,7 +7,7 @@ namespace ATDesktopWin.Controllers
 {
     public abstract class _Controller
     {
-        public abstract IView View { get; }
+        public abstract _View View { get; }
 
         public void OnLoad()
         {

@@ -7,7 +7,7 @@ using ATDesktopWin.Helpers;
 
 namespace ATDesktopWin.Views
 {
-    public partial class LoginView : Form, IView
+    public partial class LoginView : Form, _View
     {
         public string Title { get => Text; set => Text = value; }
 

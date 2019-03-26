@@ -99,7 +99,10 @@
     <Compile Include="Views\HomeView.Designer.cs">
       <DependentUpon>HomeView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\IView.cs" />
+    <Compile Include="Views\HomeView_FamilyTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\_View.cs" />
     <Compile Include="Views\LoginView.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -2,7 +2,7 @@
 
 namespace ATDesktopWin.Views
 {
-    public interface IView
+    public interface _View
     {
         string Title { get; set; }
 

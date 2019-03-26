@@ -10,8 +10,8 @@ namespace ATDesktopWin.Controllers
 {
     class HomeController : _Controller
     {
-        private IView _view;
-        public override IView View
+        private _View _view;
+        public override _View View
         {
             get
             {

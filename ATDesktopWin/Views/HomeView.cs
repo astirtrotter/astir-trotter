@@ -1,4 +1,5 @@
-﻿using ATDesktopWin.Controllers;
+﻿using ATCommon.Global;
+using ATDesktopWin.Controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ATDesktopWin.Views
 {
-    public partial class HomeView : Form, IView
+    public partial class HomeView : Form, _View
     {
         public string Title { get => Text; set => Text = value; }
 
@@ -20,6 +21,10 @@ namespace ATDesktopWin.Views
         public HomeView()
         {
             InitializeComponent();
+
+            pbHeaderPicture.BackgroundImage = LoginInfo.user.gender == Constants.genders[0].value
+                ? Properties.Resources.default_user_male
+                : Properties.Resources.default_user_female;
         }
 
         private void HomeView_Shown(object sender, EventArgs e)
@@ -28,6 +33,7 @@ namespace ATDesktopWin.Views
             AppManager.Instance.GetCurController<HomeController>().SwitchToPage(HomeController.Page.DASHBOARD);
         }
 
+        #region header-bar
         internal void SetScreenName(string title)
         {
             lblHeaderTitle.Text = title;
@@ -49,12 +55,9 @@ namespace ATDesktopWin.Views
         {
             lblHeaderName.Text = userName;
         }
+        #endregion
 
-        internal void SetUserName(object fullName)
-        {
-            throw new NotImplementedException();
-        }
-
+        #region page
         internal void ShowPage(HomeController.Page page)
         {
             switch (page)
@@ -80,5 +83,6 @@ namespace ATDesktopWin.Views
         {
             tcPages.Enabled = true;
         }
+        #endregion
     }
 }
