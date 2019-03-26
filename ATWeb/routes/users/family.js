@@ -28,40 +28,45 @@ const findChildren = function (users, fatherId, motherId) {
     return ret;
 };
 
-const getNode = function (users, userId, isNeedSpouse, isNeedParents, isNeedSiblings, isNeedChildren) {
+const getNode = function (relation, users, userId, isNeedSpouse, isNeedParents, isNeedSiblings, isNeedChildren) {
     if (userId == null) return null;
 
     var ret = {};
+    // relation
+    if (relation.length > 1) {
+        ret.relation = relation;
+    }
+
     // oneself
     ret.user = findUser(users, userId);
     users = users.filter(user => user !== ret.user);
 
     // spouse
     if (isNeedSpouse) {
-        ret.spouse = getNode(users, ret.user.spouseId, false, true, true, false);
+        ret.spouse = getNode(relation + ret.user.isMale() ? 'W' : 'H', users, ret.user.spouseId, false, true, true, false);
     }
     // parents
     if (isNeedParents) {
-        ret.father = getNode(users, ret.user.fatherId, false, true, true, false);
-        ret.mother = getNode(users, ret.user.motherId, false, true, true, false);
+        ret.father = getNode(relation + 'F', users, ret.user.fatherId, false, true, true, false);
+        ret.mother = getNode(relation + 'M', users, ret.user.motherId, false, true, true, false);
     }
     // siblings
     if (isNeedSiblings) {
         var data = [];
         const siblings = findChildren(users, ret.user.fatherId, ret.user.motherId);
         siblings.forEach(sibling => {
-            data.push(getNode(users, sibling.id, true, false, false, true));
+            data.push(getNode(relation + sibling.isMale() ? 'FS' : 'FD', users, sibling.id, true, false, false, true));
         });
         if (data.length > 0) ret.siblings = data;
     }
     // children
     if (isNeedChildren) {
-        const fatherId = ret.user.gender === GenderSeed[0].value ? ret.user.id : ret.user.spouseId;
-        const motherId = ret.user.gender === GenderSeed[0].value ? ret.user.spouseId : ret.user.id;
+        const fatherId = ret.user.isMale() ? ret.user.id : ret.user.spouseId;
+        const motherId = ret.user.isMale() ? ret.user.spouseId : ret.user.id;
 
         var children = findChildren(users, fatherId, motherId);
         children.forEach(child => {
-            data.push(getNode(users, child.id, true, false, false, true));
+            data.push(getNode(relation + child.isMale() ? 'S' : 'D', users, child.id, true, false, false, true));
         });
         if (data.length > 0) ret.children = data;
     }
