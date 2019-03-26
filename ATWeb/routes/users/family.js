@@ -3,6 +3,10 @@ const models = require('../../models');
 const Messages = require('../../config/messages');
 const GenderSeed = require('../../config/seed/_gender');
 
+const isMale = function (user) {
+    return user.gender === GenderSeed[0]
+};
+
 const findUser = function (users, userId) {
     var ret = null;
     if (userId) {
@@ -43,7 +47,7 @@ const getNode = function (relation, users, userId, isNeedSpouse, isNeedParents, 
 
     // spouse
     if (isNeedSpouse) {
-        ret.spouse = getNode(relation + ret.user.isMale() ? 'W' : 'H', users, ret.user.spouseId, false, true, true, false);
+        ret.spouse = getNode(relation + isMale(ret.user) ? 'W' : 'H', users, ret.user.spouseId, false, true, true, false);
     }
     // parents
     if (isNeedParents) {
@@ -61,8 +65,8 @@ const getNode = function (relation, users, userId, isNeedSpouse, isNeedParents, 
     }
     // children
     if (isNeedChildren) {
-        const fatherId = ret.user.isMale() ? ret.user.id : ret.user.spouseId;
-        const motherId = ret.user.isMale() ? ret.user.spouseId : ret.user.id;
+        const fatherId = isMale(ret.user) ? ret.user.id : ret.user.spouseId;
+        const motherId = isMale(ret.user) ? ret.user.spouseId : ret.user.id;
 
         var children = findChildren(users, fatherId, motherId);
         children.forEach(child => {
@@ -80,7 +84,7 @@ module.exports = function (req, res, next) {
             if (family) {
                 family.getUsers().then(users => {
                     // respond family data with structured format
-                    var ret = getNode(users, req.user.id);
+                    var ret = getNode(isMale(req.user) ? 'B' : 'G', users, req.user.id, true, true, true, true);
                     res.json({
                         success: true,
                         family: ret
