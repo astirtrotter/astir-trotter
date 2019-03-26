@@ -64,16 +64,23 @@ namespace ATDesktopWin.Views
         {
             controller.RepresentHeaderBar();
 
+            dashboardToolStripMenuItem.Checked = false;
+            tableToolStripMenuItem.Checked = false;
+            treeToolStripMenuItem.Checked = false;
+
             switch (page)
             {
                 case HomeController.Page.DASHBOARD:
                     tcPages.SelectedTab = tpDashboard;
+                    dashboardToolStripMenuItem.Checked = true;
                     break;
                 case HomeController.Page.FAMILY_TABLE:
                     tcPages.SelectedTab = tpFamilyTable;
+                    tableToolStripMenuItem.Checked = true;
                     break;
                 case HomeController.Page.FAMILY_TREE:
                     tcPages.SelectedTab = tpFamilyTree;
+                    treeToolStripMenuItem.Checked = true;
                     break;
             }
         }
@@ -89,6 +96,7 @@ namespace ATDesktopWin.Views
         }
         #endregion
 
+        #region menu-App
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
             controller.Refresh();
@@ -98,7 +106,9 @@ namespace ATDesktopWin.Views
         {
             Application.Exit();
         }
+        #endregion
 
+        #region menu-Screen
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             controller.SwitchToPage(HomeController.Page.DASHBOARD);
@@ -113,5 +123,6 @@ namespace ATDesktopWin.Views
         {
             controller.SwitchToPage(HomeController.Page.FAMILY_TREE);
         }
+        #endregion
     }
 }
