@@ -39,6 +39,7 @@ namespace ATDesktopWin.Controllers
                     Constants.classOrigins = data.classOrigins;
                     Constants.socialOrigins = data.socialOrigins;
                     Constants.nationalOrigins = data.nationalOrigins;
+                    Constants.relationships = data.relationships;
                     callback();
                 }
             });
