@@ -84,7 +84,7 @@
             // pbPicture
             // 
             this.pbPicture.BackColor = System.Drawing.Color.Transparent;
-            this.pbPicture.BackgroundImage = global::ATDesktopWin.Properties.Resources.user_profile_picture;
+            this.pbPicture.BackgroundImage = global::ATDesktopWin.Properties.Resources.default_user_male;
             this.pbPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbPicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbPicture.ContextMenuStrip = this.cmsPicture;
@@ -318,11 +318,13 @@
             // 
             // cbGender
             // 
+            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGender.FormattingEnabled = true;
             this.cbGender.Location = new System.Drawing.Point(125, 249);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(100, 21);
             this.cbGender.TabIndex = 6;
+            this.cbGender.SelectedValueChanged += new System.EventHandler(this.cbGender_SelectedValueChanged);
             // 
             // cbClassOrigin
             // 

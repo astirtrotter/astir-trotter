@@ -29,7 +29,6 @@ namespace ATDesktopWin.Views
             cbGender.DataSource = Constants.genders;
             cbGender.DisplayMember = "value";
             cbGender.ValueMember = "value";
-            cbGender.SelectedIndex = -1;
 
             cbParty.DataSource = Constants.parties;
             cbParty.DisplayMember = "value";
@@ -169,6 +168,13 @@ namespace ATDesktopWin.Views
                 }
                 pbPicture.Image = ImageHelper.CropBitmap(cameraDialog.image, pbPicture.Width, pbPicture.Height);
             }
+        }
+
+        private void cbGender_SelectedValueChanged(object sender, EventArgs e)
+        {
+            pbPicture.BackgroundImage = cbGender.SelectedValue == Constants.genders[0].value
+                ? Properties.Resources.default_user_male
+                : Properties.Resources.default_user_female;
         }
     }
 }
