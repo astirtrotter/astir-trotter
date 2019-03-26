@@ -8,6 +8,7 @@ module.exports = function (req, res, next) {
         nationalities: require('../../config/seed/_nationality'),
         classOrigins: require('../../config/seed/_origin-class'),
         socialOrigins: require('../../config/seed/_origin-social'),
-        nationalOrigins: require('../../config/seed/_origin-national')
+        nationalOrigins: require('../../config/seed/_origin-national'),
+        relationship: require('../../config/seed/_relationship')
     });
 };
