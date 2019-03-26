@@ -20,6 +20,7 @@ namespace ATCommon.Global
         public static List<_OriginClass> classOrigins;
         public static List<_OriginSocial> socialOrigins;
         public static List<_OriginNational> nationalOrigins;
+        public static List<_Relationship> relationships;
         #endregion
 
         #region page
