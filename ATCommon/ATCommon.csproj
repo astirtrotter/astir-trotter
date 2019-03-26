@@ -64,6 +64,7 @@
     <Compile Include="Models\_OriginNational.cs" />
     <Compile Include="Models\_Party.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\_Relationship.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Responses\FamilyResponse.cs" />
     <Compile Include="Responses\UserResponse.cs" />

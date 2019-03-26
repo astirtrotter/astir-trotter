@@ -11,5 +11,6 @@ namespace ATCommon.Responses
         public List<_OriginClass> classOrigins { get; set; }
         public List<_OriginSocial> socialOrigins { get; set; }
         public List<_OriginNational> nationalOrigins { get; set; }
+        public List<_Relationship> relationships { get; set; }
     }
 }
