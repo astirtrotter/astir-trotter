@@ -5,6 +5,7 @@ namespace ATCommon.Models
 {
     public class Family
     {
+        public string relation { get; set; }
         public User user { get; set; }
         public Family spouse { get; set; }
         public Family father { get; set; }
