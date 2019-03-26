@@ -18,19 +18,21 @@ namespace ATDesktopWin.Views
 
         public Form Form => this;
 
+        private HomeController controller { get => AppManager.Instance.GetCurController<HomeController>(); }
+
         public HomeView()
         {
             InitializeComponent();
 
-            pbHeaderPicture.BackgroundImage = LoginInfo.user.gender == Constants.genders[0].value
+            pbHeaderPicture.BackgroundImage = LoginInfo.user.IsMale
                 ? Properties.Resources.default_user_male
                 : Properties.Resources.default_user_female;
         }
 
         private void HomeView_Shown(object sender, EventArgs e)
         {
-            AppManager.Instance.GetCurController<HomeController>().RepresentHeaderBar();
-            AppManager.Instance.GetCurController<HomeController>().SwitchToPage(HomeController.Page.DASHBOARD);
+            controller.RepresentHeaderBar();
+            controller.SwitchToPage(HomeController.Page.DASHBOARD);
         }
 
         #region header-bar
@@ -84,5 +86,10 @@ namespace ATDesktopWin.Views
             tcPages.Enabled = true;
         }
         #endregion
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controller.Refresh();
+        }
     }
 }
