@@ -12,5 +12,13 @@ namespace ATCommon.Models
         public Family mother { get; set; }
         public List<Family> siblings { get; set; }
         public List<Family> children { get; set; }
+
+
+        /// <summary>
+        /// methods
+        /// </summary>
+
+        public Family Husband { get => user.IsMale ? this : spouse; }
+        public Family Wife { get => !user.IsMale ? this : spouse; }
     }
 }
