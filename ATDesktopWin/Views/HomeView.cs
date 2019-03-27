@@ -14,8 +14,6 @@ namespace ATDesktopWin.Views
 {
     public partial class HomeView : Form, _View
     {
-        public string Title { get => Text; set => Text = value; }
-
         public Form Form => this;
 
         private HomeController controller { get => AppManager.Instance.GetCurController<HomeController>(); }

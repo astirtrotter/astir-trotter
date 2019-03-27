@@ -17,8 +17,6 @@ namespace ATDesktopWin.Views
 {
     public partial class SignupView : Form, _View
     {
-        public string Title { get => Text; set => Text = value; }
-
         public Form Form => this;
 
     

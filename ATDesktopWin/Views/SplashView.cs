@@ -26,8 +26,6 @@ namespace ATDesktopWin.Views
             timer.Start();
         }
 
-        public string Title { get => Text; set => Text = value; }
-
         public Form Form => this;
 
         private void SplashTimeout_Tick(object sender, EventArgs e)
