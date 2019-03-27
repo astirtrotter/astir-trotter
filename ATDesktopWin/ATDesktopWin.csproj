@@ -163,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="Resources\leaf.png" />
     <None Include="Resources\default-user-male.png" />
     <None Include="Resources\default-user-female.png" />
   </ItemGroup>
