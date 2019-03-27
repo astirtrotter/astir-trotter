@@ -128,6 +128,7 @@
             this.Controls.Add(this.pbHusband);
             this.Name = "FamilyTreeNode";
             this.Size = new System.Drawing.Size(180, 120);
+            this.Validated += new System.EventHandler(this.FamilyTreeNode_Validated);
             ((System.ComponentModel.ISupportInitialize)(this.pbHusband)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbWife)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbHusbandFather)).EndInit();

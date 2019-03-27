@@ -13,26 +13,53 @@ namespace ATDesktopWin.Views.Controls
 {
     public partial class FamilyTreeNode : UserControl
     {
-        private Family _node;
-        private bool isHusbandParentVisible = true;
+        public enum HusbandOrWife { Husband, Wife }
 
-        internal Family Node
+        /// <summary>
+        /// Family Node data that consists of husband, wife, children, ....
+        /// </summary>
+        private Family _node;
+
+        /// <summary>
+        /// Indicates which parents are visible.
+        /// </summary>
+        private HusbandOrWife _parentVisible;
+
+        /// <summary>
+        /// Point between husband and wife. Used to draw lines in main family tree container.
+        /// </summary>
+        private Point _nodePoint;
+
+        public Family Node
         {
             get => _node;
             set
             {
                 _node = value;
-                Refresh();
+                Represent();
+            }
+        }
+        
+        public Point NodePoint
+        {
+            get
+            {
+                if (_nodePoint == null)
+                {
+                    _nodePoint = new Point(Width / 2, Height - pbHusband.Height / 2);
+                }
+                return _nodePoint;
             }
         }
 
-        internal bool HusbandParentVisible
+        [Description("ParentVisible"), Category("Design")]
+        public HusbandOrWife ParentVisible
         {
-            get => isHusbandParentVisible;
+            get => _parentVisible;
             set
             {
-                isHusbandParentVisible = value;
-                Refresh();
+                _parentVisible = value;
+                Represent();
             }
         }
 
@@ -41,6 +68,21 @@ namespace ATDesktopWin.Views.Controls
             InitializeComponent();
         }
 
+        private void Represent()
+        {
+            bool hParentVisible = ParentVisible == HusbandOrWife.Husband;
+            pbHusbandFather.Visible = pbHusbandMother.Visible = hParentVisible;
+            pbWifeFather.Visible = pbWifeMother.Visible = !hParentVisible;
 
+            if (Node != null)
+            {
+                
+            }
+        }
+
+        private void FamilyTreeNode_Validated(object sender, EventArgs e)
+        {
+            Represent();
+        }
     }
 }
