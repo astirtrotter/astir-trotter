@@ -11,7 +11,7 @@ namespace ATDesktopWin.Controllers.PageControllers
     {
         protected _Controller viewController;
 
-        internal abstract string Title { get;  }
+        internal abstract string Title { get; }
         
         protected abstract Object PageData { get; }
 
