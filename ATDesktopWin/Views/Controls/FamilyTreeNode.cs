@@ -13,22 +13,15 @@ namespace ATDesktopWin.Views.Controls
 {
     public partial class FamilyTreeNode : UserControl
     {
-        public enum HusbandOrWife { Husband, Wife }
-
         /// <summary>
         /// Family Node data that consists of husband, wife, children, ....
         /// </summary>
         private Family _node;
 
         /// <summary>
-        /// Indicates which parents are visible.
+        /// Indicates if parents are visible.
         /// </summary>
-        private HusbandOrWife _parentVisible;
-
-        /// <summary>
-        /// Point between husband and wife. Used to draw lines in main family tree container.
-        /// </summary>
-        private Point _nodePoint;
+        private bool _parentVisible;
 
         public Family Node
         {
@@ -40,20 +33,8 @@ namespace ATDesktopWin.Views.Controls
             }
         }
         
-        public Point NodePoint
-        {
-            get
-            {
-                if (_nodePoint == null)
-                {
-                    _nodePoint = new Point(Width / 2, Height - pbHusband.Height / 2);
-                }
-                return _nodePoint;
-            }
-        }
-
         [Description("ParentVisible"), Category("Design")]
-        public HusbandOrWife ParentVisible
+        public bool ParentVisible
         {
             get => _parentVisible;
             set
@@ -70,9 +51,7 @@ namespace ATDesktopWin.Views.Controls
 
         private void Represent()
         {
-            bool hParentVisible = ParentVisible == HusbandOrWife.Husband;
-            pbHusbandFather.Visible = pbHusbandMother.Visible = hParentVisible;
-            pbWifeFather.Visible = pbWifeMother.Visible = !hParentVisible;
+            pbFather.Visible = pbMother.Visible = ParentVisible;
 
             if (Node != null)
             {

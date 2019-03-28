@@ -29,123 +29,90 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FamilyTreeNode));
-            this.pbHusband = new System.Windows.Forms.PictureBox();
-            this.pbWife = new System.Windows.Forms.PictureBox();
-            this.pbHusbandFather = new System.Windows.Forms.PictureBox();
-            this.pbHusbandMother = new System.Windows.Forms.PictureBox();
-            this.pbWifeMother = new System.Windows.Forms.PictureBox();
-            this.pbWifeFather = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHusband)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWife)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHusbandFather)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHusbandMother)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWifeMother)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWifeFather)).BeginInit();
+            this.pbMother = new System.Windows.Forms.PictureBox();
+            this.pbFather = new System.Windows.Forms.PictureBox();
+            this.pbUser = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMother)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFather)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pbHusband
+            // pbMother
             // 
-            this.pbHusband.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbHusband.ErrorImage")));
-            this.pbHusband.Image = ((System.Drawing.Image)(resources.GetObject("pbHusband.Image")));
-            this.pbHusband.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbHusband.InitialImage")));
-            this.pbHusband.Location = new System.Drawing.Point(0, 40);
-            this.pbHusband.Name = "pbHusband";
-            this.pbHusband.Size = new System.Drawing.Size(80, 80);
-            this.pbHusband.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbHusband.TabIndex = 0;
-            this.pbHusband.TabStop = false;
+            this.pbMother.ErrorImage = global::ATDesktopWin.Properties.Resources.default_user_female;
+            this.pbMother.Image = global::ATDesktopWin.Properties.Resources.default_user_female;
+            this.pbMother.InitialImage = global::ATDesktopWin.Properties.Resources.default_user_female;
+            this.pbMother.Location = new System.Drawing.Point(45, 0);
+            this.pbMother.Name = "pbMother";
+            this.pbMother.Size = new System.Drawing.Size(30, 30);
+            this.pbMother.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMother.TabIndex = 3;
+            this.pbMother.TabStop = false;
             // 
-            // pbWife
+            // pbFather
             // 
-            this.pbWife.ErrorImage = global::ATDesktopWin.Properties.Resources.default_user_female;
-            this.pbWife.Image = global::ATDesktopWin.Properties.Resources.default_user_female;
-            this.pbWife.InitialImage = global::ATDesktopWin.Properties.Resources.default_user_female;
-            this.pbWife.Location = new System.Drawing.Point(100, 40);
-            this.pbWife.Name = "pbWife";
-            this.pbWife.Size = new System.Drawing.Size(80, 80);
-            this.pbWife.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbWife.TabIndex = 1;
-            this.pbWife.TabStop = false;
+            this.pbFather.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbFather.ErrorImage")));
+            this.pbFather.Image = ((System.Drawing.Image)(resources.GetObject("pbFather.Image")));
+            this.pbFather.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbFather.InitialImage")));
+            this.pbFather.Location = new System.Drawing.Point(5, 0);
+            this.pbFather.Name = "pbFather";
+            this.pbFather.Size = new System.Drawing.Size(30, 30);
+            this.pbFather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFather.TabIndex = 2;
+            this.pbFather.TabStop = false;
             // 
-            // pbHusbandFather
+            // pbUser
             // 
-            this.pbHusbandFather.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbHusbandFather.ErrorImage")));
-            this.pbHusbandFather.Image = ((System.Drawing.Image)(resources.GetObject("pbHusbandFather.Image")));
-            this.pbHusbandFather.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbHusbandFather.InitialImage")));
-            this.pbHusbandFather.Location = new System.Drawing.Point(5, 0);
-            this.pbHusbandFather.Name = "pbHusbandFather";
-            this.pbHusbandFather.Size = new System.Drawing.Size(30, 30);
-            this.pbHusbandFather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbHusbandFather.TabIndex = 2;
-            this.pbHusbandFather.TabStop = false;
+            this.pbUser.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbUser.ErrorImage")));
+            this.pbUser.Image = ((System.Drawing.Image)(resources.GetObject("pbUser.Image")));
+            this.pbUser.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbUser.InitialImage")));
+            this.pbUser.Location = new System.Drawing.Point(0, 40);
+            this.pbUser.Name = "pbUser";
+            this.pbUser.Size = new System.Drawing.Size(80, 80);
+            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbUser.TabIndex = 0;
+            this.pbUser.TabStop = false;
             // 
-            // pbHusbandMother
+            // pictureBox1
             // 
-            this.pbHusbandMother.ErrorImage = global::ATDesktopWin.Properties.Resources.default_user_female;
-            this.pbHusbandMother.Image = global::ATDesktopWin.Properties.Resources.default_user_female;
-            this.pbHusbandMother.InitialImage = global::ATDesktopWin.Properties.Resources.default_user_female;
-            this.pbHusbandMother.Location = new System.Drawing.Point(45, 0);
-            this.pbHusbandMother.Name = "pbHusbandMother";
-            this.pbHusbandMother.Size = new System.Drawing.Size(30, 30);
-            this.pbHusbandMother.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbHusbandMother.TabIndex = 3;
-            this.pbHusbandMother.TabStop = false;
-            // 
-            // pbWifeMother
-            // 
-            this.pbWifeMother.ErrorImage = global::ATDesktopWin.Properties.Resources.default_user_female;
-            this.pbWifeMother.Image = global::ATDesktopWin.Properties.Resources.default_user_female;
-            this.pbWifeMother.InitialImage = global::ATDesktopWin.Properties.Resources.default_user_female;
-            this.pbWifeMother.Location = new System.Drawing.Point(145, 0);
-            this.pbWifeMother.Name = "pbWifeMother";
-            this.pbWifeMother.Size = new System.Drawing.Size(30, 30);
-            this.pbWifeMother.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbWifeMother.TabIndex = 5;
-            this.pbWifeMother.TabStop = false;
-            // 
-            // pbWifeFather
-            // 
-            this.pbWifeFather.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbWifeFather.ErrorImage")));
-            this.pbWifeFather.Image = ((System.Drawing.Image)(resources.GetObject("pbWifeFather.Image")));
-            this.pbWifeFather.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbWifeFather.InitialImage")));
-            this.pbWifeFather.Location = new System.Drawing.Point(105, 0);
-            this.pbWifeFather.Name = "pbWifeFather";
-            this.pbWifeFather.Size = new System.Drawing.Size(30, 30);
-            this.pbWifeFather.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbWifeFather.TabIndex = 4;
-            this.pbWifeFather.TabStop = false;
+            this.pictureBox1.Image = global::ATDesktopWin.Properties.Resources.leaf;
+            this.pictureBox1.Location = new System.Drawing.Point(36, 61);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // FamilyTreeNode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.pbWifeMother);
-            this.Controls.Add(this.pbWifeFather);
-            this.Controls.Add(this.pbHusbandMother);
-            this.Controls.Add(this.pbHusbandFather);
-            this.Controls.Add(this.pbWife);
-            this.Controls.Add(this.pbHusband);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbMother);
+            this.Controls.Add(this.pbFather);
+            this.Controls.Add(this.pbUser);
+            this.ForeColor = System.Drawing.Color.Transparent;
+            this.MaximumSize = new System.Drawing.Size(80, 120);
+            this.MinimumSize = new System.Drawing.Size(80, 120);
             this.Name = "FamilyTreeNode";
-            this.Size = new System.Drawing.Size(180, 120);
+            this.Size = new System.Drawing.Size(80, 120);
             this.Validated += new System.EventHandler(this.FamilyTreeNode_Validated);
-            ((System.ComponentModel.ISupportInitialize)(this.pbHusband)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWife)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHusbandFather)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHusbandMother)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWifeMother)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWifeFather)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMother)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFather)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pbHusband;
-        private System.Windows.Forms.PictureBox pbWife;
-        private System.Windows.Forms.PictureBox pbHusbandFather;
-        private System.Windows.Forms.PictureBox pbHusbandMother;
-        private System.Windows.Forms.PictureBox pbWifeMother;
-        private System.Windows.Forms.PictureBox pbWifeFather;
+        private System.Windows.Forms.PictureBox pbUser;
+        private System.Windows.Forms.PictureBox pbFather;
+        private System.Windows.Forms.PictureBox pbMother;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

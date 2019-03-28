@@ -58,7 +58,6 @@
             this.tpFamilyTree = new System.Windows.Forms.TabPage();
             this.familyTreePanel = new System.Windows.Forms.Panel();
             this.tpFamilyTable = new System.Windows.Forms.TabPage();
-            this.familyTreeNode1 = new ATDesktopWin.Views.Controls.FamilyTreeNode();
             this.menuMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scMain)).BeginInit();
             this.scMain.Panel1.SuspendLayout();
@@ -68,7 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbHeaderPicture)).BeginInit();
             this.tcPages.SuspendLayout();
             this.tpFamilyTree.SuspendLayout();
-            this.familyTreePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuMain
@@ -322,7 +320,6 @@
             // 
             this.familyTreePanel.AutoScroll = true;
             this.familyTreePanel.AutoSize = true;
-            this.familyTreePanel.Controls.Add(this.familyTreeNode1);
             this.familyTreePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.familyTreePanel.Location = new System.Drawing.Point(3, 3);
             this.familyTreePanel.Name = "familyTreePanel";
@@ -337,17 +334,6 @@
             this.tpFamilyTable.TabIndex = 2;
             this.tpFamilyTable.Text = "FamilyTable";
             this.tpFamilyTable.UseVisualStyleBackColor = true;
-            // 
-            // familyTreeNode1
-            // 
-            this.familyTreeNode1.BackColor = System.Drawing.Color.Transparent;
-            this.familyTreeNode1.Location = new System.Drawing.Point(279, 108);
-            this.familyTreeNode1.Name = "familyTreeNode1";
-            this.familyTreeNode1.Node = null;
-            this.familyTreeNode1.ParentVisible = ATDesktopWin.Views.Controls.FamilyTreeNode.HusbandOrWife.Wife;
-            this.familyTreeNode1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.familyTreeNode1.Size = new System.Drawing.Size(180, 120);
-            this.familyTreeNode1.TabIndex = 0;
             // 
             // HomeView
             // 
@@ -374,7 +360,6 @@
             this.tcPages.ResumeLayout(false);
             this.tpFamilyTree.ResumeLayout(false);
             this.tpFamilyTree.PerformLayout();
-            this.familyTreePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,6 +396,5 @@
         private System.Windows.Forms.Label lblHeaderName;
         private System.Windows.Forms.PictureBox pbHeaderPicture;
         private System.Windows.Forms.Label lblHeaderTitle;
-        private Controls.FamilyTreeNode familyTreeNode1;
     }
 }
