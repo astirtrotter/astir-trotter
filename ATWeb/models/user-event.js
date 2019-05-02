@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
                 byUserId: function (userId) {
                     return {
                         where: { userId: { [Op.like]: userId } },
-                        order: [['when', 'ASC']]
+                        order: [['at', 'ASC']]
                     };
                 }
             }
